@@ -1,654 +1,673 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>خفاجي ڪيمز | عالم الألعاب</title>
-    <meta name="description" content="الموقع الرسمي لخفاجي ڪيمز - شروحات وتحميل ألعاب الحياة الواقعية RP: NEWRP, ONE LION, RP Grand, Suburbio">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --neon-pink: #ff2d95;
-            --neon-purple: #a020f0;
-            --neon-blue: #00d4ff;
-            --neon-cyan: #00ffea;
-            --neon-green: #39ff14;
-            --neon-yellow: #ffe600;
-            --bg-dark: #1a0a2e;
-            --bg-mid: #2d1b4e;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Cairo', sans-serif;
-            background: linear-gradient(135deg, #2d1b4e 0%, #1a0a2e 30%, #0d1b3e 60%, #2d1b4e 100%);
-            background-size: 400% 400%;
-            animation: bgMove 15s ease infinite;
-            color: #fff;
-            line-height: 1.7;
-            overflow-x: hidden;
-            min-height: 100vh;
-        }
-        @keyframes bgMove {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background-image: 
-                radial-gradient(2px 2px at 20% 30%, #ff2d95, transparent),
-                radial-gradient(2px 2px at 60% 70%, #00d4ff, transparent),
-                radial-gradient(1px 1px at 50% 50%, #39ff14, transparent),
-                radial-gradient(1px 1px at 80% 10%, #ffe600, transparent),
-                radial-gradient(2px 2px at 90% 60%, #a020f0, transparent),
-                radial-gradient(1px 1px at 33% 80%, #00ffea, transparent);
-            background-size: 200% 200%;
-            animation: stars 20s linear infinite;
-            z-index: -1;
-            opacity: 0.7;
-        }
-        @keyframes stars {
-            0% { background-position: 0% 0%; }
-            100% { background-position: 100% 100%; }
-        }
-        a { color: inherit; text-decoration: none; }
-        img { max-width: 100%; height: auto; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>خفاجي ڪيمز | عالم الألعاب</title>
+<meta name="description" content="الموقع الرسمي لخفاجي ڪيمز - ألعاب تفاعلية، شروحات، وتحميل ألعاب الحياة الواقعية RP">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+--pink:#ff2d95;--purple:#a020f0;--blue:#00d4ff;--cyan:#00ffea;--green:#39ff14;--yellow:#ffe600;--orange:#ff6b00;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Cairo',sans-serif;background:linear-gradient(135deg,#2d1b4e 0%,#1a0a2e 30%,#0d1b3e 60%,#2d1b4e 100%);background-size:400% 400%;animation:bgMove 15s ease infinite;color:#fff;line-height:1.7;overflow-x:hidden;min-height:100vh}
+@keyframes bgMove{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;background-image:radial-gradient(2px 2px at 20% 30%,#ff2d95,transparent),radial-gradient(2px 2px at 60% 70%,#00d4ff,transparent),radial-gradient(1px 1px at 50% 50%,#39ff14,transparent),radial-gradient(1px 1px at 80% 10%,#ffe600,transparent),radial-gradient(2px 2px at 90% 60%,#a020f0,transparent);background-size:200% 200%;animation:stars 20s linear infinite;z-index:-1;opacity:.7}
+@keyframes stars{0%{background-position:0% 0%}100%{background-position:100% 100%}}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;height:auto}
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
 
-        header {
-            background: linear-gradient(90deg, rgba(45,27,78,0.95), rgba(26,10,46,0.95), rgba(13,27,62,0.95));
-            backdrop-filter: blur(10px);
-            padding: 15px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            border-bottom: 3px solid transparent;
-            border-image: linear-gradient(90deg, var(--neon-pink), var(--neon-blue), var(--neon-green), var(--neon-yellow), var(--neon-pink)) 1;
-            box-shadow: 0 0 30px rgba(255,45,149,0.5), 0 0 60px rgba(0,212,255,0.3);
-        }
-        .header-content { display: flex; justify-content: space-between; align-items: center; }
-        .logo {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.8rem; font-weight: 900;
-            background: linear-gradient(90deg, #ff2d95, #00d4ff, #39ff14, #ffe600, #ff2d95);
-            background-size: 300% 100%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: logoRainbow 4s linear infinite;
-            filter: drop-shadow(0 0 10px rgba(255,45,149,0.8));
-        }
-        @keyframes logoRainbow {
-            0% { background-position: 0% 50%; }
-            100% { background-position: 300% 50%; }
-        }
-        nav ul { list-style: none; display: flex; gap: 25px; }
-        nav a {
-            font-weight: 700; color: #fff;
-            transition: all 0.3s; position: relative;
-            padding: 5px 10px; border-radius: 8px;
-        }
-        nav a:hover {
-            color: var(--neon-cyan);
-            text-shadow: 0 0 10px var(--neon-cyan), 0 0 20px var(--neon-cyan);
-            background: rgba(0,212,255,0.1);
-        }
+/* Header */
+header{background:linear-gradient(90deg,rgba(45,27,78,.95),rgba(26,10,46,.95),rgba(13,27,62,.95));backdrop-filter:blur(10px);padding:12px 0;position:sticky;top:0;z-index:1000;border-bottom:3px solid transparent;border-image:linear-gradient(90deg,var(--pink),var(--blue),var(--green),var(--yellow),var(--pink)) 1;box-shadow:0 0 30px rgba(255,45,149,.5)}
+.header-content{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.logo{font-family:'Orbitron',sans-serif;font-size:1.6rem;font-weight:900;background:linear-gradient(90deg,#ff2d95,#00d4ff,#39ff14,#ffe600,#ff2d95);background-size:300% 100%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:logoRainbow 4s linear infinite;filter:drop-shadow(0 0 10px rgba(255,45,149,.8))}
+@keyframes logoRainbow{0%{background-position:0% 50%}100%{background-position:300% 50%}}
+nav ul{list-style:none;display:flex;gap:15px;flex-wrap:wrap}
+nav a{font-weight:700;color:#fff;transition:.3s;padding:5px 10px;border-radius:8px;font-size:.95rem}
+nav a:hover{color:var(--cyan);text-shadow:0 0 10px var(--cyan);background:rgba(0,212,255,.1)}
+.coins-display{background:linear-gradient(135deg,#ffe600,#ff6b00);color:#1a0a2e;padding:8px 18px;border-radius:30px;font-weight:900;font-size:1rem;box-shadow:0 0 20px rgba(255,230,0,.7);display:flex;align-items:center;gap:8px;animation:coinPulse 2s ease-in-out infinite}
+@keyframes coinPulse{0%,100%{box-shadow:0 0 20px rgba(255,230,0,.6)}50%{box-shadow:0 0 35px rgba(255,230,0,1)}}
+.coins-display span{font-size:1.1rem}
 
-        .hero {
-            padding: 100px 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%; left: -50%;
-            width: 200%; height: 200%;
-            background: conic-gradient(from 0deg, transparent, rgba(255,45,149,0.15), transparent, rgba(0,212,255,0.15), transparent, rgba(57,255,20,0.15), transparent);
-            animation: rotate 20s linear infinite;
-            z-index: -1;
-        }
-        @keyframes rotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        .hero h1 {
-            font-size: 3.2rem;
-            margin-bottom: 25px;
-            font-weight: 900;
-            background: linear-gradient(90deg, #ff2d95, #00d4ff, #39ff14);
-            background-size: 200% 100%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: logoRainbow 5s linear infinite;
-            filter: drop-shadow(0 0 15px rgba(255,45,149,0.8));
-        }
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 750px;
-            margin: 0 auto 35px;
-            color: #e0d0ff;
-        }
-        .btn {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--neon-pink), var(--neon-purple));
-            color: #fff;
-            padding: 15px 40px;
-            border-radius: 50px;
-            font-weight: 900;
-            font-size: 1.1rem;
-            transition: all 0.3s;
-            box-shadow: 0 0 20px rgba(255,45,149,0.7), 0 0 40px rgba(160,32,240,0.4);
-            border: 2px solid rgba(255,255,255,0.2);
-            position: relative;
-            overflow: hidden;
-        }
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0; left: -100%;
-            width: 100%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: left 0.5s;
-        }
-        .btn:hover::before { left: 100%; }
-        .btn:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 0 40px rgba(255,45,149,1), 0 0 80px rgba(160,32,240,0.6);
-        }
+/* Hero */
+.hero{padding:70px 0 60px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:conic-gradient(from 0deg,transparent,rgba(255,45,149,.15),transparent,rgba(0,212,255,.15),transparent,rgba(57,255,20,.15),transparent);animation:rotate 20s linear infinite;z-index:-1}
+@keyframes rotate{100%{transform:rotate(360deg)}}
+.hero h1{font-size:2.8rem;margin-bottom:20px;font-weight:900;background:linear-gradient(90deg,#ff2d95,#00d4ff,#39ff14);background-size:200% 100%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:logoRainbow 5s linear infinite;filter:drop-shadow(0 0 15px rgba(255,45,149,.8))}
+.hero p{font-size:1.1rem;max-width:750px;margin:0 auto 30px;color:#e0d0ff}
+.btn{display:inline-block;background:linear-gradient(135deg,var(--pink),var(--purple));color:#fff;padding:14px 36px;border-radius:50px;font-weight:900;font-size:1.05rem;transition:.3s;box-shadow:0 0 20px rgba(255,45,149,.7);border:2px solid rgba(255,255,255,.2);position:relative;overflow:hidden;cursor:pointer}
+.btn:hover{transform:translateY(-3px) scale(1.05);box-shadow:0 0 40px rgba(255,45,149,1)}
+.btn.green{background:linear-gradient(135deg,var(--green),#00a86b);box-shadow:0 0 20px rgba(57,255,20,.7)}
+.btn.green:hover{box-shadow:0 0 40px rgba(57,255,20,1)}
+.btn.blue{background:linear-gradient(135deg,var(--blue),var(--purple));box-shadow:0 0 20px rgba(0,212,255,.7)}
 
-        .section-title {
-            text-align: center;
-            font-size: 2.3rem;
-            margin: 70px 0 40px;
-            font-weight: 900;
-            color: #fff;
-            text-shadow: 0 0 20px rgba(0,212,255,0.8);
-            position: relative;
-        }
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 120px; height: 5px;
-            background: linear-gradient(90deg, var(--neon-pink), var(--neon-blue), var(--neon-green), var(--neon-yellow));
-            background-size: 300% 100%;
-            animation: logoRainbow 3s linear infinite;
-            margin: 15px auto 0;
-            border-radius: 3px;
-            box-shadow: 0 0 15px rgba(255,45,149,0.8);
-        }
+/* Section titles */
+.section-title{text-align:center;font-size:2rem;margin:60px 0 35px;font-weight:900;color:#fff;text-shadow:0 0 20px rgba(0,212,255,.8);position:relative}
+.section-title::after{content:'';display:block;width:120px;height:5px;background:linear-gradient(90deg,var(--pink),var(--blue),var(--green),var(--yellow));background-size:300% 100%;animation:logoRainbow 3s linear infinite;margin:15px auto 0;border-radius:3px;box-shadow:0 0 15px rgba(255,45,149,.8)}
 
-        .video-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            margin-bottom: 60px;
-        }
-        .video-card {
-            background: linear-gradient(135deg, rgba(45,27,78,0.9), rgba(26,10,46,0.9));
-            border-radius: 20px;
-            overflow: hidden;
-            transition: all 0.4s;
-            border: 2px solid transparent;
-            background-clip: padding-box;
-            position: relative;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.4);
-        }
-        .video-card::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border-radius: 20px;
-            padding: 2px;
-            background: linear-gradient(135deg, var(--neon-pink), var(--neon-blue), var(--neon-green), var(--neon-yellow));
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            pointer-events: none;
-        }
-        .video-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 50px rgba(255,45,149,0.5), 0 0 40px rgba(0,212,255,0.3);
-        }
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-            background: linear-gradient(135deg, #2d1b4e, #0d1b3e);
-        }
-        .video-container iframe {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            border: none;
-        }
-        .video-info { padding: 22px; }
-        .video-info h3 {
-            color: #fff;
-            margin-bottom: 10px;
-            font-size: 1.2rem;
-            font-weight: 700;
-            text-shadow: 0 0 10px rgba(0,212,255,0.5);
-        }
-        .video-info p {
-            color: #c0b0e0;
-            font-size: 0.95rem;
-            margin-bottom: 15px;
-        }
-        .article-link {
-            display: inline-block;
-            color: var(--neon-cyan);
-            font-weight: 700;
-            transition: all 0.3s;
-            border-bottom: 2px solid transparent;
-            text-shadow: 0 0 8px rgba(0,255,234,0.5);
-        }
-        .article-link:hover {
-            color: var(--neon-yellow);
-            border-bottom-color: var(--neon-yellow);
-            text-shadow: 0 0 15px var(--neon-yellow);
-        }
+/* Videos */
+.video-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:25px;margin-bottom:50px}
+.video-card{background:linear-gradient(135deg,rgba(45,27,78,.9),rgba(26,10,46,.9));border-radius:20px;overflow:hidden;transition:.4s;border:2px solid transparent;background-clip:padding-box;position:relative;box-shadow:0 5px 25px rgba(0,0,0,.4)}
+.video-card::before{content:'';position:absolute;inset:0;border-radius:20px;padding:2px;background:linear-gradient(135deg,var(--pink),var(--blue),var(--green),var(--yellow));-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+.video-card:hover{transform:translateY(-10px);box-shadow:0 20px 50px rgba(255,45,149,.5)}
+.video-container{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;background:#1a0a2e}
+.video-container iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}
+.video-info{padding:20px}
+.video-info h3{color:#fff;margin-bottom:8px;font-size:1.1rem;text-shadow:0 0 10px rgba(0,212,255,.5)}
+.video-info p{color:#c0b0e0;font-size:.9rem;margin-bottom:12px}
+.article-link{display:inline-block;color:var(--cyan);font-weight:700;transition:.3s;text-shadow:0 0 8px rgba(0,255,234,.5)}
+.article-link:hover{color:var(--yellow);text-shadow:0 0 15px var(--yellow)}
 
-        .games-section { margin: 60px 0; }
-        .games-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 25px;
-            margin-bottom: 40px;
-        }
-        .game-card {
-            background: linear-gradient(135deg, rgba(45,27,78,0.85), rgba(13,27,62,0.85));
-            border-radius: 18px;
-            padding: 25px 20px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s;
-            border: 2px solid rgba(160,32,240,0.3);
-        }
-        .game-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 4px;
-            background: linear-gradient(90deg, var(--neon-pink), var(--neon-blue), var(--neon-green));
-            background-size: 200% 100%;
-            animation: logoRainbow 3s linear infinite;
-        }
-        .game-card:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 15px 40px rgba(160,32,240,0.5), 0 0 30px rgba(0,212,255,0.3);
-            border-color: var(--neon-cyan);
-        }
-        .game-icon {
-            font-size: 3rem;
-            margin-bottom: 15px;
-            filter: drop-shadow(0 0 15px rgba(255,45,149,0.8));
-            animation: float 3s ease-in-out infinite;
-        }
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-        .game-card h3 {
-            color: #fff;
-            margin-bottom: 10px;
-            font-size: 1.3rem;
-            text-shadow: 0 0 10px rgba(0,212,255,0.7);
-        }
-        .game-card p {
-            color: #c0b0e0;
-            font-size: 0.9rem;
-            margin-bottom: 18px;
-        }
-        .download-btn {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--neon-green), #00a86b);
-            color: #fff;
-            padding: 10px 25px;
-            border-radius: 30px;
-            font-weight: 700;
-            font-size: 0.95rem;
-            transition: all 0.3s;
-            box-shadow: 0 0 15px rgba(57,255,20,0.6);
-            border: 1px solid rgba(255,255,255,0.2);
-        }
-        .download-btn:hover {
-            transform: scale(1.08);
-            box-shadow: 0 0 30px rgba(57,255,20,1);
-        }
+/* Games Download */
+.games-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;margin-bottom:50px}
+.game-card{background:linear-gradient(135deg,rgba(45,27,78,.85),rgba(13,27,62,.85));border-radius:18px;padding:22px 18px;text-align:center;position:relative;overflow:hidden;transition:.3s;border:2px solid rgba(160,32,240,.3)}
+.game-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(90deg,var(--pink),var(--blue),var(--green));background-size:200% 100%;animation:logoRainbow 3s linear infinite}
+.game-card:hover{transform:translateY(-8px) scale(1.02);box-shadow:0 15px 40px rgba(160,32,240,.5);border-color:var(--cyan)}
+.game-icon{font-size:2.8rem;margin-bottom:12px;filter:drop-shadow(0 0 15px rgba(255,45,149,.8));animation:float 3s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.game-card h3{color:#fff;margin-bottom:8px;font-size:1.15rem;text-shadow:0 0 10px rgba(0,212,255,.7)}
+.game-card p{color:#c0b0e0;font-size:.85rem;margin-bottom:15px}
+.download-btn{display:inline-block;background:linear-gradient(135deg,var(--green),#00a86b);color:#fff;padding:9px 22px;border-radius:30px;font-weight:700;font-size:.9rem;transition:.3s;box-shadow:0 0 15px rgba(57,255,20,.6);border:1px solid rgba(255,255,255,.2)}
+.download-btn:hover{transform:scale(1.08);box-shadow:0 0 30px rgba(57,255,20,1)}
 
-        .about {
-            background: linear-gradient(135deg, rgba(45,27,78,0.7), rgba(13,27,62,0.7));
-            padding: 60px 0;
-            margin: 60px 0;
-            border-radius: 25px;
-            border: 2px solid rgba(255,45,149,0.4);
-            box-shadow: 0 0 40px rgba(255,45,149,0.3);
-        }
-        .about-content { display: flex; flex-wrap: wrap; align-items: center; gap: 50px; padding: 0 40px; }
-        .about-text { flex: 1; min-width: 300px; }
-        .about-text h2 {
-            color: #fff;
-            margin-bottom: 20px;
-            font-size: 2rem;
-            text-shadow: 0 0 15px rgba(0,255,234,0.7);
-        }
-        .about-text p { color: #d0c0f0; margin-bottom: 15px; font-size: 1.05rem; }
-        .about-image { flex: 1; min-width: 300px; text-align: center; }
-        .about-image img {
-            border-radius: 50%;
-            width: 250px; height: 250px;
-            object-fit: cover;
-            border: 5px solid transparent;
-            background: linear-gradient(135deg, var(--neon-pink), var(--neon-blue), var(--neon-green)) border-box;
-            box-shadow: 0 0 40px rgba(255,45,149,0.8), 0 0 80px rgba(0,212,255,0.5);
-            animation: avatarGlow 3s ease-in-out infinite alternate;
-        }
-        @keyframes avatarGlow {
-            from { box-shadow: 0 0 30px rgba(255,45,149,0.6); }
-            to { box-shadow: 0 0 50px rgba(0,212,255,0.9), 0 0 100px rgba(57,255,20,0.5); }
-        }
+/* Play Games Section */
+.play-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;margin-bottom:50px}
+.play-card{background:linear-gradient(135deg,rgba(45,27,78,.9),rgba(13,27,62,.9));border-radius:20px;padding:25px 20px;text-align:center;position:relative;overflow:hidden;transition:.3s;border:2px solid rgba(0,212,255,.3);cursor:pointer}
+.play-card:hover{transform:translateY(-8px);box-shadow:0 20px 50px rgba(0,212,255,.5),0 0 30px rgba(255,45,149,.3);border-color:var(--pink)}
+.play-icon{font-size:3rem;margin-bottom:15px;filter:drop-shadow(0 0 15px rgba(0,212,255,.8));animation:float 3s ease-in-out infinite}
+.play-card h3{color:#fff;margin-bottom:10px;font-size:1.2rem;text-shadow:0 0 10px rgba(255,45,149,.7)}
+.play-card p{color:#c0b0e0;font-size:.9rem;margin-bottom:15px}
+.play-btn{display:inline-block;background:linear-gradient(135deg,var(--pink),var(--purple));color:#fff;padding:10px 25px;border-radius:30px;font-weight:700;font-size:.95rem;transition:.3s;box-shadow:0 0 15px rgba(255,45,149,.7);border:none;cursor:pointer;font-family:inherit}
+.play-btn:hover{transform:scale(1.08);box-shadow:0 0 30px rgba(255,45,149,1)}
+.earn-badge{position:absolute;top:12px;left:12px;background:linear-gradient(135deg,#ffe600,#ff6b00);color:#1a0a2e;padding:4px 12px;border-radius:20px;font-weight:900;font-size:.75rem;box-shadow:0 0 15px rgba(255,230,0,.7)}
 
-        .social-section {
-            text-align: center;
-            padding: 60px 0;
-            margin: 60px 0;
-        }
-        .social-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        .social-card {
-            padding: 35px 20px;
-            border-radius: 20px;
-            text-align: center;
-            transition: all 0.4s;
-            position: relative;
-            overflow: hidden;
-            border: 2px solid rgba(255,255,255,0.1);
-        }
-        .social-card.youtube {
-            background: linear-gradient(135deg, rgba(255,0,0,0.15), rgba(160,32,240,0.15));
-        }
-        .social-card.tiktok {
-            background: linear-gradient(135deg, rgba(0,212,255,0.15), rgba(255,45,149,0.15));
-        }
-        .social-card.discord {
-            background: linear-gradient(135deg, rgba(88,101,242,0.15), rgba(160,32,240,0.15));
-        }
-        .social-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--neon-cyan);
-            box-shadow: 0 20px 50px rgba(0,212,255,0.4);
-        }
-        .social-logo {
-            width: 80px; height: 80px;
-            margin: 0 auto 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 20px;
-            font-size: 2.5rem;
-            transition: all 0.3s;
-        }
-        .social-card.youtube .social-logo {
-            background: linear-gradient(135deg, #ff0000, #cc0000);
-            box-shadow: 0 0 30px rgba(255,0,0,0.8);
-        }
-        .social-card.tiktok .social-logo {
-            background: linear-gradient(135deg, #00d4ff, #ff2d95);
-            box-shadow: 0 0 30px rgba(255,45,149,0.8);
-        }
-        .social-card.discord .social-logo {
-            background: linear-gradient(135deg, #5865F2, #a020f0);
-            box-shadow: 0 0 30px rgba(88,101,242,0.8);
-        }
-        .social-card:hover .social-logo {
-            transform: rotate(360deg) scale(1.1);
-            transition: transform 0.6s;
-        }
-        .social-card h3 {
-            color: #fff;
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-            text-shadow: 0 0 10px rgba(0,212,255,0.7);
-        }
-        .social-card p {
-            color: #c0b0e0;
-            font-size: 0.95rem;
-            margin-bottom: 20px;
-        }
-        .follow-btn {
-            display: inline-block;
-            padding: 12px 30px;
-            border-radius: 30px;
-            font-weight: 700;
-            color: #fff;
-            transition: all 0.3s;
-            border: 1px solid rgba(255,255,255,0.3);
-        }
-        .social-card.youtube .follow-btn {
-            background: linear-gradient(135deg, #ff0000, #cc0000);
-            box-shadow: 0 0 15px rgba(255,0,0,0.6);
-        }
-        .social-card.tiktok .follow-btn {
-            background: linear-gradient(135deg, #00d4ff, #ff2d95);
-            box-shadow: 0 0 15px rgba(255,45,149,0.6);
-        }
-        .social-card.discord .follow-btn {
-            background: linear-gradient(135deg, #5865F2, #a020f0);
-            box-shadow: 0 0 15px rgba(88,101,242,0.6);
-        }
-        .follow-btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 0 30px rgba(255,255,255,0.6);
-        }
+/* Modal for games */
+.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(10,10,30,.95);z-index:2000;justify-content:center;align-items:center;padding:20px;overflow-y:auto}
+.modal.active{display:flex}
+.modal-content{background:linear-gradient(135deg,#2d1b4e,#0d1b3e);border-radius:25px;padding:30px 25px;max-width:500px;width:100%;border:2px solid var(--cyan);box-shadow:0 0 50px rgba(0,212,255,.6);position:relative;animation:modalIn .3s ease}
+@keyframes modalIn{from{transform:scale(.8);opacity:0}to{transform:scale(1);opacity:1}}
+.modal-close{position:absolute;top:15px;left:15px;background:rgba(255,45,149,.8);border:none;color:#fff;width:35px;height:35px;border-radius:50%;font-size:1.2rem;cursor:pointer;font-weight:900;transition:.3s}
+.modal-close:hover{background:var(--pink);transform:rotate(90deg)}
+.modal-content h2{text-align:center;color:#fff;margin-bottom:20px;text-shadow:0 0 15px rgba(255,45,149,.8);font-size:1.5rem}
+.game-area{text-align:center;padding:15px 0}
+.game-display{background:rgba(0,0,0,.3);border-radius:15px;padding:20px;margin:15px 0;font-size:1.3rem;color:#fff;font-weight:700;min-height:80px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(0,212,255,.3)}
+.game-input{width:100%;padding:12px 15px;border-radius:12px;border:2px solid rgba(0,212,255,.4);background:rgba(0,0,0,.3);color:#fff;font-size:1.1rem;font-family:inherit;text-align:center;margin:10px 0;outline:none;transition:.3s}
+.game-input:focus{border-color:var(--cyan);box-shadow:0 0 20px rgba(0,212,255,.5)}
+.game-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:15px}
+.memory-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:15px 0}
+.memory-card{aspect-ratio:1;background:linear-gradient(135deg,var(--purple),var(--blue));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:2rem;cursor:pointer;transition:.3s;user-select:none}
+.memory-card.flipped{background:linear-gradient(135deg,var(--pink),var(--purple));box-shadow:0 0 20px rgba(255,45,149,.8)}
+.memory-card.matched{background:linear-gradient(135deg,var(--green),#00a86b);cursor:default;box-shadow:0 0 20px rgba(57,255,20,.8)}
+.reaction-circle{width:150px;height:150px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--purple));margin:20px auto;display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-weight:900;cursor:pointer;transition:.3s;box-shadow:0 0 30px rgba(0,212,255,.6)}
+.reaction-circle.ready{background:linear-gradient(135deg,var(--green),#00a86b);box-shadow:0 0 40px rgba(57,255,20,1)}
+.reaction-circle.wait{background:linear-gradient(135deg,#ff2d2d,#8b0000)}
+.score-display{font-size:1rem;color:#ffe600;margin:10px 0;font-weight:700}
 
-        footer {
-            background: linear-gradient(90deg, rgba(45,27,78,0.95), rgba(13,27,62,0.95), rgba(45,27,78,0.95));
-            padding: 40px 0;
-            text-align: center;
-            border-top: 3px solid transparent;
-            border-image: linear-gradient(90deg, var(--neon-pink), var(--neon-blue), var(--neon-green), var(--neon-yellow), var(--neon-pink)) 1;
-            box-shadow: 0 0 30px rgba(0,212,255,0.4);
-        }
-        footer p { color: #a090c0; font-size: 0.9rem; margin-top: 15px; }
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
-        }
-        .footer-links a {
-            color: #d0c0f0;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-        .footer-links a:hover {
-            color: var(--neon-cyan);
-            text-shadow: 0 0 10px var(--neon-cyan);
-        }
+/* About */
+.about{background:linear-gradient(135deg,rgba(45,27,78,.7),rgba(13,27,62,.7));padding:50px 0;margin:50px 0;border-radius:25px;border:2px solid rgba(255,45,149,.4);box-shadow:0 0 40px rgba(255,45,149,.3)}
+.about-content{display:flex;flex-wrap:wrap;align-items:center;gap:40px;padding:0 30px}
+.about-text{flex:1;min-width:280px}
+.about-text h2{color:#fff;margin-bottom:18px;font-size:1.8rem;text-shadow:0 0 15px rgba(0,255,234,.7)}
+.about-text p{color:#d0c0f0;margin-bottom:12px;font-size:1rem}
+.about-image{flex:1;min-width:280px;text-align:center}
+.about-image img{border-radius:50%;width:220px;height:220px;object-fit:cover;border:5px solid transparent;background:linear-gradient(135deg,var(--pink),var(--blue),var(--green)) border-box;box-shadow:0 0 40px rgba(255,45,149,.8);animation:avatarGlow 3s ease-in-out infinite alternate}
+@keyframes avatarGlow{from{box-shadow:0 0 30px rgba(255,45,149,.6)}to{box-shadow:0 0 50px rgba(0,212,255,.9)}}
 
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.2rem; }
-            .hero { padding: 70px 0; }
-            .header-content { flex-direction: column; gap: 12px; }
-            nav ul { gap: 15px; flex-wrap: wrap; justify-content: center; }
-            .about-content { flex-direction: column; padding: 0 20px; }
-            .video-grid { grid-template-columns: 1fr; }
-            .section-title { font-size: 1.7rem; }
-            .games-grid { grid-template-columns: 1fr 1fr; }
-        }
-        @media (max-width: 480px) {
-            .games-grid { grid-template-columns: 1fr; }
-            nav ul { gap: 10px; }
-            nav a { font-size: 0.9rem; padding: 3px 6px; }
-        }
-    </style>
+/* Social */
+.social-section{text-align:center;padding:50px 0;margin:50px 0}
+.social-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;max-width:1000px;margin:0 auto}
+.social-card{padding:30px 18px;border-radius:20px;text-align:center;transition:.4s;position:relative;overflow:hidden;border:2px solid rgba(255,255,255,.1)}
+.social-card.youtube{background:linear-gradient(135deg,rgba(255,0,0,.15),rgba(160,32,240,.15))}
+.social-card.tiktok{background:linear-gradient(135deg,rgba(0,212,255,.15),rgba(255,45,149,.15))}
+.social-card.discord{background:linear-gradient(135deg,rgba(88,101,242,.15),rgba(160,32,240,.15))}
+.social-card:hover{transform:translateY(-10px);border-color:var(--cyan);box-shadow:0 20px 50px rgba(0,212,255,.4)}
+.social-logo{width:75px;height:75px;margin:0 auto 18px;display:flex;align-items:center;justify-content:center;border-radius:20px;font-size:2.2rem;transition:.3s}
+.social-card.youtube .social-logo{background:linear-gradient(135deg,#ff0000,#cc0000);box-shadow:0 0 30px rgba(255,0,0,.8)}
+.social-card.tiktok .social-logo{background:linear-gradient(135deg,#00d4ff,#ff2d95);box-shadow:0 0 30px rgba(255,45,149,.8)}
+.social-card.discord .social-logo{background:linear-gradient(135deg,#5865F2,#a020f0);box-shadow:0 0 30px rgba(88,101,242,.8)}
+.social-card:hover .social-logo{transform:rotate(360deg) scale(1.1);transition:transform .6s}
+.social-card h3{color:#fff;font-size:1.2rem;margin-bottom:8px}
+.social-card p{color:#c0b0e0;font-size:.9rem;margin-bottom:18px}
+.follow-btn{display:inline-block;padding:11px 28px;border-radius:30px;font-weight:700;color:#fff;transition:.3s;border:1px solid rgba(255,255,255,.3)}
+.social-card.youtube .follow-btn{background:linear-gradient(135deg,#ff0000,#cc0000);box-shadow:0 0 15px rgba(255,0,0,.6)}
+.social-card.tiktok .follow-btn{background:linear-gradient(135deg,#00d4ff,#ff2d95);box-shadow:0 0 15px rgba(255,45,149,.6)}
+.social-card.discord .follow-btn{background:linear-gradient(135deg,#5865F2,#a020f0);box-shadow:0 0 15px rgba(88,101,242,.6)}
+.follow-btn:hover{transform:scale(1.1);box-shadow:0 0 30px rgba(255,255,255,.6)}
+
+/* Footer */
+footer{background:linear-gradient(90deg,rgba(45,27,78,.95),rgba(13,27,62,.95),rgba(45,27,78,.95));padding:35px 0;text-align:center;border-top:3px solid transparent;border-image:linear-gradient(90deg,var(--pink),var(--blue),var(--green),var(--yellow),var(--pink)) 1;box-shadow:0 0 30px rgba(0,212,255,.4)}
+footer p{color:#a090c0;font-size:.9rem;margin-top:15px}
+.footer-links{display:flex;justify-content:center;gap:25px;flex-wrap:wrap;margin-bottom:15px}
+.footer-links a{color:#d0c0f0;font-weight:600;transition:.3s;font-size:.95rem}
+.footer-links a:hover{color:var(--cyan);text-shadow:0 0 10px var(--cyan)}
+
+/* AI Chat Widget */
+.chat-widget{position:fixed;bottom:20px;right:20px;z-index:1500;font-family:'Cairo',sans-serif}
+.chat-toggle{width:65px;height:65px;border-radius:50%;background:linear-gradient(135deg,var(--pink),var(--purple));border:none;cursor:pointer;font-size:1.8rem;color:#fff;box-shadow:0 0 30px rgba(255,45,149,.8);transition:.3s;animation:chatPulse 2s ease-in-out infinite}
+@keyframes chatPulse{0%,100%{box-shadow:0 0 25px rgba(255,45,149,.6)}50%{box-shadow:0 0 45px rgba(255,45,149,1),0 0 60px rgba(0,212,255,.5)}}
+.chat-toggle:hover{transform:scale(1.1) rotate(15deg)}
+.chat-window{position:absolute;bottom:80px;right:0;width:340px;max-width:calc(100vw - 40px);height:480px;max-height:calc(100vh - 120px);background:linear-gradient(135deg,#2d1b4e,#0d1b3e);border-radius:20px;box-shadow:0 0 50px rgba(0,212,255,.5);border:2px solid var(--cyan);display:none;flex-direction:column;overflow:hidden}
+.chat-window.active{display:flex;animation:modalIn .3s ease}
+.chat-header{background:linear-gradient(135deg,var(--pink),var(--purple));padding:15px;color:#fff;font-weight:900;display:flex;align-items:center;justify-content:space-between;border-bottom:2px solid rgba(255,255,255,.2)}
+.chat-header .bot-info{display:flex;align-items:center;gap:10px}
+.chat-header .bot-avatar{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--cyan),var(--blue));display:flex;align-items:center;justify-content:center;font-size:1.3rem;box-shadow:0 0 15px rgba(0,255,234,.8)}
+.chat-header .status{font-size:.75rem;color:#a0ffa0;font-weight:400}
+.chat-close{background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:0 5px}
+.chat-body{flex:1;padding:15px;overflow-y:auto;display:flex;flex-direction:column;gap:10px}
+.chat-msg{max-width:80%;padding:10px 15px;border-radius:15px;font-size:.9rem;line-height:1.5;word-wrap:break-word}
+.chat-msg.bot{background:linear-gradient(135deg,rgba(0,212,255,.2),rgba(160,32,240,.2));color:#fff;align-self:flex-start;border:1px solid rgba(0,212,255,.3);border-top-right-radius:5px}
+.chat-msg.user{background:linear-gradient(135deg,var(--pink),var(--purple));color:#fff;align-self:flex-end;border-top-left-radius:5px}
+.chat-input-area{padding:12px;border-top:1px solid rgba(255,255,255,.1);display:flex;gap:8px}
+.chat-input{flex:1;padding:10px 15px;border-radius:25px;border:1px solid rgba(0,212,255,.3);background:rgba(0,0,0,.3);color:#fff;font-family:inherit;font-size:.9rem;outline:none}
+.chat-input:focus{border-color:var(--cyan);box-shadow:0 0 15px rgba(0,212,255,.4)}
+.chat-send{background:linear-gradient(135deg,var(--cyan),var(--blue));border:none;color:#fff;width:42px;height:42px;border-radius:50%;cursor:pointer;font-size:1.1rem;transition:.3s;font-weight:900}
+.chat-send:hover{transform:scale(1.1);box-shadow:0 0 20px rgba(0,255,234,.8)}
+
+@media(max-width:768px){
+.hero h1{font-size:2rem}
+.hero{padding:50px 0 40px}
+.header-content{flex-direction:column;gap:10px}
+nav ul{gap:10px;justify-content:center}
+nav a{font-size:.85rem;padding:4px 8px}
+.about-content{flex-direction:column;padding:0 20px}
+.section-title{font-size:1.6rem}
+.games-grid,.play-grid{grid-template-columns:1fr 1fr}
+.chat-window{width:calc(100vw - 30px);right:-10px}
+}
+@media(max-width:480px){
+.games-grid,.play-grid{grid-template-columns:1fr}
+}
+</style>
 </head>
 <body>
-    <header>
-        <div class="container header-content">
-            <div class="logo">خفاجي ڪيمز</div>
-            <nav>
-                <ul>
-                    <li><a href="#home">الرئيسية</a></li>
-                    <li><a href="#videos">الفيديوهات</a></li>
-                    <li><a href="#games">تحميل الألعاب</a></li>
-                    <li><a href="#about">من أنا</a></li>
-                    <li><a href="#contact">تابعني</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
 
-    <section class="hero" id="home">
-        <div class="container">
-            <h1>أهلاً بك في عالم خفاجي ڪيمز</h1>
-            <p>شروحات وتغطيات لأقوى ألعاب الحياة الواقعية RP على الموبايل: NEWRP، ONE LION، RP Grand، Suburbio. انضم لرحلتنا داخل المدينة!</p>
-            <a href="https://youtube.com/@experiencestaterp" class="btn" target="_blank">🎮 اشترك في القناة</a>
-        </div>
-    </section>
+<header>
+<div class="container header-content">
+<div class="logo">خفاجي ڪيمز</div>
+<nav>
+<ul>
+<li><a href="#home">الرئيسية</a></li>
+<li><a href="#videos">الفيديوهات</a></li>
+<li><a href="#games">تحميل الألعاب</a></li>
+<li><a href="#play">العب واربح</a></li>
+<li><a href="#about">من أنا</a></li>
+<li><a href="#contact">تابعني</a></li>
+</ul>
+</nav>
+<div class="coins-display">🪙 <span id="coinCount">0</span></div>
+</div>
+</header>
 
-    <section class="container" id="videos">
-        <h2 class="section-title">🎬 أحدث الفيديوهات</h2>
-        <div class="video-grid">
-            <div class="video-card">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/sSo5fuuYgVQ" title="فيديو خفاجي ڪيمز" allowfullscreen loading="lazy"></iframe>
-                </div>
-                <div class="video-info">
-                    <h3>كيف تعدل دقة لعبة NEWRP موبايل ❤️</h3>
-                    <p>شرح كامل لطريقة تعديل دقة اللعبة على هاتفك للحصول على أفضل تجربة لعب ممكنة.</p>
-                    <a href="article1.html" class="article-link">اقرأ المقال كاملاً ←</a>
-                </div>
-            </div>
-            <div class="video-card">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/GYNds9uKOnE" title="فيديو خفاجي ڪيمز" allowfullscreen loading="lazy"></iframe>
-                </div>
-                <div class="video-info">
-                    <h3>طريقة اخذ جواز خدمة العسكرية والانضمام للشرطة والجيش في NEWRP</h3>
-                    <p>خطوات مفصلة للانضمام إلى القوات المسلحة والشرطة في لعبة NEWRP مع نصائح مهمة.</p>
-                    <a href="article2.html" class="article-link">اقرأ المقال كاملاً ←</a>
-                </div>
-            </div>
-            <div class="video-card">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/h6VJebnMeA4" title="فيديو خفاجي ڪيمز" allowfullscreen loading="lazy"></iframe>
-                </div>
-                <div class="video-info">
-                    <h3>كيف انضم سيرفر عربي في لعبة NEWRP / كيف انضم للجيش</h3>
-                    <p>دليل شامل للانضمام إلى السيرفرات العربية والجيش في لعبة NEWRP مع شرح كامل.</p>
-                    <a href="article3.html" class="article-link">اقرأ المقال كاملاً ←</a>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="hero" id="home">
+<div class="container">
+<h1>أهلاً بك في عالم خفاجي ڪيمز</h1>
+<p>شروحات، تغطيات، وألعاب تفاعلية! العب داخل الموقع واجمع العملات 🪙</p>
+<a href="#play" class="btn green">🎮 ابدأ اللعب الآن</a>
+</div>
+</section>
 
-    <section class="container games-section" id="games">
-        <h2 class="section-title">📥 تحميل الألعاب</h2>
-        <div class="games-grid">
-            <div class="game-card">
-                <div class="game-icon">🏙️</div>
-                <h3>NEWRP</h3>
-                <p>لعبة حياة واقعية بأسلوب عصري مع سيرفرات عربية متعددة ومهام ممتعة.</p>
-                <a href="https://play.google.com/store/search?q=NEWRP&c=apps" class="download-btn" target="_blank">⬇️ تحميل</a>
-            </div>
-            <div class="game-card">
-                <div class="game-icon">🦁</div>
-                <h3>ONE LION</h3>
-                <p>لعبة RP متقدمة برسومات عالية الجودة وتحديثات مستمرة من المطور.</p>
-                <a href="https://play.google.com/store/search?q=ONE%20LION%20RP&c=apps" class="download-btn" target="_blank">⬇️ تحميل</a>
-            </div>
-            <div class="game-card">
-                <div class="game-icon">🎮</div>
-                <h3>RP Grand</h3>
-                <p>واحدة من أشهر ألعاب الحياة الواقعية على الموبايل، عالم مفتوح وحياة كاملة.</p>
-                <a href="https://play.google.com/store/search?q=RP%20Grand&c=apps" class="download-btn" target="_blank">⬇️ تحميل</a>
-            </div>
-            <div class="game-card">
-                <div class="game-icon">🌆</div>
-                <h3>Suburbio RP</h3>
-                <p>تجربة RP فريدة بأسلوب البرازيلي مع مجتمع كبير وفرص لا محدودة.</p>
-                <a href="https://play.google.com/store/search?q=Suburbio%20RP&c=apps" class="download-btn" target="_blank">⬇️ تحميل</a>
-            </div>
-            <div class="game-card">
-                <div class="game-icon">⛏️</div>
-                <h3>Craft RP</h3>
-                <p>استمتع بعالم ماين كرافت بأسلوب حياة واقعية مع المجتمع العربي.</p>
-                <a href="https://play.google.com/store/search?q=Craft%20RP&c=apps" class="download-btn" target="_blank">⬇️ تحميل</a>
-            </div>
-            <div class="game-card">
-                <div class="game-icon">🎯</div>
-                <h3>BEDROCK Reimagined</h3>
-                <p>لعبة بأسلوب جديد مع تحكم محسن ورسومات محسنة لمحبي الإثارة.</p>
-                <a href="https://play.google.com/store/search?q=BEDROCK%20Reimagined&c=apps" class="download-btn" target="_blank">⬇️ تحميل</a>
-            </div>
-        </div>
-    </section>
+<section class="container" id="videos">
+<h2 class="section-title">🎬 أحدث الفيديوهات</h2>
+<div class="video-grid">
+<div class="video-card">
+<div class="video-container"><iframe src="https://www.youtube.com/embed/sSo5fuuYgVQ" allowfullscreen loading="lazy"></iframe></div>
+<div class="video-info">
+<h3>كيف تعدل دقة لعبة NEWRP موبايل ❤️</h3>
+<p>شرح كامل لطريقة تعديل دقة اللعبة على هاتفك.</p>
+<a href="#" class="article-link">اقرأ المقال كاملاً ←</a>
+</div>
+</div>
+<div class="video-card">
+<div class="video-container"><iframe src="https://www.youtube.com/embed/GYNds9uKOnE" allowfullscreen loading="lazy"></iframe></div>
+<div class="video-info">
+<h3>جواز الخدمة العسكرية والانضمام للشرطة والجيش في NEWRP</h3>
+<p>خطوات مفصلة للانضمام إلى القوات المسلحة والشرطة.</p>
+<a href="#" class="article-link">اقرأ المقال كاملاً ←</a>
+</div>
+</div>
+<div class="video-card">
+<div class="video-container"><iframe src="https://www.youtube.com/embed/h6VJebnMeA4" allowfullscreen loading="lazy"></iframe></div>
+<div class="video-info">
+<h3>كيف انضم سيرفر عربي في لعبة NEWRP / كيف انضم للجيش</h3>
+<p>دليل شامل للانضمام إلى السيرفرات العربية والجيش.</p>
+<a href="#" class="article-link">اقرأ المقال كاملاً ←</a>
+</div>
+</div>
+</div>
+</section>
 
-    <section class="container about" id="about">
-        <div class="about-content">
-            <div class="about-text">
-                <h2>من أنا؟</h2>
-                <p>أنا خفاجي، صانع محتوى متخصص في ألعاب الحياة الواقعية (RP) على الموبايل. أقدم شروحات وتغطيات ممتعة لألعاب مثل NEWRP وONE LION وRP Grand وSuburbio RP.</p>
-                <p>هدفي مساعدة اللاعبين العرب على فهم هذه الألعاب والاستمتاع بها، ومشاركة كل جديد من تحديثات وأحداث. تابعني على قناتي في يوتيوب لمشاهدة كل جديد!</p>
-            </div>
-            <div class="about-image">
-                <img src="profile.jpg" alt="خفاجي ڪيمز">
-            </div>
-        </div>
-    </section>
+<section class="container" id="play">
+<h2 class="section-title">🎮 العب واربح العملات</h2>
+<div class="play-grid">
+<div class="play-card" onclick="openGame('math')">
+<div class="earn-badge">+10 🪙</div>
+<div class="play-icon">🧮</div>
+<h3>تحدي الرياضيات</h3>
+<p>حل المسائل بسرعة واجمع العملات</p>
+<button class="play-btn">العب الآن</button>
+</div>
+<div class="play-card" onclick="openGame('memory')">
+<div class="earn-badge">+15 🪙</div>
+<div class="play-icon">🧠</div>
+<h3>لعبة الذاكرة</h3>
+<p>طابق الأزواج المتشابهة</p>
+<button class="play-btn">العب الآن</button>
+</div>
+<div class="play-card" onclick="openGame('reaction')">
+<div class="earn-badge">+8 🪙</div>
+<div class="play-icon">⚡</div>
+<h3>سرعة الرد</h3>
+<p>اختبر سرعة ردة فعلك</p>
+<button class="play-btn">العب الآن</button>
+</div>
+<div class="play-card" onclick="openGame('guess')">
+<div class="earn-badge">+12 🪙</div>
+<div class="play-icon">🎯</div>
+<h3>خمن الرقم</h3>
+<p>خمن الرقم بين 1 و 100</p>
+<button class="play-btn">العب الآن</button>
+</div>
+<div class="play-card" onclick="openGame('rps')">
+<div class="earn-badge">+5 🪙</div>
+<div class="play-icon">✊</div>
+<h3>حجر ورقة مقص</h3>
+<p>تحدى البوت واربح</p>
+<button class="play-btn">العب الآن</button>
+</div>
+</div>
+</section>
 
-    <section class="container social-section" id="contact">
-        <h2 class="section-title">🌟 تابعني على</h2>
-        <div class="social-cards">
-            <div class="social-card youtube">
-                <div class="social-logo">▶</div>
-                <h3>YouTube</h3>
-                <p>قناة خفاجي ڪيمز على يوتيوب - اشترك ليصلك كل جديد من الفيديوهات والشروحات.</p>
-                <a href="https://youtube.com/@experiencestaterp" class="follow-btn" target="_blank">اشترك الآن</a>
-            </div>
-            <div class="social-card tiktok">
-                <div class="social-logo">♪</div>
-                <h3>TikTok</h3>
-                <p>مقاطع قصيرة ومحتوى حصري على تيك توك - تابعني لمشاهدة كل جديد.</p>
-                <a href="https://www.tiktok.com/@fvx4" class="follow-btn" target="_blank">تابعني</a>
-            </div>
-            <div class="social-card discord">
-                <div class="social-logo">💬</div>
-                <h3>Discord</h3>
-                <p>انضم لسيرفر الديسكورد الرسمي - تواصل مع المجتمع وشارك في الفعاليات.</p>
-                <a href="https://discord.gg/4AbKZMCPXP" class="follow-btn" target="_blank">انضم الآن</a>
-            </div>
-        </div>
-    </section>
+<section class="container" id="games">
+<h2 class="section-title">📥 تحميل الألعاب</h2>
+<div class="games-grid">
+<div class="game-card"><div class="game-icon">🏙️</div><h3>NEWRP</h3><p>لعبة حياة واقعية بسيرفرات عربية.</p><a href="https://play.google.com/store/search?q=NEWRP&c=apps" class="download-btn" target="_blank">⬇️ تحميل</a></div>
+<div class="game-card"><div class="game-icon">🦁</div><h3>ONE LION</h3><p>لعبة RP متقدمة برسومات عالية.</p><a href="https://play.google.com/store/search?q=ONE%20LION%20RP&c=apps" class="download-btn" target="_blank">⬇️ تحميل</a></div>
+<div class="game-card"><div class="game-icon">🎮</div><h3>RP Grand</h3><p>أشهر ألعاب الحياة الواقعية.</p><a href="https://play.google.com/store/search?q=RP%20Grand&c=apps" class="download-btn" target="_blank">⬇️ تحميل</a></div>
+<div class="game-card"><div class="game-icon">🌆</div><h3>Suburbio RP</h3><p>تجربة RP فريدة بأسلوب برازيلي.</p><a href="https://play.google.com/store/search?q=Suburbio%20RP&c=apps" class="download-btn" target="_blank">⬇️ تحميل</a></div>
+<div class="game-card"><div class="game-icon">⛏️</div><h3>Craft RP</h3><p>ماين كرافت بأسلوب حياة واقعية.</p><a href="https://play.google.com/store/search?q=Craft%20RP&c=apps" class="download-btn" target="_blank">⬇️ تحميل</a></div>
+<div class="game-card"><div class="game-icon">🎯</div><h3>BEDROCK Reimagined</h3><p>رسومات محسنة و تحكم ممتاز.</p><a href="https://play.google.com/store/search?q=BEDROCK%20Reimagined&c=apps" class="download-btn" target="_blank">⬇️ تحميل</a></div>
+</div>
+</section>
 
-    <footer>
-        <div class="container">
-            <div class="footer-links">
-                <a href="#home">الرئيسية</a>
-                <a href="#videos">الفيديوهات</a>
-                <a href="#games">تحميل الألعاب</a>
-                <a href="#about">من أنا</a>
-                <a href="#contact">تابعني</a>
-            </div>
-            <p>© 2026 خفاجي ڪيمز - جميع الحقوق محفوظة | صُنع بـ ❤️ في العراق</p>
-        </div>
-    </footer>
+<section class="container about" id="about">
+<div class="about-content">
+<div class="about-text">
+<h2>من أنا؟</h2>
+<p>أنا خفاجي، صانع محتوى متخصص في ألعاب الحياة الواقعية (RP) على الموبايل. أقدم شروحات وتغطيات ممتعة.</p>
+<p>هدفي مساعدة اللاعبين العرب ومشاركة كل جديد. تابعني على قناتي!</p>
+</div>
+<div class="about-image"><img src="profile.jpg" alt="خفاجي ڪيمز" onerror="this.src='https://via.placeholder.com/220/2d1b4e/00d4ff?text=Khafaji'"></div>
+</div>
+</section>
+
+<section class="container social-section" id="contact">
+<h2 class="section-title">🌟 تابعني على</h2>
+<div class="social-cards">
+<div class="social-card youtube"><div class="social-logo">▶</div><h3>YouTube</h3><p>اشترك ليصلك كل جديد</p><a href="https://youtube.com/@experiencestaterp" class="follow-btn" target="_blank">اشترك الآن</a></div>
+<div class="social-card tiktok"><div class="social-logo">♪</div><h3>TikTok</h3><p>مقاطع قصيرة ومحتوى حصري</p><a href="https://www.tiktok.com/@fvx4" class="follow-btn" target="_blank">تابعني</a></div>
+<div class="social-card discord"><div class="social-logo">💬</div><h3>Discord</h3><p>انضم للمجتمع الرسمي</p><a href="https://discord.gg/4AbKZMCPXP" class="follow-btn" target="_blank">انضم الآن</a></div>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<div class="footer-links">
+<a href="#home">الرئيسية</a>
+<a href="#videos">الفيديوهات</a>
+<a href="#games">تحميل الألعاب</a>
+<a href="#play">العب واربح</a>
+<a href="#about">من أنا</a>
+<a href="#contact">تابعني</a>
+</div>
+<p>© 2026 خفاجي ڪيمز - جميع الحقوق محفوظة | صُنع بـ ❤️ في العراق</p>
+</div>
+</footer>
+
+<!-- Games Modal -->
+<div class="modal" id="gameModal">
+<div class="modal-content">
+<button class="modal-close" onclick="closeGame()">✕</button>
+<h2 id="gameTitle">لعبة</h2>
+<div class="game-area" id="gameArea"></div>
+</div>
+</div>
+
+<!-- Chat Widget -->
+<div class="chat-widget">
+<div class="chat-window" id="chatWindow">
+<div class="chat-header">
+<div class="bot-info">
+<div class="bot-avatar">🤖</div>
+<div>
+<div style="font-size:.95rem">مساعد خفاجي</div>
+<div class="status">● متصل الآن</div>
+</div>
+</div>
+<button class="chat-close" onclick="toggleChat()">✕</button>
+</div>
+<div class="chat-body" id="chatBody"></div>
+<div class="chat-input-area">
+<input type="text" class="chat-input" id="chatInput" placeholder="اكتب رسالتك..." onkeypress="if(event.key==='Enter')sendChat()">
+<button class="chat-send" onclick="sendChat()">➤</button>
+</div>
+</div>
+<button class="chat-toggle" onclick="toggleChat()">💬</button>
+</div>
+
+<script>
+/* ============ COINS SYSTEM ============ */
+let coins = parseInt(localStorage.getItem('khafajiCoins') || '0');
+function updateCoins(){
+document.getElementById('coinCount').textContent = coins;
+localStorage.setItem('khafajiCoins', coins);
+}
+function addCoins(n){
+coins += n;
+updateCoins();
+}
+updateCoins();
+
+/* ============ GAMES ============ */
+let currentGame = null;
+let memoryState = {cards:[],flipped:[],matched:0,lock:false};
+let guessNum = 0, guessTries = 0;
+let reactionState = {timeout:null,startTime:0,ready:false};
+let mathState = {score:0,qIndex:0};
+
+function openGame(type){
+currentGame = type;
+document.getElementById('gameModal').classList.add('active');
+const area = document.getElementById('gameArea');
+const title = document.getElementById('gameTitle');
+document.body.style.overflow = 'hidden';
+
+if(type === 'math'){
+title.textContent = '🧮 تحدي الرياضيات';
+mathState = {score:0,qIndex:0};
+area.innerHTML = `
+<div class="score-display">النقاط: <span id="mathScore">0</span> / 5</div>
+<div class="game-display" id="mathQuestion">جاري التحضير...</div>
+<input type="number" class="game-input" id="mathAnswer" placeholder="اكتب الإجابة" onkeypress="if(event.key==='Enter')checkMath()">
+<div class="game-btns"><button class="btn green" onclick="checkMath()">إرسال</button></div>
+`;
+nextMath();
+}
+else if(type === 'memory'){
+title.textContent = '🧠 لعبة الذاكرة';
+startMemory();
+}
+else if(type === 'reaction'){
+title.textContent = '⚡ سرعة الرد';
+startReaction();
+}
+else if(type === 'guess'){
+title.textContent = '🎯 خمن الرقم';
+guessNum = Math.floor(Math.random()*100)+1;
+guessTries = 0;
+area.innerHTML = `
+<div class="game-display" id="guessMsg">خمن الرقم بين 1 و 100</div>
+<input type="number" class="game-input" id="guessInput" placeholder="اكتب تخمينك" min="1" max="100" onkeypress="if(event.key==='Enter')checkGuess()">
+<div class="game-btns"><button class="btn green" onclick="checkGuess()">تخمين</button></div>
+<div class="score-display" id="guessTries">المحاولات: 0</div>
+`;
+}
+else if(type === 'rps'){
+title.textContent = '✊ حجر ورقة مقص';
+startRPS();
+}
+}
+
+function closeGame(){
+document.getElementById('gameModal').classList.remove('active');
+document.body.style.overflow = '';
+if(reactionState.timeout) clearTimeout(reactionState.timeout);
+currentGame = null;
+}
+
+/* MATH GAME */
+let mathAnswerCorrect = 0;
+function nextMath(){
+if(mathState.qIndex >= 5){
+const earned = mathState.score * 10;
+addCoins(earned);
+document.getElementById('gameTitle').textContent = '🎉 نتيجة اللعبة';
+document.getElementById('gameArea').innerHTML = `
+<div class="game-display">أحسنت! أحرزت ${mathState.score} من 5<br>ربحت ${earned} 🪙</div>
+<div class="game-btns"><button class="btn green" onclick="closeGame()">إغلاق</button><button class="btn blue" onclick="openGame('math')">العب مرة أخرى</button></div>
+`;
+return;
+}
+const a = Math.floor(Math.random()*20)+1;
+const b = Math.floor(Math.random()*20)+1;
+const ops = ['+','-','×'];
+const op = ops[Math.floor(Math.random()*3)];
+let correct;
+if(op==='+') correct = a+b;
+else if(op==='-') correct = a-b;
+else correct = a*b;
+mathAnswerCorrect = correct;
+document.getElementById('mathQuestion').textContent = `${a} ${op} ${b} = ؟`;
+document.getElementById('mathAnswer').value = '';
+document.getElementById('mathAnswer').focus();
+}
+function checkMath(){
+const val = parseInt(document.getElementById('mathAnswer').value);
+if(isNaN(val)) return;
+if(val === mathAnswerCorrect) mathState.score++;
+mathState.qIndex++;
+document.getElementById('mathScore').textContent = mathState.score;
+nextMath();
+}
+
+/* MEMORY GAME */
+function startMemory(){
+const emojis = ['🎮','🚗','🔫','🏠','💎','⭐','🔥','🎯'];
+const cards = [...emojis, ...emojis].sort(() => Math.random() - 0.5);
+memoryState = {cards, flipped:[], matched:0, lock:false};
+let html = '<div class="memory-grid" id="memoryGrid">';
+cards.forEach((emoji, i) => {
+html += `<div class="memory-card" data-index="${i}" onclick="flipCard(${i})">?</div>`;
+});
+html += '</div><div class="score-display">الأزواج: <span id="memMatched">0</span> / 8</div>';
+document.getElementById('gameArea').innerHTML = html;
+}
+function flipCard(i){
+if(memoryState.lock) return;
+const card = document.querySelector(`.memory-card[data-index="${i}"]`);
+if(card.classList.contains('flipped') || card.classList.contains('matched')) return;
+card.classList.add('flipped');
+card.textContent = memoryState.cards[i];
+memoryState.flipped.push(i);
+if(memoryState.flipped.length === 2){
+memoryState.lock = true;
+const [a,b] = memoryState.flipped;
+if(memoryState.cards[a] === memoryState.cards[b]){
+setTimeout(() => {
+document.querySelector(`.memory-card[data-index="${a}"]`).classList.add('matched');
+document.querySelector(`.memory-card[data-index="${b}"]`).classList.add('matched');
+memoryState.matched++;
+document.getElementById('memMatched').textContent = memoryState.matched;
+memoryState.flipped = [];
+memoryState.lock = false;
+if(memoryState.matched === 8){
+addCoins(15);
+document.getElementById('gameTitle').textContent = '🎉 فزت!';
+document.getElementById('gameArea').innerHTML = `
+<div class="game-display">أحسنت! أكملت جميع الأزواج<br>ربحت 15 🪙</div>
+<div class="game-btns"><button class="btn green" onclick="closeGame()">إغلاق</button><button class="btn blue" onclick="openGame('memory')">العب مرة أخرى</button></div>
+`;
+}
+}, 500);
+} else {
+setTimeout(() => {
+document.querySelector(`.memory-card[data-index="${a}"]`).classList.remove('flipped');
+document.querySelector(`.memory-card[data-index="${a}"]`).textContent = '?';
+document.querySelector(`.memory-card[data-index="${b}"]`).classList.remove('flipped');
+document.querySelector(`.memory-card[data-index="${b}"]`).textContent = '?';
+memoryState.flipped = [];
+memoryState.lock = false;
+}, 800);
+}
+}
+}
+
+/* REACTION GAME */
+function startReaction(){
+reactionState = {timeout:null,startTime:0,ready:false};
+document.getElementById('gameArea').innerHTML = `
+<div class="game-display" id="reactMsg">انتظر اللون الأخضر ثم اضغط بسرعة!</div>
+<div class="reaction-circle wait" id="reactCircle" onclick="tapReaction()">انتظر...</div>
+<div class="score-display" id="reactTime">-</div>
+`;
+const circle = document.getElementById('reactCircle');
+const delay = Math.random()*3000 + 1500;
+reactionState.timeout = setTimeout(() => {
+circle.classList.remove('wait');
+circle.classList.add('ready');
+circle.textContent = 'اضغط!';
+reactionState.ready = true;
+reactionState.startTime = Date.now();
+}, delay);
+}
+function tapReaction(){
+const circle = document.getElementById('reactCircle');
+if(!reactionState.ready){
+if(reactionState.timeout) clearTimeout(reactionState.timeout);
+document.getElementById('reactMsg').textContent = '❌ ضغطت مبكراً! جرب مرة أخرى';
+startReaction();
+return;
+}
+const time = Date.now() - reactionState.startTime;
+document.getElementById('reactTime').textContent = `⚡ وقتك: ${time} مللي ثانية`;
+const earned = Math.max(2, Math.floor((1000 - time)/100));
+addCoins(8);
+document.getElementById('gameArea').innerHTML = `
+<div class="game-display">⚡ سرعتك: ${time} مللي ثانية<br>ربحت 8 🪙</div>
+<div class="game-btns"><button class="btn green" onclick="closeGame()">إغلاق</button><button class="btn blue" onclick="openGame('reaction')">العب مرة أخرى</button></div>
+`;
+}
+
+/* GUESS GAME */
+function checkGuess(){
+const val = parseInt(document.getElementById('guessInput').value);
+if(isNaN(val) || val < 1 || val > 100) return;
+guessTries++;
+document.getElementById('guessTries').textContent = `المحاولات: ${guessTries}`;
+if(val === guessNum){
+addCoins(12);
+document.getElementById('gameArea').innerHTML = `
+<div class="game-display">🎉 صح! الرقم كان ${guessNum}<br>خمنته في ${guessTries} محاولات<br>ربحت 12 🪙</div>
+<div class="game-btns"><button class="btn green" onclick="closeGame()">إغلاق</button><button class="btn blue" onclick="openGame('guess')">العب مرة أخرى</button></div>
+`;
+} else if(val < guessNum){
+document.getElementById('guessMsg').textContent = `⬆️ الرقم أكبر من ${val}`;
+} else {
+document.getElementById('guessMsg').textContent = `⬇️ الرقم أصغر من ${val}`;
+}
+}
+
+/* RPS GAME */
+function startRPS(){
+document.getElementById('gameArea').innerHTML = `
+<div class="game-display" id="rpsMsg">اختر حركتك!</div>
+<div class="game-btns">
+<button class="btn blue" onclick="playRPS('✊')">✊ حجر</button>
+<button class="btn blue" onclick="playRPS('📄')">📄 ورقة</button>
+<button class="btn blue" onclick="playRPS('✂️')">✂️ مقص</button>
+</div>
+`;
+}
+function playRPS(player){
+const options = ['✊','📄','✂️'];
+const bot = options[Math.floor(Math.random()*3)];
+let result, color;
+if(player === bot){ result = '🤝 تعادل!'; color = '#ffe600'; }
+else if((player==='✊'&&bot==='✂️')||(player==='📄'&&bot==='✊')||(player==='✂️'&&bot==='📄')){ result = '🎉 فزت!'; color = '#39ff14'; addCoins(5); }
+else { result = '😢 خسرت!'; color = '#ff2d2d'; }
+document.getElementById('gameArea').innerHTML = `
+<div class="game-display" style="color:${color}">
+أنت: ${player} | البوت: ${bot}<br><br>
+<div style="font-size:1.5rem">${result}</div>
+${result==='🎉 فزت!' ? '<div style="font-size:1rem;margin-top:10px">ربحت 5 🪙</div>' : ''}
+</div>
+<div class="game-btns"><button class="btn green" onclick="closeGame()">إغلاق</button><button class="btn blue" onclick="openGame('rps')">العب مرة أخرى</button></div>
+`;
+}
+
+/* ============ AI CHATBOT ============ */
+const chatResponses = {
+greet:['أهلاً وسهلاً! 👋 كيف أقدر أساعدك اليوم؟','يا هلا! نورت الموقع 🌟 اسألني عن أي شي.','هلا بالغالي! 😊 شنو تحب تعرف؟'],
+about:['خفاجي ڪيمز قناة متخصصة في ألعاب الحياة الواقعية (RP) على الموبايل. فيديوهاتنا تشمل NEWRP وONE LION وRP Grand وغيرها! 🎮','خفاجي صانع محتوى عراقي يحب ألعاب RP. يقدم شروحات وتغطيات ممتعة للاعبين العرب. 🔥'],
+games:['عندنا 5 ألعاب تفاعلية في الموقع! 🎮 تحدي الرياضيات، لعبة الذاكرة، سرعة الرد، خمن الرقم، وحجر ورقة مقص. كل لعبة تعطيك عملات 🪙!','تقدر تلعب داخل الموقع وتربح عملات! اضغط على قسم "العب واربح" في الأعلى. 🎯'],
+coins:['العملات 🪙 تكسبها من لعب الألعاب التفاعلية. كل لعبة تعطيك عدد مختلف من العملات. حاول تجمع أكبر قدر! 💰','العملات محفوظة في متصفحك. كل ما تلعب أكثر، تكسب أكثر! 🪙'],
+subscribe:['تشرفت! تقدر تشترك من قسم "تابعني على" أو من زر "اشترك في القناة" في الأعلى. 🔔','اشترك من هنا: youtube.com/@experiencestaterp ✅'],
+tiktok:['تابعني على تيك توك: @fvx4 📱 اضغط على قسم "تابعني" في الأسفل.','رابط تيك توك موجود في قسم التواصل! 🎵'],
+discord:['انضم لسيرفر الديسكورد الرسمي! الرابط في قسم "تابعني". 💬','الديسكورد موجود تحت قسم التواصل. انضم للمجتمع! 🚀'],
+download:['كل الألعاب متوفرة في قسم "تحميل الألعاب". اضغط على زر التحميل لأي لعبة. 📥','تقدر تحمل NEWRP وONE LION وRP Grand وغيرها من قسم "تحميل الألعاب". 🎮'],
+thanks:['على الرحب والسعة! 🤍','أي وقت! إذا احتجت شي، أنا موجود. 😊','تسلم! نورت الموقع. ✨'],
+bye:['وداعاً! نتمنى نشوفك قريباً. 👋','مع السلامة! لا تنسى تلعب الألعاب وتربح العملات. 🎮'],
+help:['أقدر أساعدك في:\n• معلومات عن القناة 🎬\n• الألعاب التفاعلية 🎮\n• كيفية ربح العملات 🪙\n• روابط السوشيال ميديا 📱\n• تحميل الألعاب 📥\n\nشنو تحب تسأل عنه؟'],
+};
+const chatKeywords = {
+greet:['هلا','مرحبا','سلام','السلام','اهلا','أهلا','hi','hello','هاي','صباح','مساء'],
+about:['خفاجي','قناة','القناة','منو','مين','محتوى','تعريف'],
+games:['لعبة','ألعاب','العاب','العب','ألعابكم','play'],
+coins:['عملات','نقاط','كويز','coin','فلوس','رصيد'],
+subscribe:['اشترك','اشتراك','subscribe','قناة يوتيوب','يوتيوب'],
+tiktok:['تيك','تيك توك','tiktok'],
+discord:['دسكورد','ديسكورد','discord','سيرفر'],
+download:['تحميل','تنزيل','download','حمل'],
+thanks:['شكرا','شكراً','تسلم','مشكور','thanks'],
+bye:['وداعا','مع السلامة','باي','bye'],
+help:['مساعدة','ساعدني','كيف','help','مساعدة'],
+};
+function getBotReply(msg){
+const lower = msg.toLowerCase();
+for(const key in chatKeywords){
+if(chatKeywords[key].some(k => lower.includes(k))){
+return chatResponses[key][Math.floor(Math.random()*chatResponses[key].length)];
+}
+}
+// الردود العشوائية
+const randoms = ['أخبرني أكثر! 🤔','موضوع شيق! بس أنا مختص بألعاب RP. 🎮','تقدر تسألني عن الألعاب أو القناة. 😊','فهمت! في شي ثاني تحب تعرفه؟','ممتع! شنو رأيك تجرب لعبة من ألعابنا؟ 🎯'];
+return randoms[Math.floor(Math.random()*randoms.length)];
+}
+function toggleChat(){
+const w = document.getElementById('chatWindow');
+w.classList.toggle('active');
+if(w.classList.contains('active') && document.getElementById('chatBody').children.length === 0){
+botMessage('أهلاً بك في موقع خفاجي ڪيمز! 👋\nأنا مساعدك الذكي. كيف أقدر أساعدك اليوم؟\n\nاكتب "مساعدة" لتشوف شنو أقدر أسوي. 😊');
+}
+}
+function botMessage(text){
+const body = document.getElementById('chatBody');
+const div = document.createElement('div');
+div.className = 'chat-msg bot';
+div.innerHTML = text.replace(/\n/g,'<br>');
+body.appendChild(div);
+body.scrollTop = body.scrollHeight;
+}
+function userMessage(text){
+const body = document.getElementById('chatBody');
+const div = document.createElement('div');
+div.className = 'chat-msg user';
+div.textContent = text;
+body.appendChild(div);
+body.scrollTop = body.scrollHeight;
+}
+function sendChat(){
+const input = document.getElementById('chatInput');
+const msg = input.value.trim();
+if(!msg) return;
+userMessage(msg);
+input.value = '';
+setTimeout(() => {
+botMessage(getBotReply(msg));
+}, 500);
+}
+</script>
+
 </body>
 </html>
