@@ -16,10 +16,8 @@
             --neon-cyan: #00ffea;
             --neon-green: #39ff14;
             --neon-yellow: #ffe600;
-            --neon-orange: #ff6b00;
             --bg-dark: #1a0a2e;
             --bg-mid: #2d1b4e;
-            --bg-light: #f0e6ff;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -37,7 +35,6 @@
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
-        /* نجوم متحركة */
         body::before {
             content: '';
             position: fixed;
@@ -63,7 +60,6 @@
         img { max-width: 100%; height: auto; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-        /* ===== الهيدر ===== */
         header {
             background: linear-gradient(90deg, rgba(45,27,78,0.95), rgba(26,10,46,0.95), rgba(13,27,62,0.95));
             backdrop-filter: blur(10px);
@@ -103,7 +99,6 @@
             background: rgba(0,212,255,0.1);
         }
 
-        /* ===== الهيرو ===== */
         .hero {
             padding: 100px 0;
             text-align: center;
@@ -169,7 +164,6 @@
             box-shadow: 0 0 40px rgba(255,45,149,1), 0 0 80px rgba(160,32,240,0.6);
         }
 
-        /* ===== عناوين الأقسام ===== */
         .section-title {
             text-align: center;
             font-size: 2.3rem;
@@ -191,7 +185,6 @@
             box-shadow: 0 0 15px rgba(255,45,149,0.8);
         }
 
-        /* ===== شبكة الفيديوهات ===== */
         .video-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -264,7 +257,6 @@
             text-shadow: 0 0 15px var(--neon-yellow);
         }
 
-        /* ===== قسم تحميل الألعاب ===== */
         .games-section { margin: 60px 0; }
         .games-grid {
             display: grid;
@@ -334,7 +326,6 @@
             box-shadow: 0 0 30px rgba(57,255,20,1);
         }
 
-        /* ===== من أنا ===== */
         .about {
             background: linear-gradient(135deg, rgba(45,27,78,0.7), rgba(13,27,62,0.7));
             padding: 60px 0;
@@ -355,7 +346,7 @@
         .about-image { flex: 1; min-width: 300px; text-align: center; }
         .about-image img {
             border-radius: 50%;
-            width: 220px; height: 220px;
+            width: 250px; height: 250px;
             object-fit: cover;
             border: 5px solid transparent;
             background: linear-gradient(135deg, var(--neon-pink), var(--neon-blue), var(--neon-green)) border-box;
@@ -367,7 +358,6 @@
             to { box-shadow: 0 0 50px rgba(0,212,255,0.9), 0 0 100px rgba(57,255,20,0.5); }
         }
 
-        /* ===== قسم السوشيال ميديا ===== */
         .social-section {
             text-align: center;
             padding: 60px 0;
@@ -466,7 +456,6 @@
             box-shadow: 0 0 30px rgba(255,255,255,0.6);
         }
 
-        /* ===== الفوتر ===== */
         footer {
             background: linear-gradient(90deg, rgba(45,27,78,0.95), rgba(13,27,62,0.95), rgba(45,27,78,0.95));
             padding: 40px 0;
@@ -493,7 +482,6 @@
             text-shadow: 0 0 10px var(--neon-cyan);
         }
 
-        /* ===== موبايل ===== */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.2rem; }
             .hero { padding: 70px 0; }
@@ -535,13 +523,12 @@
         </div>
     </section>
 
-    <!-- قسم الفيديوهات -->
     <section class="container" id="videos">
         <h2 class="section-title">🎬 أحدث الفيديوهات</h2>
         <div class="video-grid">
             <div class="video-card">
                 <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" title="فيديو خفاجي ڪيمز" allowfullscreen loading="lazy"></iframe>
+                    <iframe src="https://www.youtube.com/embed/sSo5fuuYgVQ" title="فيديو خفاجي ڪيمز" allowfullscreen loading="lazy"></iframe>
                 </div>
                 <div class="video-info">
                     <h3>كيف تعدل دقة لعبة NEWRP موبايل ❤️</h3>
@@ -551,7 +538,7 @@
             </div>
             <div class="video-card">
                 <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" title="فيديو خفاجي ڪيمز" allowfullscreen loading="lazy"></iframe>
+                    <iframe src="https://www.youtube.com/embed/GYNds9uKOnE" title="فيديو خفاجي ڪيمز" allowfullscreen loading="lazy"></iframe>
                 </div>
                 <div class="video-info">
                     <h3>طريقة اخذ جواز خدمة العسكرية والانضمام للشرطة والجيش في NEWRP</h3>
@@ -561,7 +548,7 @@
             </div>
             <div class="video-card">
                 <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" title="فيديو خفاجي ڪيمز" allowfullscreen loading="lazy"></iframe>
+                    <iframe src="https://www.youtube.com/embed/h6VJebnMeA4" title="فيديو خفاجي ڪيمز" allowfullscreen loading="lazy"></iframe>
                 </div>
                 <div class="video-info">
                     <h3>كيف انضم سيرفر عربي في لعبة NEWRP / كيف انضم للجيش</h3>
@@ -572,7 +559,6 @@
         </div>
     </section>
 
-    <!-- قسم تحميل الألعاب -->
     <section class="container games-section" id="games">
         <h2 class="section-title">📥 تحميل الألعاب</h2>
         <div class="games-grid">
@@ -615,7 +601,6 @@
         </div>
     </section>
 
-    <!-- من أنا -->
     <section class="container about" id="about">
         <div class="about-content">
             <div class="about-text">
@@ -624,12 +609,11 @@
                 <p>هدفي مساعدة اللاعبين العرب على فهم هذه الألعاب والاستمتاع بها، ومشاركة كل جديد من تحديثات وأحداث. تابعني على قناتي في يوتيوب لمشاهدة كل جديد!</p>
             </div>
             <div class="about-image">
-                <img src="https://via.placeholder.com/220" alt="خفاجي ڪيمز">
+                <img src="profile.jpg" alt="خفاجي ڪيمز">
             </div>
         </div>
     </section>
 
-    <!-- قسم تابعني -->
     <section class="container social-section" id="contact">
         <h2 class="section-title">🌟 تابعني على</h2>
         <div class="social-cards">
