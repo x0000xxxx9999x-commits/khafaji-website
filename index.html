@@ -3,187 +3,511 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>خفاجي ڪيمز | الموقع الرسمي</title>
-    <meta name="description" content="الموقع الرسمي لخفاجي ڪيمز - شروحات ألعاب الحياة الواقعية RP على الموبايل: NEWRP, ONE LION, RP Grand, Suburbio.">
+    <title>خفاجي ڪيمز | عالم الألعاب</title>
+    <meta name="description" content="الموقع الرسمي لخفاجي ڪيمز - شروحات وتحميل ألعاب الحياة الواقعية RP: NEWRP, ONE LION, RP Grand, Suburbio">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --neon-red: #ff0040;
+            --neon-pink: #ff2d95;
+            --neon-purple: #a020f0;
             --neon-blue: #00d4ff;
-            --dark: #0a0a0a;
-            --light-gray: #e8e8e8;
-            --white: #ffffff;
-            --glow-red: 0 0 10px #ff0040, 0 0 20px #ff0040, 0 0 40px #ff0040;
-            --glow-blue: 0 0 10px #00d4ff, 0 0 20px #00d4ff, 0 0 40px #00d4ff;
+            --neon-cyan: #00ffea;
+            --neon-green: #39ff14;
+            --neon-yellow: #ffe600;
+            --neon-orange: #ff6b00;
+            --bg-dark: #1a0a2e;
+            --bg-mid: #2d1b4e;
+            --bg-light: #f0e6ff;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Cairo', sans-serif;
-            background: linear-gradient(135deg, #f5f5f5 0%, #d9d9d9 100%);
-            color: #1a1a1a;
+            background: linear-gradient(135deg, #2d1b4e 0%, #1a0a2e 30%, #0d1b3e 60%, #2d1b4e 100%);
+            background-size: 400% 400%;
+            animation: bgMove 15s ease infinite;
+            color: #fff;
             line-height: 1.7;
             overflow-x: hidden;
+            min-height: 100vh;
         }
+        @keyframes bgMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        /* نجوم متحركة */
         body::before {
             content: '';
             position: fixed;
             top: 0; left: 0;
             width: 100%; height: 100%;
-            background: radial-gradient(circle at 20% 50%, rgba(255,0,64,0.08) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 50%, rgba(0,212,255,0.08) 0%, transparent 50%);
+            background-image: 
+                radial-gradient(2px 2px at 20% 30%, #ff2d95, transparent),
+                radial-gradient(2px 2px at 60% 70%, #00d4ff, transparent),
+                radial-gradient(1px 1px at 50% 50%, #39ff14, transparent),
+                radial-gradient(1px 1px at 80% 10%, #ffe600, transparent),
+                radial-gradient(2px 2px at 90% 60%, #a020f0, transparent),
+                radial-gradient(1px 1px at 33% 80%, #00ffea, transparent);
+            background-size: 200% 200%;
+            animation: stars 20s linear infinite;
             z-index: -1;
-            animation: bgPulse 8s ease-in-out infinite alternate;
+            opacity: 0.7;
         }
-        @keyframes bgPulse { 0% { opacity: 0.5; } 100% { opacity: 1; } }
+        @keyframes stars {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 100% 100%; }
+        }
         a { color: inherit; text-decoration: none; }
         img { max-width: 100%; height: auto; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
+        /* ===== الهيدر ===== */
         header {
-            background: rgba(10, 10, 10, 0.95);
+            background: linear-gradient(90deg, rgba(45,27,78,0.95), rgba(26,10,46,0.95), rgba(13,27,62,0.95));
             backdrop-filter: blur(10px);
             padding: 15px 0;
             position: sticky;
             top: 0;
             z-index: 100;
-            border-bottom: 2px solid var(--neon-red);
-            box-shadow: 0 0 20px rgba(255, 0, 64, 0.4);
+            border-bottom: 3px solid transparent;
+            border-image: linear-gradient(90deg, var(--neon-pink), var(--neon-blue), var(--neon-green), var(--neon-yellow), var(--neon-pink)) 1;
+            box-shadow: 0 0 30px rgba(255,45,149,0.5), 0 0 60px rgba(0,212,255,0.3);
         }
         .header-content { display: flex; justify-content: space-between; align-items: center; }
         .logo {
-            font-size: 1.8rem; font-weight: 900; color: var(--white);
-            text-shadow: var(--glow-red);
-            animation: logoGlow 2s ease-in-out infinite alternate;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem; font-weight: 900;
+            background: linear-gradient(90deg, #ff2d95, #00d4ff, #39ff14, #ffe600, #ff2d95);
+            background-size: 300% 100%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: logoRainbow 4s linear infinite;
+            filter: drop-shadow(0 0 10px rgba(255,45,149,0.8));
         }
-        @keyframes logoGlow {
-            from { text-shadow: 0 0 10px #ff0040, 0 0 20px #ff0040; }
-            to { text-shadow: 0 0 20px #ff0040, 0 0 40px #ff0040, 0 0 60px #ff0040; }
+        @keyframes logoRainbow {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 300% 50%; }
         }
         nav ul { list-style: none; display: flex; gap: 25px; }
-        nav a { font-weight: 700; color: var(--white); transition: all 0.3s; position: relative; }
-        nav a:hover { color: var(--neon-blue); text-shadow: var(--glow-blue); }
+        nav a {
+            font-weight: 700; color: #fff;
+            transition: all 0.3s; position: relative;
+            padding: 5px 10px; border-radius: 8px;
+        }
+        nav a:hover {
+            color: var(--neon-cyan);
+            text-shadow: 0 0 10px var(--neon-cyan), 0 0 20px var(--neon-cyan);
+            background: rgba(0,212,255,0.1);
+        }
 
+        /* ===== الهيرو ===== */
         .hero {
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%);
-            padding: 100px 0; text-align: center; position: relative; overflow: hidden;
-            border-bottom: 3px solid var(--neon-blue);
-            box-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
         }
-        .hero::after {
-            content: ''; position: absolute; top: -50%; left: -50%;
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%;
             width: 200%; height: 200%;
-            background: linear-gradient(45deg, transparent 40%, rgba(255,0,64,0.05) 50%, transparent 60%);
-            animation: shimmer 4s linear infinite;
+            background: conic-gradient(from 0deg, transparent, rgba(255,45,149,0.15), transparent, rgba(0,212,255,0.15), transparent, rgba(57,255,20,0.15), transparent);
+            animation: rotate 20s linear infinite;
+            z-index: -1;
         }
-        @keyframes shimmer { 0% { transform: translateX(-100%) rotate(0deg); } 100% { transform: translateX(100%) rotate(0deg); } }
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
         .hero h1 {
-            font-size: 3rem; margin-bottom: 20px; color: var(--white); font-weight: 900;
-            text-shadow: var(--glow-red); position: relative; z-index: 1;
+            font-size: 3.2rem;
+            margin-bottom: 25px;
+            font-weight: 900;
+            background: linear-gradient(90deg, #ff2d95, #00d4ff, #39ff14);
+            background-size: 200% 100%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: logoRainbow 5s linear infinite;
+            filter: drop-shadow(0 0 15px rgba(255,45,149,0.8));
         }
-        .hero p { font-size: 1.2rem; max-width: 700px; margin: 0 auto 35px; color: #ccc; position: relative; z-index: 1; }
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 750px;
+            margin: 0 auto 35px;
+            color: #e0d0ff;
+        }
         .btn {
-            display: inline-block; background: linear-gradient(135deg, var(--neon-red), #b3002d);
-            color: var(--white); padding: 14px 35px; border-radius: 50px;
-            font-weight: 900; font-size: 1.1rem; transition: all 0.3s;
-            box-shadow: 0 0 15px rgba(255, 0, 64, 0.5); position: relative; z-index: 1;
-            border: 1px solid rgba(255,255,255,0.2);
+            display: inline-block;
+            background: linear-gradient(135deg, var(--neon-pink), var(--neon-purple));
+            color: #fff;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: 900;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 0 20px rgba(255,45,149,0.7), 0 0 40px rgba(160,32,240,0.4);
+            border: 2px solid rgba(255,255,255,0.2);
+            position: relative;
+            overflow: hidden;
         }
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+        .btn:hover::before { left: 100%; }
         .btn:hover {
             transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 0 30px rgba(255, 0, 64, 0.8), 0 0 60px rgba(255, 0, 64, 0.4);
+            box-shadow: 0 0 40px rgba(255,45,149,1), 0 0 80px rgba(160,32,240,0.6);
         }
 
+        /* ===== عناوين الأقسام ===== */
         .section-title {
-            text-align: center; font-size: 2.2rem; margin: 60px 0 40px;
-            color: var(--dark); font-weight: 900; position: relative;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: center;
+            font-size: 2.3rem;
+            margin: 70px 0 40px;
+            font-weight: 900;
+            color: #fff;
+            text-shadow: 0 0 20px rgba(0,212,255,0.8);
+            position: relative;
         }
         .section-title::after {
-            content: ''; display: block; width: 100px; height: 4px;
-            background: linear-gradient(90deg, var(--neon-red), var(--neon-blue));
-            margin: 12px auto 0; border-radius: 2px;
-            box-shadow: 0 0 10px rgba(255,0,64,0.6), 0 0 20px rgba(0,212,255,0.6);
+            content: '';
+            display: block;
+            width: 120px; height: 5px;
+            background: linear-gradient(90deg, var(--neon-pink), var(--neon-blue), var(--neon-green), var(--neon-yellow));
+            background-size: 300% 100%;
+            animation: logoRainbow 3s linear infinite;
+            margin: 15px auto 0;
+            border-radius: 3px;
+            box-shadow: 0 0 15px rgba(255,45,149,0.8);
         }
 
+        /* ===== شبكة الفيديوهات ===== */
         .video-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px; margin-bottom: 60px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
         }
         .video-card {
-            background: var(--white); border-radius: 18px; overflow: hidden;
-            transition: all 0.4s; box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            border: 1px solid #ddd; position: relative;
+            background: linear-gradient(135deg, rgba(45,27,78,0.9), rgba(26,10,46,0.9));
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s;
+            border: 2px solid transparent;
+            background-clip: padding-box;
+            position: relative;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.4);
         }
         .video-card::before {
-            content: ''; position: absolute; top: 0; left: 0;
-            width: 100%; height: 4px;
-            background: linear-gradient(90deg, var(--neon-red), var(--neon-blue)); z-index: 2;
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 20px;
+            padding: 2px;
+            background: linear-gradient(135deg, var(--neon-pink), var(--neon-blue), var(--neon-green), var(--neon-yellow));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
         }
         .video-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 40px rgba(255, 0, 64, 0.3), 0 0 30px rgba(0, 212, 255, 0.2);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(255,45,149,0.5), 0 0 40px rgba(0,212,255,0.3);
         }
-        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
-        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            background: linear-gradient(135deg, #2d1b4e, #0d1b3e);
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            border: none;
+        }
         .video-info { padding: 22px; }
-        .video-info h3 { color: var(--dark); margin-bottom: 10px; font-size: 1.25rem; font-weight: 700; }
-        .video-info p { color: #555; font-size: 0.95rem; margin-bottom: 15px; }
-        .article-link {
-            display: inline-block; color: var(--neon-red); font-weight: 700;
-            transition: all 0.3s; border-bottom: 2px solid transparent;
+        .video-info h3 {
+            color: #fff;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-shadow: 0 0 10px rgba(0,212,255,0.5);
         }
-        .article-link:hover { color: #b3002d; border-bottom-color: #b3002d; }
+        .video-info p {
+            color: #c0b0e0;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+        .article-link {
+            display: inline-block;
+            color: var(--neon-cyan);
+            font-weight: 700;
+            transition: all 0.3s;
+            border-bottom: 2px solid transparent;
+            text-shadow: 0 0 8px rgba(0,255,234,0.5);
+        }
+        .article-link:hover {
+            color: var(--neon-yellow);
+            border-bottom-color: var(--neon-yellow);
+            text-shadow: 0 0 15px var(--neon-yellow);
+        }
 
+        /* ===== قسم تحميل الألعاب ===== */
+        .games-section { margin: 60px 0; }
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        .game-card {
+            background: linear-gradient(135deg, rgba(45,27,78,0.85), rgba(13,27,62,0.85));
+            border-radius: 18px;
+            padding: 25px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s;
+            border: 2px solid rgba(160,32,240,0.3);
+        }
+        .game-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 4px;
+            background: linear-gradient(90deg, var(--neon-pink), var(--neon-blue), var(--neon-green));
+            background-size: 200% 100%;
+            animation: logoRainbow 3s linear infinite;
+        }
+        .game-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(160,32,240,0.5), 0 0 30px rgba(0,212,255,0.3);
+            border-color: var(--neon-cyan);
+        }
+        .game-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            filter: drop-shadow(0 0 15px rgba(255,45,149,0.8));
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .game-card h3 {
+            color: #fff;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+            text-shadow: 0 0 10px rgba(0,212,255,0.7);
+        }
+        .game-card p {
+            color: #c0b0e0;
+            font-size: 0.9rem;
+            margin-bottom: 18px;
+        }
+        .download-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--neon-green), #00a86b);
+            color: #fff;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            box-shadow: 0 0 15px rgba(57,255,20,0.6);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .download-btn:hover {
+            transform: scale(1.08);
+            box-shadow: 0 0 30px rgba(57,255,20,1);
+        }
+
+        /* ===== من أنا ===== */
         .about {
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
-            padding: 60px 0; margin: 60px 0; border-radius: 25px;
-            border: 1px solid rgba(255,0,64,0.3);
-            box-shadow: 0 0 30px rgba(255,0,64,0.15);
+            background: linear-gradient(135deg, rgba(45,27,78,0.7), rgba(13,27,62,0.7));
+            padding: 60px 0;
+            margin: 60px 0;
+            border-radius: 25px;
+            border: 2px solid rgba(255,45,149,0.4);
+            box-shadow: 0 0 40px rgba(255,45,149,0.3);
         }
         .about-content { display: flex; flex-wrap: wrap; align-items: center; gap: 50px; padding: 0 40px; }
         .about-text { flex: 1; min-width: 300px; }
-        .about-text h2 { color: var(--white); margin-bottom: 20px; font-size: 2rem; text-shadow: var(--glow-blue); }
-        .about-text p { color: #ccc; margin-bottom: 15px; font-size: 1.05rem; }
+        .about-text h2 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 2rem;
+            text-shadow: 0 0 15px rgba(0,255,234,0.7);
+        }
+        .about-text p { color: #d0c0f0; margin-bottom: 15px; font-size: 1.05rem; }
         .about-image { flex: 1; min-width: 300px; text-align: center; }
         .about-image img {
-            border-radius: 50%; width: 240px; height: 240px; object-fit: cover;
-            border: 5px solid var(--neon-red);
-            box-shadow: 0 0 30px rgba(255,0,64,0.6), 0 0 60px rgba(0,212,255,0.3);
+            border-radius: 50%;
+            width: 220px; height: 220px;
+            object-fit: cover;
+            border: 5px solid transparent;
+            background: linear-gradient(135deg, var(--neon-pink), var(--neon-blue), var(--neon-green)) border-box;
+            box-shadow: 0 0 40px rgba(255,45,149,0.8), 0 0 80px rgba(0,212,255,0.5);
             animation: avatarGlow 3s ease-in-out infinite alternate;
         }
         @keyframes avatarGlow {
-            from { box-shadow: 0 0 20px rgba(255,0,64,0.5); }
-            to { box-shadow: 0 0 40px rgba(0,212,255,0.8), 0 0 80px rgba(255,0,64,0.5); }
+            from { box-shadow: 0 0 30px rgba(255,45,149,0.6); }
+            to { box-shadow: 0 0 50px rgba(0,212,255,0.9), 0 0 100px rgba(57,255,20,0.5); }
         }
 
+        /* ===== قسم السوشيال ميديا ===== */
+        .social-section {
+            text-align: center;
+            padding: 60px 0;
+            margin: 60px 0;
+        }
+        .social-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .social-card {
+            padding: 35px 20px;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid rgba(255,255,255,0.1);
+        }
+        .social-card.youtube {
+            background: linear-gradient(135deg, rgba(255,0,0,0.15), rgba(160,32,240,0.15));
+        }
+        .social-card.tiktok {
+            background: linear-gradient(135deg, rgba(0,212,255,0.15), rgba(255,45,149,0.15));
+        }
+        .social-card.discord {
+            background: linear-gradient(135deg, rgba(88,101,242,0.15), rgba(160,32,240,0.15));
+        }
+        .social-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--neon-cyan);
+            box-shadow: 0 20px 50px rgba(0,212,255,0.4);
+        }
+        .social-logo {
+            width: 80px; height: 80px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+            font-size: 2.5rem;
+            transition: all 0.3s;
+        }
+        .social-card.youtube .social-logo {
+            background: linear-gradient(135deg, #ff0000, #cc0000);
+            box-shadow: 0 0 30px rgba(255,0,0,0.8);
+        }
+        .social-card.tiktok .social-logo {
+            background: linear-gradient(135deg, #00d4ff, #ff2d95);
+            box-shadow: 0 0 30px rgba(255,45,149,0.8);
+        }
+        .social-card.discord .social-logo {
+            background: linear-gradient(135deg, #5865F2, #a020f0);
+            box-shadow: 0 0 30px rgba(88,101,242,0.8);
+        }
+        .social-card:hover .social-logo {
+            transform: rotate(360deg) scale(1.1);
+            transition: transform 0.6s;
+        }
+        .social-card h3 {
+            color: #fff;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(0,212,255,0.7);
+        }
+        .social-card p {
+            color: #c0b0e0;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+        .follow-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 700;
+            color: #fff;
+            transition: all 0.3s;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        .social-card.youtube .follow-btn {
+            background: linear-gradient(135deg, #ff0000, #cc0000);
+            box-shadow: 0 0 15px rgba(255,0,0,0.6);
+        }
+        .social-card.tiktok .follow-btn {
+            background: linear-gradient(135deg, #00d4ff, #ff2d95);
+            box-shadow: 0 0 15px rgba(255,45,149,0.6);
+        }
+        .social-card.discord .follow-btn {
+            background: linear-gradient(135deg, #5865F2, #a020f0);
+            box-shadow: 0 0 15px rgba(88,101,242,0.6);
+        }
+        .follow-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 30px rgba(255,255,255,0.6);
+        }
+
+        /* ===== الفوتر ===== */
         footer {
-            background: var(--dark); padding: 40px 0; text-align: center;
-            border-top: 3px solid var(--neon-blue);
-            box-shadow: 0 0 20px rgba(0,212,255,0.3);
+            background: linear-gradient(90deg, rgba(45,27,78,0.95), rgba(13,27,62,0.95), rgba(45,27,78,0.95));
+            padding: 40px 0;
+            text-align: center;
+            border-top: 3px solid transparent;
+            border-image: linear-gradient(90deg, var(--neon-pink), var(--neon-blue), var(--neon-green), var(--neon-yellow), var(--neon-pink)) 1;
+            box-shadow: 0 0 30px rgba(0,212,255,0.4);
         }
-        .social-links { display: flex; justify-content: center; gap: 25px; margin-bottom: 25px; }
-        .social-links a {
-            display: inline-flex; align-items: center; justify-content: center;
-            width: 55px; height: 55px; background: rgba(255,255,255,0.05);
-            border-radius: 50%; color: var(--white); font-size: 1.6rem;
-            transition: all 0.3s; border: 1px solid rgba(255,255,255,0.1); text-shadow: none;
+        footer p { color: #a090c0; font-size: 0.9rem; margin-top: 15px; }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
         }
-        .social-links a:hover {
-            background: var(--neon-red); transform: scale(1.15);
-            box-shadow: 0 0 20px rgba(255,0,64,0.8); border-color: var(--neon-red);
+        .footer-links a {
+            color: #d0c0f0;
+            font-weight: 600;
+            transition: all 0.3s;
         }
-        footer p { color: #666; font-size: 0.9rem; }
+        .footer-links a:hover {
+            color: var(--neon-cyan);
+            text-shadow: 0 0 10px var(--neon-cyan);
+        }
 
+        /* ===== موبايل ===== */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.2rem; }
             .hero { padding: 70px 0; }
             .header-content { flex-direction: column; gap: 12px; }
-            nav ul { gap: 18px; }
+            nav ul { gap: 15px; flex-wrap: wrap; justify-content: center; }
             .about-content { flex-direction: column; padding: 0 20px; }
             .video-grid { grid-template-columns: 1fr; }
-            .section-title { font-size: 1.8rem; }
+            .section-title { font-size: 1.7rem; }
+            .games-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 480px) {
+            .games-grid { grid-template-columns: 1fr; }
+            nav ul { gap: 10px; }
+            nav a { font-size: 0.9rem; padding: 3px 6px; }
         }
     </style>
 </head>
@@ -195,8 +519,9 @@
                 <ul>
                     <li><a href="#home">الرئيسية</a></li>
                     <li><a href="#videos">الفيديوهات</a></li>
+                    <li><a href="#games">تحميل الألعاب</a></li>
                     <li><a href="#about">من أنا</a></li>
-                    <li><a href="#contact">تواصل</a></li>
+                    <li><a href="#contact">تابعني</a></li>
                 </ul>
             </nav>
         </div>
@@ -206,68 +531,139 @@
         <div class="container">
             <h1>أهلاً بك في عالم خفاجي ڪيمز</h1>
             <p>شروحات وتغطيات لأقوى ألعاب الحياة الواقعية RP على الموبايل: NEWRP، ONE LION، RP Grand، Suburbio. انضم لرحلتنا داخل المدينة!</p>
-            <a href="https://youtube.com/@experiencestaterp" class="btn" target="_blank">اشترك في القناة</a>
+            <a href="https://youtube.com/@experiencestaterp" class="btn" target="_blank">🎮 اشترك في القناة</a>
         </div>
     </section>
 
+    <!-- قسم الفيديوهات -->
     <section class="container" id="videos">
-        <h2 class="section-title">أحدث الفيديوهات</h2>
+        <h2 class="section-title">🎬 أحدث الفيديوهات</h2>
         <div class="video-grid">
             <div class="video-card">
                 <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/videoseries?list=UUexperiencestaterp" title="فيديو خفاجي ڪيمز" allowfullscreen loading="lazy"></iframe>
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" title="فيديو خفاجي ڪيمز" allowfullscreen loading="lazy"></iframe>
                 </div>
                 <div class="video-info">
                     <h3>كيف تعدل دقة لعبة NEWRP موبايل ❤️</h3>
-                    <p>شرح كامل لطريقة تعديل دقة اللعبة على هاتفك للحصول على أفضل تجربة لعب ممكنة مع خفاجي ڪيمز.</p>
+                    <p>شرح كامل لطريقة تعديل دقة اللعبة على هاتفك للحصول على أفضل تجربة لعب ممكنة.</p>
                     <a href="article1.html" class="article-link">اقرأ المقال كاملاً ←</a>
                 </div>
             </div>
             <div class="video-card">
                 <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/videoseries?list=UUexperiencestaterp" title="فيديو خفاجي ڪيمز" allowfullscreen loading="lazy"></iframe>
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" title="فيديو خفاجي ڪيمز" allowfullscreen loading="lazy"></iframe>
                 </div>
                 <div class="video-info">
-                    <h3>طريقة اخذ جواز خدمة العسكرية والانضمام للشرطة وجيش في لعبة NEWRP</h3>
-                    <p>خطوات مفصلة للانضمام إلى القوات المسلحة والشرطة في لعبة NEWRP مع نصائح مهمة للمبتدئين.</p>
+                    <h3>طريقة اخذ جواز خدمة العسكرية والانضمام للشرطة والجيش في NEWRP</h3>
+                    <p>خطوات مفصلة للانضمام إلى القوات المسلحة والشرطة في لعبة NEWRP مع نصائح مهمة.</p>
                     <a href="article2.html" class="article-link">اقرأ المقال كاملاً ←</a>
                 </div>
             </div>
             <div class="video-card">
                 <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/videoseries?list=UUexperiencestaterp" title="فيديو خفاجي ڪيمز" allowfullscreen loading="lazy"></iframe>
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" title="فيديو خفاجي ڪيمز" allowfullscreen loading="lazy"></iframe>
                 </div>
                 <div class="video-info">
                     <h3>كيف انضم سيرفر عربي في لعبة NEWRP / كيف انضم للجيش</h3>
-                    <p>دليل شامل للانضمام إلى السيرفرات العربية والجيش في لعبة NEWRP، مع شرح كامل للخطوات.</p>
+                    <p>دليل شامل للانضمام إلى السيرفرات العربية والجيش في لعبة NEWRP مع شرح كامل.</p>
                     <a href="article3.html" class="article-link">اقرأ المقال كاملاً ←</a>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- قسم تحميل الألعاب -->
+    <section class="container games-section" id="games">
+        <h2 class="section-title">📥 تحميل الألعاب</h2>
+        <div class="games-grid">
+            <div class="game-card">
+                <div class="game-icon">🏙️</div>
+                <h3>NEWRP</h3>
+                <p>لعبة حياة واقعية بأسلوب عصري مع سيرفرات عربية متعددة ومهام ممتعة.</p>
+                <a href="https://play.google.com/store/search?q=NEWRP&c=apps" class="download-btn" target="_blank">⬇️ تحميل</a>
+            </div>
+            <div class="game-card">
+                <div class="game-icon">🦁</div>
+                <h3>ONE LION</h3>
+                <p>لعبة RP متقدمة برسومات عالية الجودة وتحديثات مستمرة من المطور.</p>
+                <a href="https://play.google.com/store/search?q=ONE%20LION%20RP&c=apps" class="download-btn" target="_blank">⬇️ تحميل</a>
+            </div>
+            <div class="game-card">
+                <div class="game-icon">🎮</div>
+                <h3>RP Grand</h3>
+                <p>واحدة من أشهر ألعاب الحياة الواقعية على الموبايل، عالم مفتوح وحياة كاملة.</p>
+                <a href="https://play.google.com/store/search?q=RP%20Grand&c=apps" class="download-btn" target="_blank">⬇️ تحميل</a>
+            </div>
+            <div class="game-card">
+                <div class="game-icon">🌆</div>
+                <h3>Suburbio RP</h3>
+                <p>تجربة RP فريدة بأسلوب البرازيلي مع مجتمع كبير وفرص لا محدودة.</p>
+                <a href="https://play.google.com/store/search?q=Suburbio%20RP&c=apps" class="download-btn" target="_blank">⬇️ تحميل</a>
+            </div>
+            <div class="game-card">
+                <div class="game-icon">⛏️</div>
+                <h3>Craft RP</h3>
+                <p>استمتع بعالم ماين كرافت بأسلوب حياة واقعية مع المجتمع العربي.</p>
+                <a href="https://play.google.com/store/search?q=Craft%20RP&c=apps" class="download-btn" target="_blank">⬇️ تحميل</a>
+            </div>
+            <div class="game-card">
+                <div class="game-icon">🎯</div>
+                <h3>BEDROCK Reimagined</h3>
+                <p>لعبة بأسلوب جديد مع تحكم محسن ورسومات محسنة لمحبي الإثارة.</p>
+                <a href="https://play.google.com/store/search?q=BEDROCK%20Reimagined&c=apps" class="download-btn" target="_blank">⬇️ تحميل</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- من أنا -->
     <section class="container about" id="about">
         <div class="about-content">
             <div class="about-text">
                 <h2>من أنا؟</h2>
                 <p>أنا خفاجي، صانع محتوى متخصص في ألعاب الحياة الواقعية (RP) على الموبايل. أقدم شروحات وتغطيات ممتعة لألعاب مثل NEWRP وONE LION وRP Grand وSuburbio RP.</p>
-                <p>هدفي مساعدة اللاعبين العرب على فهم هذه الألعاب والاستمتاع بها، ومشاركة كل جديد من تحديثات وأحداث. تابعني على قناتي في يوتيوب لمشاهدة كل جديد.</p>
+                <p>هدفي مساعدة اللاعبين العرب على فهم هذه الألعاب والاستمتاع بها، ومشاركة كل جديد من تحديثات وأحداث. تابعني على قناتي في يوتيوب لمشاهدة كل جديد!</p>
             </div>
             <div class="about-image">
-                <img src="https://via.placeholder.com/240" alt="خفاجي ڪيمز">
+                <img src="https://via.placeholder.com/220" alt="خفاجي ڪيمز">
             </div>
         </div>
     </section>
 
-    <footer id="contact">
-        <div class="container">
-            <div class="social-links">
-                <a href="https://youtube.com/@experiencestaterp" target="_blank" title="يوتيوب">▶</a>
-                <a href="https://tiktok.com/@khafajikmez" target="_blank" title="تيك توك">♪</a>
-                <a href="https://instagram.com/khafajikmez" target="_blank" title="انستغرام">📷</a>
-                <a href="https://discord.gg/yourinvite" target="_blank" title="ديسكورد">💬</a>
+    <!-- قسم تابعني -->
+    <section class="container social-section" id="contact">
+        <h2 class="section-title">🌟 تابعني على</h2>
+        <div class="social-cards">
+            <div class="social-card youtube">
+                <div class="social-logo">▶</div>
+                <h3>YouTube</h3>
+                <p>قناة خفاجي ڪيمز على يوتيوب - اشترك ليصلك كل جديد من الفيديوهات والشروحات.</p>
+                <a href="https://youtube.com/@experiencestaterp" class="follow-btn" target="_blank">اشترك الآن</a>
             </div>
-            <p>© 2026 خفاجي ڪيمز. جميع الحقوق محفوظة.</p>
+            <div class="social-card tiktok">
+                <div class="social-logo">♪</div>
+                <h3>TikTok</h3>
+                <p>مقاطع قصيرة ومحتوى حصري على تيك توك - تابعني لمشاهدة كل جديد.</p>
+                <a href="https://www.tiktok.com/@fvx4" class="follow-btn" target="_blank">تابعني</a>
+            </div>
+            <div class="social-card discord">
+                <div class="social-logo">💬</div>
+                <h3>Discord</h3>
+                <p>انضم لسيرفر الديسكورد الرسمي - تواصل مع المجتمع وشارك في الفعاليات.</p>
+                <a href="https://discord.gg/4AbKZMCPXP" class="follow-btn" target="_blank">انضم الآن</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#home">الرئيسية</a>
+                <a href="#videos">الفيديوهات</a>
+                <a href="#games">تحميل الألعاب</a>
+                <a href="#about">من أنا</a>
+                <a href="#contact">تابعني</a>
+            </div>
+            <p>© 2026 خفاجي ڪيمز - جميع الحقوق محفوظة | صُنع بـ ❤️ في العراق</p>
         </div>
     </footer>
 </body>
