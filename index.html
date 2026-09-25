@@ -4,177 +4,265 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>خفاجي ڪيمز | عالم الألعاب</title>
-<meta name="description" content="الموقع الرسمي لخفاجي ڪيمز - ألعاب تفاعلية، شروحات، وتحميل ألعاب الحياة الواقعية RP">
+<meta name="description" content="الموقع الرسمي لخفاجي ڪيمز - ألعاب تفاعلية، اختبارات، بطاقات RP، وكل ما يخص ألعاب الحياة الواقعية">
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
 <style>
 :root{
---pink:#ff2d95;--purple:#a020f0;--blue:#00d4ff;--cyan:#00ffea;--green:#39ff14;--yellow:#ffe600;--orange:#ff6b00;
+--neon-yellow:#ffee00;
+--neon-pink:#ff1b8d;
+--neon-green:#00ff87;
+--neon-cyan:#00e5ff;
+--neon-orange:#ff6b00;
+--neon-lime:#aaff00;
+--dark:#1a1a1a;
+--gray:#666;
+--white:#ffffff;
+--bg:#fafafa;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Cairo',sans-serif;background:linear-gradient(135deg,#2d1b4e 0%,#1a0a2e 30%,#0d1b3e 60%,#2d1b4e 100%);background-size:400% 400%;animation:bgMove 15s ease infinite;color:#fff;line-height:1.7;overflow-x:hidden;min-height:100vh}
-@keyframes bgMove{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
-body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;background-image:radial-gradient(2px 2px at 20% 30%,#ff2d95,transparent),radial-gradient(2px 2px at 60% 70%,#00d4ff,transparent),radial-gradient(1px 1px at 50% 50%,#39ff14,transparent),radial-gradient(1px 1px at 80% 10%,#ffe600,transparent),radial-gradient(2px 2px at 90% 60%,#a020f0,transparent);background-size:200% 200%;animation:stars 20s linear infinite;z-index:-1;opacity:.7}
-@keyframes stars{0%{background-position:0% 0%}100%{background-position:100% 100%}}
+body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--dark);line-height:1.7;overflow-x:hidden}
+body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;background-image:radial-gradient(circle at 15% 20%,rgba(255,27,141,.08),transparent 40%),radial-gradient(circle at 85% 70%,rgba(0,229,255,.08),transparent 40%),radial-gradient(circle at 50% 40%,rgba(255,238,0,.06),transparent 40%);z-index:-1;animation:bgPulse 10s ease-in-out infinite alternate}
+@keyframes bgPulse{0%{opacity:.5}100%{opacity:1}}
 a{color:inherit;text-decoration:none}
 img{max-width:100%;height:auto}
 .container{max-width:1200px;margin:0 auto;padding:0 20px}
 
 /* Header */
-header{background:linear-gradient(90deg,rgba(45,27,78,.95),rgba(26,10,46,.95),rgba(13,27,62,.95));backdrop-filter:blur(10px);padding:12px 0;position:sticky;top:0;z-index:1000;border-bottom:3px solid transparent;border-image:linear-gradient(90deg,var(--pink),var(--blue),var(--green),var(--yellow),var(--pink)) 1;box-shadow:0 0 30px rgba(255,45,149,.5)}
+header{background:rgba(255,255,255,.95);backdrop-filter:blur(12px);padding:12px 0;position:sticky;top:0;z-index:1000;border-bottom:3px solid transparent;border-image:linear-gradient(90deg,var(--neon-pink),var(--neon-yellow),var(--neon-green),var(--neon-cyan),var(--neon-orange)) 1;box-shadow:0 4px 30px rgba(255,27,141,.15)}
 .header-content{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
-.logo{font-family:'Orbitron',sans-serif;font-size:1.6rem;font-weight:900;background:linear-gradient(90deg,#ff2d95,#00d4ff,#39ff14,#ffe600,#ff2d95);background-size:300% 100%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:logoRainbow 4s linear infinite;filter:drop-shadow(0 0 10px rgba(255,45,149,.8))}
-@keyframes logoRainbow{0%{background-position:0% 50%}100%{background-position:300% 50%}}
-nav ul{list-style:none;display:flex;gap:15px;flex-wrap:wrap}
-nav a{font-weight:700;color:#fff;transition:.3s;padding:5px 10px;border-radius:8px;font-size:.95rem}
-nav a:hover{color:var(--cyan);text-shadow:0 0 10px var(--cyan);background:rgba(0,212,255,.1)}
-.coins-display{background:linear-gradient(135deg,#ffe600,#ff6b00);color:#1a0a2e;padding:8px 18px;border-radius:30px;font-weight:900;font-size:1rem;box-shadow:0 0 20px rgba(255,230,0,.7);display:flex;align-items:center;gap:8px;animation:coinPulse 2s ease-in-out infinite}
-@keyframes coinPulse{0%,100%{box-shadow:0 0 20px rgba(255,230,0,.6)}50%{box-shadow:0 0 35px rgba(255,230,0,1)}}
-.coins-display span{font-size:1.1rem}
+.logo{font-family:'Orbitron',sans-serif;font-size:1.6rem;font-weight:900;background:linear-gradient(90deg,#ff1b8d,#ff6b00,#ffee00,#00ff87,#00e5ff,#ff1b8d);background-size:300% 100%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:rainbow 5s linear infinite;filter:drop-shadow(0 2px 4px rgba(255,27,141,.3))}
+@keyframes rainbow{0%{background-position:0% 50%}100%{background-position:300% 50%}}
+nav ul{list-style:none;display:flex;gap:8px;flex-wrap:wrap}
+nav a{font-weight:700;color:var(--dark);transition:.3s;padding:6px 12px;border-radius:20px;font-size:.9rem;border:2px solid transparent}
+nav a:hover{color:var(--neon-pink);background:rgba(255,27,141,.08);border-color:var(--neon-pink);box-shadow:0 0 15px rgba(255,27,141,.4)}
+.coins-display{background:linear-gradient(135deg,#ffee00,#ff6b00);color:#fff;padding:8px 18px;border-radius:30px;font-weight:900;font-size:1rem;box-shadow:0 0 20px rgba(255,238,0,.7),0 0 30px rgba(255,107,0,.4);display:flex;align-items:center;gap:8px;animation:coinPulse 2s ease-in-out infinite}
+@keyframes coinPulse{0%,100%{box-shadow:0 0 20px rgba(255,238,0,.6),0 0 30px rgba(255,107,0,.3)}50%{box-shadow:0 0 35px rgba(255,238,0,1),0 0 50px rgba(255,107,0,.6)}}
+
+/* Notification Banner */
+.notif-banner{display:none;background:linear-gradient(135deg,var(--neon-cyan),var(--neon-green));padding:15px 20px;border-radius:15px;margin:20px auto;max-width:900px;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap;box-shadow:0 8px 30px rgba(0,229,255,.4);animation:slideDown .5s ease}
+@keyframes slideDown{from{transform:translateY(-30px);opacity:0}to{transform:translateY(0);opacity:1}}
+.notif-banner.show{display:flex}
+.notif-banner p{color:#fff;font-weight:700;flex:1;min-width:200px}
+.notif-banner button{background:#fff;color:var(--neon-pink);border:none;padding:10px 22px;border-radius:25px;font-weight:900;cursor:pointer;transition:.3s;font-family:inherit;font-size:.9rem;box-shadow:0 4px 15px rgba(0,0,0,.2)}
+.notif-banner button:hover{transform:scale(1.05);box-shadow:0 6px 20px rgba(0,0,0,.3)}
+.notif-banner .dismiss{background:rgba(255,255,255,.3);color:#fff}
 
 /* Hero */
-.hero{padding:70px 0 60px;text-align:center;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:conic-gradient(from 0deg,transparent,rgba(255,45,149,.15),transparent,rgba(0,212,255,.15),transparent,rgba(57,255,20,.15),transparent);animation:rotate 20s linear infinite;z-index:-1}
+.hero{padding:60px 0 50px;text-align:center;position:relative;overflow:hidden;background:linear-gradient(135deg,#fff 0%,#fff9e6 50%,#fff 100%)}
+.hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:conic-gradient(from 0deg,transparent,rgba(255,27,141,.08),transparent,rgba(0,229,255,.08),transparent,rgba(255,238,0,.08),transparent);animation:rotate 20s linear infinite;z-index:0}
 @keyframes rotate{100%{transform:rotate(360deg)}}
-.hero h1{font-size:2.8rem;margin-bottom:20px;font-weight:900;background:linear-gradient(90deg,#ff2d95,#00d4ff,#39ff14);background-size:200% 100%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:logoRainbow 5s linear infinite;filter:drop-shadow(0 0 15px rgba(255,45,149,.8))}
-.hero p{font-size:1.1rem;max-width:750px;margin:0 auto 30px;color:#e0d0ff}
-.btn{display:inline-block;background:linear-gradient(135deg,var(--pink),var(--purple));color:#fff;padding:14px 36px;border-radius:50px;font-weight:900;font-size:1.05rem;transition:.3s;box-shadow:0 0 20px rgba(255,45,149,.7);border:2px solid rgba(255,255,255,.2);position:relative;overflow:hidden;cursor:pointer}
-.btn:hover{transform:translateY(-3px) scale(1.05);box-shadow:0 0 40px rgba(255,45,149,1)}
-.btn.green{background:linear-gradient(135deg,var(--green),#00a86b);box-shadow:0 0 20px rgba(57,255,20,.7)}
-.btn.green:hover{box-shadow:0 0 40px rgba(57,255,20,1)}
-.btn.blue{background:linear-gradient(135deg,var(--blue),var(--purple));box-shadow:0 0 20px rgba(0,212,255,.7)}
+.hero .container{position:relative;z-index:1}
+.hero h1{font-size:2.8rem;margin-bottom:20px;font-weight:900;background:linear-gradient(90deg,#ff1b8d,#ff6b00,#ffee00,#00ff87,#00e5ff);background-size:300% 100%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:rainbow 5s linear infinite;filter:drop-shadow(0 4px 8px rgba(255,27,141,.2))}
+.hero p{font-size:1.1rem;max-width:750px;margin:0 auto 30px;color:#555;font-weight:600}
+.btn{display:inline-block;background:linear-gradient(135deg,var(--neon-pink),var(--neon-orange));color:#fff;padding:14px 36px;border-radius:50px;font-weight:900;font-size:1.05rem;transition:.3s;box-shadow:0 6px 25px rgba(255,27,141,.4);border:none;cursor:pointer;font-family:inherit;position:relative;overflow:hidden}
+.btn:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 10px 35px rgba(255,27,141,.6)}
+.btn.green{background:linear-gradient(135deg,var(--neon-green),#00cc6a);box-shadow:0 6px 25px rgba(0,255,135,.4)}
+.btn.green:hover{box-shadow:0 10px 35px rgba(0,255,135,.6)}
+.btn.cyan{background:linear-gradient(135deg,var(--neon-cyan),#0099cc);box-shadow:0 6px 25px rgba(0,229,255,.4)}
+.btn.cyan:hover{box-shadow:0 10px 35px rgba(0,229,255,.6)}
+.btn.yellow{background:linear-gradient(135deg,var(--neon-yellow),var(--neon-orange));color:#1a1a1a;box-shadow:0 6px 25px rgba(255,238,0,.5)}
+.btn.yellow:hover{box-shadow:0 10px 35px rgba(255,238,0,.7)}
 
-/* Section titles */
-.section-title{text-align:center;font-size:2rem;margin:60px 0 35px;font-weight:900;color:#fff;text-shadow:0 0 20px rgba(0,212,255,.8);position:relative}
-.section-title::after{content:'';display:block;width:120px;height:5px;background:linear-gradient(90deg,var(--pink),var(--blue),var(--green),var(--yellow));background-size:300% 100%;animation:logoRainbow 3s linear infinite;margin:15px auto 0;border-radius:3px;box-shadow:0 0 15px rgba(255,45,149,.8)}
+/* Section Title */
+.section-title{text-align:center;font-size:2rem;margin:55px 0 30px;font-weight:900;color:var(--dark);position:relative}
+.section-title::after{content:'';display:block;width:120px;height:5px;background:linear-gradient(90deg,var(--neon-pink),var(--neon-yellow),var(--neon-green),var(--neon-cyan));background-size:300% 100%;animation:rainbow 3s linear infinite;margin:15px auto 0;border-radius:3px;box-shadow:0 2px 15px rgba(255,27,141,.4)}
+
+/* Daily Reward */
+.daily-card{background:linear-gradient(135deg,#fff,#f0fbff);border-radius:25px;padding:30px;margin:0 auto 40px;max-width:700px;text-align:center;border:3px dashed var(--neon-cyan);box-shadow:0 10px 40px rgba(0,229,255,.2);position:relative}
+.daily-card h3{color:var(--dark);margin-bottom:10px;font-size:1.5rem}
+.daily-card p{color:#555;margin-bottom:20px}
+.streak-display{display:flex;justify-content:center;gap:8px;margin:20px 0;flex-wrap:wrap}
+.streak-day{width:45px;height:45px;border-radius:12px;background:#f0f0f0;display:flex;align-items:center;justify-content:center;font-weight:900;color:#999;border:2px solid #e0e0e0;transition:.3s;font-size:.85rem}
+.streak-day.done{background:linear-gradient(135deg,var(--neon-green),#00cc6a);color:#fff;border-color:var(--neon-green);box-shadow:0 0 15px rgba(0,255,135,.5)}
+.streak-day.today{background:linear-gradient(135deg,var(--neon-yellow),var(--neon-orange));color:#fff;border-color:var(--neon-yellow);box-shadow:0 0 20px rgba(255,238,0,.7);animation:pulse 1.5s ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
 
 /* Videos */
 .video-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:25px;margin-bottom:50px}
-.video-card{background:linear-gradient(135deg,rgba(45,27,78,.9),rgba(26,10,46,.9));border-radius:20px;overflow:hidden;transition:.4s;border:2px solid transparent;background-clip:padding-box;position:relative;box-shadow:0 5px 25px rgba(0,0,0,.4)}
-.video-card::before{content:'';position:absolute;inset:0;border-radius:20px;padding:2px;background:linear-gradient(135deg,var(--pink),var(--blue),var(--green),var(--yellow));-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
-.video-card:hover{transform:translateY(-10px);box-shadow:0 20px 50px rgba(255,45,149,.5)}
-.video-container{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;background:#1a0a2e}
+.video-card{background:#fff;border-radius:20px;overflow:hidden;transition:.4s;box-shadow:0 4px 20px rgba(0,0,0,.06);border:2px solid transparent;position:relative}
+.video-card::before{content:'';position:absolute;inset:0;border-radius:20px;padding:3px;background:linear-gradient(135deg,var(--neon-pink),var(--neon-yellow),var(--neon-green),var(--neon-cyan));-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+.video-card:hover{transform:translateY(-8px);box-shadow:0 20px 50px rgba(255,27,141,.25)}
+.video-container{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;background:#000}
 .video-container iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}
 .video-info{padding:20px}
-.video-info h3{color:#fff;margin-bottom:8px;font-size:1.1rem;text-shadow:0 0 10px rgba(0,212,255,.5)}
-.video-info p{color:#c0b0e0;font-size:.9rem;margin-bottom:12px}
-.article-link{display:inline-block;color:var(--cyan);font-weight:700;transition:.3s;text-shadow:0 0 8px rgba(0,255,234,.5)}
-.article-link:hover{color:var(--yellow);text-shadow:0 0 15px var(--yellow)}
+.video-info h3{color:var(--dark);margin-bottom:8px;font-size:1.1rem}
+.video-info p{color:#666;font-size:.9rem;margin-bottom:12px}
+.article-link{display:inline-block;color:var(--neon-pink);font-weight:700;transition:.3s}
+.article-link:hover{color:var(--neon-orange);text-shadow:0 0 10px rgba(255,107,0,.5)}
 
-/* Games Download */
-.games-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;margin-bottom:50px}
-.game-card{background:linear-gradient(135deg,rgba(45,27,78,.85),rgba(13,27,62,.85));border-radius:18px;padding:22px 18px;text-align:center;position:relative;overflow:hidden;transition:.3s;border:2px solid rgba(160,32,240,.3)}
-.game-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(90deg,var(--pink),var(--blue),var(--green));background-size:200% 100%;animation:logoRainbow 3s linear infinite}
-.game-card:hover{transform:translateY(-8px) scale(1.02);box-shadow:0 15px 40px rgba(160,32,240,.5);border-color:var(--cyan)}
-.game-icon{font-size:2.8rem;margin-bottom:12px;filter:drop-shadow(0 0 15px rgba(255,45,149,.8));animation:float 3s ease-in-out infinite}
+/* Play Section */
+.play-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;margin-bottom:50px}
+.play-card{background:#fff;border-radius:20px;padding:25px 20px;text-align:center;position:relative;overflow:hidden;transition:.3s;border:2px solid #f0f0f0;cursor:pointer;box-shadow:0 4px 15px rgba(0,0,0,.04)}
+.play-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:5px;background:linear-gradient(90deg,var(--neon-pink),var(--neon-yellow),var(--neon-green),var(--neon-cyan));background-size:200% 100%;animation:rainbow 3s linear infinite}
+.play-card:hover{transform:translateY(-8px);box-shadow:0 20px 50px rgba(0,229,255,.25);border-color:var(--neon-cyan)}
+.play-icon{font-size:3rem;margin-bottom:15px;animation:float 3s ease-in-out infinite;filter:drop-shadow(0 4px 10px rgba(255,27,141,.3))}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-.game-card h3{color:#fff;margin-bottom:8px;font-size:1.15rem;text-shadow:0 0 10px rgba(0,212,255,.7)}
-.game-card p{color:#c0b0e0;font-size:.85rem;margin-bottom:15px}
-.download-btn{display:inline-block;background:linear-gradient(135deg,var(--green),#00a86b);color:#fff;padding:9px 22px;border-radius:30px;font-weight:700;font-size:.9rem;transition:.3s;box-shadow:0 0 15px rgba(57,255,20,.6);border:1px solid rgba(255,255,255,.2)}
-.download-btn:hover{transform:scale(1.08);box-shadow:0 0 30px rgba(57,255,20,1)}
+.play-card h3{color:var(--dark);margin-bottom:10px;font-size:1.15rem}
+.play-card p{color:#666;font-size:.9rem;margin-bottom:15px}
+.play-btn{display:inline-block;background:linear-gradient(135deg,var(--neon-pink),var(--neon-orange));color:#fff;padding:10px 25px;border-radius:30px;font-weight:700;font-size:.95rem;transition:.3s;box-shadow:0 4px 15px rgba(255,27,141,.4);border:none;cursor:pointer;font-family:inherit}
+.play-btn:hover{transform:scale(1.08);box-shadow:0 8px 25px rgba(255,27,141,.6)}
+.earn-badge{position:absolute;top:12px;left:12px;background:linear-gradient(135deg,#ffee00,#ff6b00);color:#1a1a1a;padding:4px 12px;border-radius:20px;font-weight:900;font-size:.75rem;box-shadow:0 3px 10px rgba(255,238,0,.5)}
 
-/* Play Games Section */
-.play-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;margin-bottom:50px}
-.play-card{background:linear-gradient(135deg,rgba(45,27,78,.9),rgba(13,27,62,.9));border-radius:20px;padding:25px 20px;text-align:center;position:relative;overflow:hidden;transition:.3s;border:2px solid rgba(0,212,255,.3);cursor:pointer}
-.play-card:hover{transform:translateY(-8px);box-shadow:0 20px 50px rgba(0,212,255,.5),0 0 30px rgba(255,45,149,.3);border-color:var(--pink)}
-.play-icon{font-size:3rem;margin-bottom:15px;filter:drop-shadow(0 0 15px rgba(0,212,255,.8));animation:float 3s ease-in-out infinite}
-.play-card h3{color:#fff;margin-bottom:10px;font-size:1.2rem;text-shadow:0 0 10px rgba(255,45,149,.7)}
-.play-card p{color:#c0b0e0;font-size:.9rem;margin-bottom:15px}
-.play-btn{display:inline-block;background:linear-gradient(135deg,var(--pink),var(--purple));color:#fff;padding:10px 25px;border-radius:30px;font-weight:700;font-size:.95rem;transition:.3s;box-shadow:0 0 15px rgba(255,45,149,.7);border:none;cursor:pointer;font-family:inherit}
-.play-btn:hover{transform:scale(1.08);box-shadow:0 0 30px rgba(255,45,149,1)}
-.earn-badge{position:absolute;top:12px;left:12px;background:linear-gradient(135deg,#ffe600,#ff6b00);color:#1a0a2e;padding:4px 12px;border-radius:20px;font-weight:900;font-size:.75rem;box-shadow:0 0 15px rgba(255,230,0,.7)}
+/* Quiz / Personality / Dictionary / Card Gen */
+.feature-card{background:#fff;border-radius:25px;padding:35px;margin:30px 0;border:2px solid #f0f0f0;box-shadow:0 10px 40px rgba(0,0,0,.05);position:relative;overflow:hidden}
+.feature-card::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--neon-pink),var(--neon-yellow),var(--neon-green),var(--neon-cyan),var(--neon-orange));background-size:300% 100%;animation:rainbow 4s linear infinite}
+.feature-card h3{font-size:1.5rem;color:var(--dark);margin-bottom:15px;text-align:center}
+.feature-card p.desc{text-align:center;color:#666;margin-bottom:25px}
+.form-row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-bottom:15px}
+.form-input{padding:12px 18px;border-radius:12px;border:2px solid #e0e0e0;background:#fafafa;color:var(--dark);font-size:1rem;font-family:inherit;outline:none;transition:.3s;min-width:200px;flex:1}
+.form-input:focus{border-color:var(--neon-cyan);box-shadow:0 0 15px rgba(0,229,255,.3)}
 
-/* Modal for games */
-.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(10,10,30,.95);z-index:2000;justify-content:center;align-items:center;padding:20px;overflow-y:auto}
-.modal.active{display:flex}
-.modal-content{background:linear-gradient(135deg,#2d1b4e,#0d1b3e);border-radius:25px;padding:30px 25px;max-width:500px;width:100%;border:2px solid var(--cyan);box-shadow:0 0 50px rgba(0,212,255,.6);position:relative;animation:modalIn .3s ease}
-@keyframes modalIn{from{transform:scale(.8);opacity:0}to{transform:scale(1);opacity:1}}
-.modal-close{position:absolute;top:15px;left:15px;background:rgba(255,45,149,.8);border:none;color:#fff;width:35px;height:35px;border-radius:50%;font-size:1.2rem;cursor:pointer;font-weight:900;transition:.3s}
-.modal-close:hover{background:var(--pink);transform:rotate(90deg)}
-.modal-content h2{text-align:center;color:#fff;margin-bottom:20px;text-shadow:0 0 15px rgba(255,45,149,.8);font-size:1.5rem}
-.game-area{text-align:center;padding:15px 0}
-.game-display{background:rgba(0,0,0,.3);border-radius:15px;padding:20px;margin:15px 0;font-size:1.3rem;color:#fff;font-weight:700;min-height:80px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(0,212,255,.3)}
-.game-input{width:100%;padding:12px 15px;border-radius:12px;border:2px solid rgba(0,212,255,.4);background:rgba(0,0,0,.3);color:#fff;font-size:1.1rem;font-family:inherit;text-align:center;margin:10px 0;outline:none;transition:.3s}
-.game-input:focus{border-color:var(--cyan);box-shadow:0 0 20px rgba(0,212,255,.5)}
-.game-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:15px}
-.memory-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:15px 0}
-.memory-card{aspect-ratio:1;background:linear-gradient(135deg,var(--purple),var(--blue));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:2rem;cursor:pointer;transition:.3s;user-select:none}
-.memory-card.flipped{background:linear-gradient(135deg,var(--pink),var(--purple));box-shadow:0 0 20px rgba(255,45,149,.8)}
-.memory-card.matched{background:linear-gradient(135deg,var(--green),#00a86b);cursor:default;box-shadow:0 0 20px rgba(57,255,20,.8)}
-.reaction-circle{width:150px;height:150px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--purple));margin:20px auto;display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-weight:900;cursor:pointer;transition:.3s;box-shadow:0 0 30px rgba(0,212,255,.6)}
-.reaction-circle.ready{background:linear-gradient(135deg,var(--green),#00a86b);box-shadow:0 0 40px rgba(57,255,20,1)}
-.reaction-circle.wait{background:linear-gradient(135deg,#ff2d2d,#8b0000)}
-.score-display{font-size:1rem;color:#ffe600;margin:10px 0;font-weight:700}
+/* Dictionary */
+.dict-search{width:100%;padding:15px 20px;border-radius:15px;border:2px solid #e0e0e0;background:#fafafa;font-family:inherit;font-size:1rem;margin-bottom:20px;outline:none;transition:.3s}
+.dict-search:focus{border-color:var(--neon-yellow);box-shadow:0 0 20px rgba(255,238,0,.3)}
+.dict-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:15px;max-height:500px;overflow-y:auto;padding:5px}
+.dict-item{background:linear-gradient(135deg,#fff,#f8fdff);padding:15px 18px;border-radius:15px;border-right:4px solid var(--neon-cyan);box-shadow:0 3px 10px rgba(0,0,0,.04);transition:.3s}
+.dict-item:hover{transform:translateX(-5px);box-shadow:0 8px 20px rgba(0,229,255,.15)}
+.dict-item strong{color:var(--neon-pink);display:block;margin-bottom:6px;font-size:1.05rem}
+.dict-item span{color:#666;font-size:.9rem;line-height:1.5}
+
+/* Download Games */
+.games-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;margin-bottom:50px}
+.game-card{background:#fff;border-radius:20px;padding:22px 18px;text-align:center;position:relative;overflow:hidden;transition:.3s;border:2px solid #f0f0f0;box-shadow:0 4px 15px rgba(0,0,0,.04)}
+.game-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:5px;background:linear-gradient(90deg,var(--neon-cyan),var(--neon-green),var(--neon-yellow));background-size:200% 100%;animation:rainbow 3s linear infinite}
+.game-card:hover{transform:translateY(-8px);box-shadow:0 20px 50px rgba(0,255,135,.2);border-color:var(--neon-green)}
+.game-icon{font-size:2.8rem;margin-bottom:12px;animation:float 3s ease-in-out infinite}
+.game-card h3{color:var(--dark);margin-bottom:8px;font-size:1.15rem}
+.game-card p{color:#666;font-size:.85rem;margin-bottom:15px}
+.download-btn{display:inline-block;background:linear-gradient(135deg,var(--neon-green),#00cc6a);color:#fff;padding:9px 22px;border-radius:30px;font-weight:700;font-size:.9rem;transition:.3s;box-shadow:0 4px 15px rgba(0,255,135,.4)}
+.download-btn:hover{transform:scale(1.08);box-shadow:0 8px 25px rgba(0,255,135,.6)}
+
+/* Hall of Fame */
+.hall-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px;margin-bottom:40px}
+.hall-card{background:linear-gradient(135deg,#fff,#fff8e6);border-radius:20px;padding:22px;text-align:center;border:2px solid #f0f0f0;transition:.3s;position:relative}
+.hall-card:hover{transform:translateY(-5px);box-shadow:0 15px 35px rgba(255,238,0,.3);border-color:var(--neon-yellow)}
+.hall-rank{font-size:2rem;font-weight:900;margin-bottom:8px}
+.hall-rank.gold{background:linear-gradient(135deg,#ffd700,#ff8c00);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 2px 5px rgba(255,140,0,.5))}
+.hall-rank.silver{background:linear-gradient(135deg,#c0c0c0,#808080);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hall-rank.bronze{background:linear-gradient(135deg,#cd7f32,#8b4513);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hall-card h4{color:var(--dark);margin-bottom:5px;font-size:1rem}
+.hall-card p{color:var(--neon-pink);font-weight:700;font-size:.9rem}
 
 /* About */
-.about{background:linear-gradient(135deg,rgba(45,27,78,.7),rgba(13,27,62,.7));padding:50px 0;margin:50px 0;border-radius:25px;border:2px solid rgba(255,45,149,.4);box-shadow:0 0 40px rgba(255,45,149,.3)}
+.about{background:linear-gradient(135deg,#fff,#f0fffc);padding:50px 0;margin:50px 0;border-radius:25px;border:2px solid #e0fff5;box-shadow:0 10px 40px rgba(0,255,135,.1)}
 .about-content{display:flex;flex-wrap:wrap;align-items:center;gap:40px;padding:0 30px}
 .about-text{flex:1;min-width:280px}
-.about-text h2{color:#fff;margin-bottom:18px;font-size:1.8rem;text-shadow:0 0 15px rgba(0,255,234,.7)}
-.about-text p{color:#d0c0f0;margin-bottom:12px;font-size:1rem}
+.about-text h2{color:var(--dark);margin-bottom:18px;font-size:1.8rem}
+.about-text h2::after{content:'';display:block;width:60px;height:4px;background:linear-gradient(90deg,var(--neon-pink),var(--neon-cyan));margin-top:8px;border-radius:2px}
+.about-text p{color:#555;margin-bottom:12px;font-size:1rem}
 .about-image{flex:1;min-width:280px;text-align:center}
-.about-image img{border-radius:50%;width:220px;height:220px;object-fit:cover;border:5px solid transparent;background:linear-gradient(135deg,var(--pink),var(--blue),var(--green)) border-box;box-shadow:0 0 40px rgba(255,45,149,.8);animation:avatarGlow 3s ease-in-out infinite alternate}
-@keyframes avatarGlow{from{box-shadow:0 0 30px rgba(255,45,149,.6)}to{box-shadow:0 0 50px rgba(0,212,255,.9)}}
+.about-image img{border-radius:50%;width:220px;height:220px;object-fit:cover;border:5px solid #fff;box-shadow:0 0 30px rgba(255,27,141,.4),0 0 60px rgba(0,229,255,.3);animation:avatarGlow 3s ease-in-out infinite alternate}
+@keyframes avatarGlow{from{box-shadow:0 0 30px rgba(255,27,141,.4),0 0 60px rgba(0,229,255,.2)}to{box-shadow:0 0 40px rgba(255,238,0,.7),0 0 70px rgba(0,255,135,.5)}}
 
 /* Social */
 .social-section{text-align:center;padding:50px 0;margin:50px 0}
 .social-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;max-width:1000px;margin:0 auto}
-.social-card{padding:30px 18px;border-radius:20px;text-align:center;transition:.4s;position:relative;overflow:hidden;border:2px solid rgba(255,255,255,.1)}
-.social-card.youtube{background:linear-gradient(135deg,rgba(255,0,0,.15),rgba(160,32,240,.15))}
-.social-card.tiktok{background:linear-gradient(135deg,rgba(0,212,255,.15),rgba(255,45,149,.15))}
-.social-card.discord{background:linear-gradient(135deg,rgba(88,101,242,.15),rgba(160,32,240,.15))}
-.social-card:hover{transform:translateY(-10px);border-color:var(--cyan);box-shadow:0 20px 50px rgba(0,212,255,.4)}
+.social-card{padding:30px 18px;border-radius:20px;text-align:center;transition:.4s;position:relative;overflow:hidden;border:2px solid #f0f0f0;background:#fff}
+.social-card:hover{transform:translateY(-10px);box-shadow:0 20px 50px rgba(0,0,0,.1)}
+.social-card.youtube:hover{border-color:#ff0000;box-shadow:0 20px 50px rgba(255,0,0,.2)}
+.social-card.tiktok:hover{border-color:var(--neon-cyan);box-shadow:0 20px 50px rgba(0,229,255,.3)}
+.social-card.discord:hover{border-color:#5865F2;box-shadow:0 20px 50px rgba(88,101,242,.3)}
 .social-logo{width:75px;height:75px;margin:0 auto 18px;display:flex;align-items:center;justify-content:center;border-radius:20px;font-size:2.2rem;transition:.3s}
-.social-card.youtube .social-logo{background:linear-gradient(135deg,#ff0000,#cc0000);box-shadow:0 0 30px rgba(255,0,0,.8)}
-.social-card.tiktok .social-logo{background:linear-gradient(135deg,#00d4ff,#ff2d95);box-shadow:0 0 30px rgba(255,45,149,.8)}
-.social-card.discord .social-logo{background:linear-gradient(135deg,#5865F2,#a020f0);box-shadow:0 0 30px rgba(88,101,242,.8)}
+.social-card.youtube .social-logo{background:linear-gradient(135deg,#ff0000,#cc0000);box-shadow:0 8px 25px rgba(255,0,0,.5);color:#fff}
+.social-card.tiktok .social-logo{background:linear-gradient(135deg,#00e5ff,#ff1b8d);box-shadow:0 8px 25px rgba(255,27,141,.5);color:#fff}
+.social-card.discord .social-logo{background:linear-gradient(135deg,#5865F2,#7c83ff);box-shadow:0 8px 25px rgba(88,101,242,.5);color:#fff}
 .social-card:hover .social-logo{transform:rotate(360deg) scale(1.1);transition:transform .6s}
-.social-card h3{color:#fff;font-size:1.2rem;margin-bottom:8px}
-.social-card p{color:#c0b0e0;font-size:.9rem;margin-bottom:18px}
-.follow-btn{display:inline-block;padding:11px 28px;border-radius:30px;font-weight:700;color:#fff;transition:.3s;border:1px solid rgba(255,255,255,.3)}
-.social-card.youtube .follow-btn{background:linear-gradient(135deg,#ff0000,#cc0000);box-shadow:0 0 15px rgba(255,0,0,.6)}
-.social-card.tiktok .follow-btn{background:linear-gradient(135deg,#00d4ff,#ff2d95);box-shadow:0 0 15px rgba(255,45,149,.6)}
-.social-card.discord .follow-btn{background:linear-gradient(135deg,#5865F2,#a020f0);box-shadow:0 0 15px rgba(88,101,242,.6)}
-.follow-btn:hover{transform:scale(1.1);box-shadow:0 0 30px rgba(255,255,255,.6)}
+.social-card h3{color:var(--dark);font-size:1.2rem;margin-bottom:8px}
+.social-card p{color:#666;font-size:.9rem;margin-bottom:18px}
+.follow-btn{display:inline-block;padding:11px 28px;border-radius:30px;font-weight:700;color:#fff;transition:.3s;border:none;font-family:inherit;font-size:.95rem;cursor:pointer}
+.social-card.youtube .follow-btn{background:linear-gradient(135deg,#ff0000,#cc0000);box-shadow:0 4px 15px rgba(255,0,0,.4)}
+.social-card.tiktok .follow-btn{background:linear-gradient(135deg,#00e5ff,#ff1b8d);box-shadow:0 4px 15px rgba(255,27,141,.4)}
+.social-card.discord .follow-btn{background:linear-gradient(135deg,#5865F2,#7c83ff);box-shadow:0 4px 15px rgba(88,101,242,.4)}
+.follow-btn:hover{transform:scale(1.08)}
 
 /* Footer */
-footer{background:linear-gradient(90deg,rgba(45,27,78,.95),rgba(13,27,62,.95),rgba(45,27,78,.95));padding:35px 0;text-align:center;border-top:3px solid transparent;border-image:linear-gradient(90deg,var(--pink),var(--blue),var(--green),var(--yellow),var(--pink)) 1;box-shadow:0 0 30px rgba(0,212,255,.4)}
-footer p{color:#a090c0;font-size:.9rem;margin-top:15px}
+footer{background:linear-gradient(135deg,#1a1a1a,#2d2d2d);padding:40px 0;text-align:center;color:#fff}
+footer p{color:#aaa;font-size:.9rem;margin-top:15px}
 .footer-links{display:flex;justify-content:center;gap:25px;flex-wrap:wrap;margin-bottom:15px}
-.footer-links a{color:#d0c0f0;font-weight:600;transition:.3s;font-size:.95rem}
-.footer-links a:hover{color:var(--cyan);text-shadow:0 0 10px var(--cyan)}
+.footer-links a{color:#fff;font-weight:600;transition:.3s;font-size:.95rem}
+.footer-links a:hover{color:var(--neon-yellow);text-shadow:0 0 10px var(--neon-yellow)}
 
-/* AI Chat Widget */
+/* Modal */
+.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.75);backdrop-filter:blur(5px);z-index:2000;justify-content:center;align-items:center;padding:20px;overflow-y:auto}
+.modal.active{display:flex}
+.modal-content{background:#fff;border-radius:25px;padding:30px 25px;max-width:520px;width:100%;border:3px solid var(--neon-cyan);box-shadow:0 25px 70px rgba(0,229,255,.5);position:relative;animation:modalIn .3s ease}
+@keyframes modalIn{from{transform:scale(.8);opacity:0}to{transform:scale(1);opacity:1}}
+.modal-close{position:absolute;top:15px;left:15px;background:var(--neon-pink);border:none;color:#fff;width:35px;height:35px;border-radius:50%;font-size:1.2rem;cursor:pointer;font-weight:900;transition:.3s;box-shadow:0 4px 15px rgba(255,27,141,.4)}
+.modal-close:hover{transform:rotate(90deg) scale(1.1)}
+.modal-content h2{text-align:center;color:var(--dark);margin-bottom:20px;font-size:1.5rem}
+.game-area{text-align:center;padding:15px 0}
+.game-display{background:linear-gradient(135deg,#fafafa,#f0f0f0);border-radius:15px;padding:20px;margin:15px 0;font-size:1.3rem;color:var(--dark);font-weight:700;min-height:80px;display:flex;align-items:center;justify-content:center;border:2px solid #e0e0e0}
+.game-input{width:100%;padding:14px 18px;border-radius:15px;border:2px solid #e0e0e0;background:#fafafa;color:var(--dark);font-size:1.1rem;font-family:inherit;text-align:center;margin:10px 0;outline:none;transition:.3s}
+.game-input:focus{border-color:var(--neon-cyan);box-shadow:0 0 20px rgba(0,229,255,.3)}
+.game-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:15px}
+.memory-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:15px 0}
+.memory-card{aspect-ratio:1;background:linear-gradient(135deg,var(--neon-cyan),var(--neon-green));border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:2rem;cursor:pointer;transition:.3s;user-select:none;box-shadow:0 4px 12px rgba(0,229,255,.3);color:#fff}
+.memory-card.flipped{background:linear-gradient(135deg,var(--neon-pink),var(--neon-orange));box-shadow:0 4px 15px rgba(255,27,141,.5)}
+.memory-card.matched{background:linear-gradient(135deg,var(--neon-green),#00cc6a);cursor:default;box-shadow:0 4px 15px rgba(0,255,135,.5)}
+.reaction-circle{width:150px;height:150px;border-radius:50%;background:linear-gradient(135deg,var(--neon-cyan),var(--neon-green));margin:20px auto;display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-weight:900;cursor:pointer;transition:.3s;box-shadow:0 8px 30px rgba(0,229,255,.4);color:#fff}
+.reaction-circle.ready{background:linear-gradient(135deg,var(--neon-green),#00cc6a);box-shadow:0 0 40px rgba(0,255,135,.8)}
+.reaction-circle.wait{background:linear-gradient(135deg,#ff2d2d,#8b0000)}
+.score-display{font-size:1rem;color:var(--neon-orange);margin:10px 0;font-weight:700}
+
+/* Quiz */
+.quiz-question{font-size:1.15rem;font-weight:700;color:var(--dark);margin:20px 0 15px;text-align:center}
+.quiz-options{display:grid;gap:10px;margin-bottom:15px}
+.quiz-option{background:#fafafa;border:2px solid #e0e0e0;padding:12px 18px;border-radius:15px;cursor:pointer;transition:.3s;font-family:inherit;color:var(--dark);font-size:1rem;text-align:right}
+.quiz-option:hover{border-color:var(--neon-cyan);background:#f0fdff;transform:translateX(-4px)}
+.quiz-progress{text-align:center;color:#999;font-size:.9rem;margin-bottom:10px}
+
+/* RP Card */
+.card-preview{background:linear-gradient(135deg,#1a1a1a,#2d2d2d);border-radius:20px;padding:25px;margin:20px auto;max-width:380px;color:#fff;text-align:center;box-shadow:0 15px 50px rgba(0,0,0,.3);border:3px solid var(--neon-cyan);position:relative;overflow:hidden}
+.card-preview::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--neon-pink),var(--neon-yellow),var(--neon-green))}
+.card-avatar{width:90px;height:90px;border-radius:50%;background:linear-gradient(135deg,var(--neon-cyan),var(--neon-pink));display:flex;align-items:center;justify-content:center;font-size:2.5rem;margin:10px auto 15px;box-shadow:0 0 25px rgba(0,229,255,.5)}
+.card-name{font-size:1.3rem;font-weight:900;margin-bottom:5px;color:var(--neon-yellow)}
+.card-job{font-size:.95rem;color:var(--neon-cyan);margin-bottom:15px}
+.card-stats{display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:.85rem;text-align:right}
+.card-stats div{background:rgba(255,255,255,.08);padding:8px 12px;border-radius:10px}
+.card-stats span{color:#aaa;display:block;font-size:.75rem}
+.card-stats strong{color:var(--neon-green)}
+
+/* Mystery Box */
+.mystery-box{font-size:5rem;text-align:center;margin:20px 0;cursor:pointer;transition:.3s;animation:float 2s ease-in-out infinite}
+.mystery-box:hover{transform:scale(1.1)}
+
+/* Chat */
 .chat-widget{position:fixed;bottom:20px;right:20px;z-index:1500;font-family:'Cairo',sans-serif}
-.chat-toggle{width:65px;height:65px;border-radius:50%;background:linear-gradient(135deg,var(--pink),var(--purple));border:none;cursor:pointer;font-size:1.8rem;color:#fff;box-shadow:0 0 30px rgba(255,45,149,.8);transition:.3s;animation:chatPulse 2s ease-in-out infinite}
-@keyframes chatPulse{0%,100%{box-shadow:0 0 25px rgba(255,45,149,.6)}50%{box-shadow:0 0 45px rgba(255,45,149,1),0 0 60px rgba(0,212,255,.5)}}
+.chat-toggle{width:65px;height:65px;border-radius:50%;background:linear-gradient(135deg,var(--neon-pink),var(--neon-orange));border:none;cursor:pointer;font-size:1.8rem;color:#fff;box-shadow:0 8px 30px rgba(255,27,141,.6);transition:.3s;animation:coinPulse 2s ease-in-out infinite}
 .chat-toggle:hover{transform:scale(1.1) rotate(15deg)}
-.chat-window{position:absolute;bottom:80px;right:0;width:340px;max-width:calc(100vw - 40px);height:480px;max-height:calc(100vh - 120px);background:linear-gradient(135deg,#2d1b4e,#0d1b3e);border-radius:20px;box-shadow:0 0 50px rgba(0,212,255,.5);border:2px solid var(--cyan);display:none;flex-direction:column;overflow:hidden}
+.chat-window{position:absolute;bottom:80px;right:0;width:340px;max-width:calc(100vw - 40px);height:480px;max-height:calc(100vh - 120px);background:#fff;border-radius:20px;box-shadow:0 20px 60px rgba(0,229,255,.4);border:3px solid var(--neon-cyan);display:none;flex-direction:column;overflow:hidden}
 .chat-window.active{display:flex;animation:modalIn .3s ease}
-.chat-header{background:linear-gradient(135deg,var(--pink),var(--purple));padding:15px;color:#fff;font-weight:900;display:flex;align-items:center;justify-content:space-between;border-bottom:2px solid rgba(255,255,255,.2)}
+.chat-header{background:linear-gradient(135deg,var(--neon-cyan),var(--neon-green));padding:15px;color:#fff;font-weight:900;display:flex;align-items:center;justify-content:space-between}
 .chat-header .bot-info{display:flex;align-items:center;gap:10px}
-.chat-header .bot-avatar{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--cyan),var(--blue));display:flex;align-items:center;justify-content:center;font-size:1.3rem;box-shadow:0 0 15px rgba(0,255,234,.8)}
-.chat-header .status{font-size:.75rem;color:#a0ffa0;font-weight:400}
+.chat-header .bot-avatar{width:38px;height:38px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;font-size:1.3rem;box-shadow:0 0 15px rgba(255,255,255,.8)}
+.chat-header .status{font-size:.75rem;color:#f0fff9;font-weight:400}
 .chat-close{background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;padding:0 5px}
-.chat-body{flex:1;padding:15px;overflow-y:auto;display:flex;flex-direction:column;gap:10px}
+.chat-body{flex:1;padding:15px;overflow-y:auto;display:flex;flex-direction:column;gap:10px;background:#fafafa}
 .chat-msg{max-width:80%;padding:10px 15px;border-radius:15px;font-size:.9rem;line-height:1.5;word-wrap:break-word}
-.chat-msg.bot{background:linear-gradient(135deg,rgba(0,212,255,.2),rgba(160,32,240,.2));color:#fff;align-self:flex-start;border:1px solid rgba(0,212,255,.3);border-top-right-radius:5px}
-.chat-msg.user{background:linear-gradient(135deg,var(--pink),var(--purple));color:#fff;align-self:flex-end;border-top-left-radius:5px}
-.chat-input-area{padding:12px;border-top:1px solid rgba(255,255,255,.1);display:flex;gap:8px}
-.chat-input{flex:1;padding:10px 15px;border-radius:25px;border:1px solid rgba(0,212,255,.3);background:rgba(0,0,0,.3);color:#fff;font-family:inherit;font-size:.9rem;outline:none}
-.chat-input:focus{border-color:var(--cyan);box-shadow:0 0 15px rgba(0,212,255,.4)}
-.chat-send{background:linear-gradient(135deg,var(--cyan),var(--blue));border:none;color:#fff;width:42px;height:42px;border-radius:50%;cursor:pointer;font-size:1.1rem;transition:.3s;font-weight:900}
-.chat-send:hover{transform:scale(1.1);box-shadow:0 0 20px rgba(0,255,234,.8)}
+.chat-msg.bot{background:linear-gradient(135deg,#e0fdff,#d0f5f0);color:var(--dark);align-self:flex-start;border:2px solid rgba(0,229,255,.3);border-top-right-radius:5px}
+.chat-msg.user{background:linear-gradient(135deg,var(--neon-pink),var(--neon-orange));color:#fff;align-self:flex-end;border-top-left-radius:5px}
+.chat-input-area{padding:12px;border-top:2px solid #f0f0f0;display:flex;gap:8px;background:#fff}
+.chat-input{flex:1;padding:10px 15px;border-radius:25px;border:2px solid #e0e0e0;background:#fafafa;color:var(--dark);font-family:inherit;font-size:.9rem;outline:none;transition:.3s}
+.chat-input:focus{border-color:var(--neon-cyan);box-shadow:0 0 15px rgba(0,229,255,.3)}
+.chat-send{background:linear-gradient(135deg,var(--neon-cyan),var(--neon-green));border:none;color:#fff;width:42px;height:42px;border-radius:50%;cursor:pointer;font-size:1.1rem;transition:.3s;font-weight:900;box-shadow:0 4px 15px rgba(0,229,255,.4)}
+.chat-send:hover{transform:scale(1.1)}
+
+/* Toast */
+.toast{position:fixed;top:100px;left:50%;transform:translateX(-50%) translateY(-100px);background:linear-gradient(135deg,var(--neon-green),#00cc6a);color:#fff;padding:15px 30px;border-radius:30px;font-weight:900;box-shadow:0 10px 40px rgba(0,255,135,.5);z-index:3000;transition:.4s;opacity:0;pointer-events:none}
+.toast.show{transform:translateX(-50%) translateY(0);opacity:1}
+.toast.error{background:linear-gradient(135deg,var(--neon-pink),#cc0055);box-shadow:0 10px 40px rgba(255,27,141,.5)}
 
 @media(max-width:768px){
 .hero h1{font-size:2rem}
 .hero{padding:50px 0 40px}
 .header-content{flex-direction:column;gap:10px}
-nav ul{gap:10px;justify-content:center}
-nav a{font-size:.85rem;padding:4px 8px}
+nav ul{gap:6px;justify-content:center}
+nav a{font-size:.8rem;padding:5px 9px}
 .about-content{flex-direction:column;padding:0 20px}
 .section-title{font-size:1.6rem}
 .games-grid,.play-grid{grid-template-columns:1fr 1fr}
 .chat-window{width:calc(100vw - 30px);right:-10px}
+.feature-card{padding:25px 18px}
 }
 @media(max-width:480px){
 .games-grid,.play-grid{grid-template-columns:1fr}
@@ -189,10 +277,12 @@ nav a{font-size:.85rem;padding:4px 8px}
 <nav>
 <ul>
 <li><a href="#home">الرئيسية</a></li>
+<li><a href="#daily">المكافأة</a></li>
 <li><a href="#videos">الفيديوهات</a></li>
-<li><a href="#games">تحميل الألعاب</a></li>
-<li><a href="#play">العب واربح</a></li>
-<li><a href="#about">من أنا</a></li>
+<li><a href="#play">العب</a></li>
+<li><a href="#quiz">اختبار</a></li>
+<li><a href="#tools">أدوات</a></li>
+<li><a href="#games">تحميل</a></li>
 <li><a href="#contact">تابعني</a></li>
 </ul>
 </nav>
@@ -200,14 +290,37 @@ nav a{font-size:.85rem;padding:4px 8px}
 </div>
 </header>
 
+<div class="container">
+<div class="notif-banner" id="notifBanner">
+<p>🔔 فعّل الإشعارات ليصلك كل جديد من خفاجي ڪيمز (بث مباشر، مكافآت، فيديوهات جديدة)!</p>
+<div style="display:flex;gap:10px">
+<button onclick="enableNotifications()">تفعيل</button>
+<button class="dismiss" onclick="dismissNotif()">لاحقاً</button>
+</div>
+</div>
+</div>
+
 <section class="hero" id="home">
 <div class="container">
 <h1>أهلاً بك في عالم خفاجي ڪيمز</h1>
-<p>شروحات، تغطيات، وألعاب تفاعلية! العب داخل الموقع واجمع العملات 🪙</p>
+<p>شروحات، تغطيات، ألعاب تفاعلية، اختبارات، بطاقات RP، وأكثر! العب واجمع العملات 🪙</p>
 <a href="#play" class="btn green">🎮 ابدأ اللعب الآن</a>
 </div>
 </section>
 
+<!-- Daily Reward -->
+<section class="container" id="daily">
+<h2 class="section-title">🎁 المكافأة اليومية</h2>
+<div class="daily-card">
+<h3>🔥 سلسلة الدخول اليومي</h3>
+<p>ادخل كل يوم واستلم مكافأتك، وكل يوم تزيد العملات!</p>
+<div class="streak-display" id="streakDisplay"></div>
+<button class="btn yellow" id="dailyBtn" onclick="claimDaily()">🎉 استلم مكافأة اليوم</button>
+<p id="dailyMsg" style="margin-top:15px;color:#666;font-size:.9rem"></p>
+</div>
+</section>
+
+<!-- Videos -->
 <section class="container" id="videos">
 <h2 class="section-title">🎬 أحدث الفيديوهات</h2>
 <div class="video-grid">
@@ -238,6 +351,7 @@ nav a{font-size:.85rem;padding:4px 8px}
 </div>
 </section>
 
+<!-- Play -->
 <section class="container" id="play">
 <h2 class="section-title">🎮 العب واربح العملات</h2>
 <div class="play-grid">
@@ -245,52 +359,120 @@ nav a{font-size:.85rem;padding:4px 8px}
 <div class="earn-badge">+10 🪙</div>
 <div class="play-icon">🧮</div>
 <h3>تحدي الرياضيات</h3>
-<p>حل المسائل بسرعة واجمع العملات</p>
+<p>حل المسائل بسرعة</p>
 <button class="play-btn">العب الآن</button>
 </div>
 <div class="play-card" onclick="openGame('memory')">
 <div class="earn-badge">+15 🪙</div>
 <div class="play-icon">🧠</div>
 <h3>لعبة الذاكرة</h3>
-<p>طابق الأزواج المتشابهة</p>
+<p>طابق الأزواج</p>
 <button class="play-btn">العب الآن</button>
 </div>
 <div class="play-card" onclick="openGame('reaction')">
 <div class="earn-badge">+8 🪙</div>
 <div class="play-icon">⚡</div>
 <h3>سرعة الرد</h3>
-<p>اختبر سرعة ردة فعلك</p>
+<p>اختبر سرعتك</p>
 <button class="play-btn">العب الآن</button>
 </div>
 <div class="play-card" onclick="openGame('guess')">
 <div class="earn-badge">+12 🪙</div>
 <div class="play-icon">🎯</div>
 <h3>خمن الرقم</h3>
-<p>خمن الرقم بين 1 و 100</p>
+<p>بين 1 و 100</p>
 <button class="play-btn">العب الآن</button>
 </div>
 <div class="play-card" onclick="openGame('rps')">
 <div class="earn-badge">+5 🪙</div>
 <div class="play-icon">✊</div>
 <h3>حجر ورقة مقص</h3>
-<p>تحدى البوت واربح</p>
+<p>تحدى البوت</p>
 <button class="play-btn">العب الآن</button>
 </div>
 </div>
 </section>
 
+<!-- Quiz -->
+<section class="container" id="quiz">
+<h2 class="section-title">🎭 اختبار الشخصية RP</h2>
+<div class="feature-card">
+<h3>اكتشف شخصيتك في السيرفر!</h3>
+<p class="desc">أجب على 8 أسئلة وسنخبرك من تكون في عالم RP</p>
+<div id="quizArea">
+<button class="btn cyan" onclick="startQuiz()">🚀 ابدأ الاختبار</button>
+</div>
+</div>
+</section>
+
+<!-- Tools -->
+<section class="container" id="tools">
+<h2 class="section-title">🛠️ أدوات اللاعبين</h2>
+
+<div class="feature-card">
+<h3>🎫 صانع بطاقة RP</h3>
+<p class="desc">صمم بطاقتك الشخصية الاحترافية للاستخدام في السيرفرات</p>
+<div class="form-row">
+<input type="text" class="form-input" id="cardName" placeholder="اسمك في اللعبة" maxlength="20">
+<input type="text" class="form-input" id="cardJob" placeholder="وظيفتك (مثال: شرطي)" maxlength="20">
+</div>
+<div class="form-row">
+<input type="number" class="form-input" id="cardAge" placeholder="العمر" min="15" max="80">
+<input type="text" class="form-input" id="cardCountry" placeholder="الدولة" maxlength="15">
+</div>
+<div style="text-align:center">
+<button class="btn green" onclick="generateCard()">🎨 توليد البطاقة</button>
+</div>
+<div id="cardResult"></div>
+</div>
+
+<div class="feature-card">
+<h3>📖 قاموس مصطلحات RP</h3>
+<p class="desc">كل المصطلحات التي تحتاجها في عالم ألعاب الحياة الواقعية</p>
+<input type="text" class="dict-search" id="dictSearch" placeholder="🔍 ابحث عن مصطلح..." oninput="filterDict()">
+<div class="dict-list" id="dictList"></div>
+</div>
+</section>
+
+<!-- Mystery Box -->
+<section class="container">
+<h2 class="section-title">🎁 صندوق الحظ</h2>
+<div class="feature-card">
+<h3>جرب حظك!</h3>
+<p class="desc">ادفع 200 عملة واستلم مكافأة عشوائية (بين 50 و 1000 عملة)</p>
+<div class="mystery-box" onclick="openMystery()">🎁</div>
+<div style="text-align:center">
+<button class="btn yellow" onclick="openMystery()">🪙 افتح الصندوق (200 🪙)</button>
+</div>
+<div id="mysteryResult" style="text-align:center;margin-top:20px;font-weight:700"></div>
+</div>
+</section>
+
+<!-- Hall of Fame -->
+<section class="container">
+<h2 class="section-title">🏆 قائمة الشرف</h2>
+<div class="hall-grid">
+<div class="hall-card"><div class="hall-rank gold">🥇</div><h4>المركز الأول</h4><p id="rank1">-</p></div>
+<div class="hall-card"><div class="hall-rank silver">🥈</div><h4>المركز الثاني</h4><p id="rank2">-</p></div>
+<div class="hall-card"><div class="hall-rank bronze">🥉</div><h4>المركز الثالث</h4><p id="rank3">-</p></div>
+</div>
+<p style="text-align:center;color:#666;font-size:.9rem">* يتم تحديث القائمة تلقائياً حسب أعلى رصيد عملات محلي</p>
+</section>
+
+<!-- Download -->
 <section class="container" id="games">
 <h2 class="section-title">📥 تحميل الألعاب</h2>
 <div class="games-grid">
 <div class="game-card"><div class="game-icon">🏙️</div><h3>NEWRP</h3><p>لعبة حياة واقعية بسيرفرات عربية.</p><a href="https://play.google.com/store/search?q=NEWRP&c=apps" class="download-btn" target="_blank">⬇️ تحميل</a></div>
 <div class="game-card"><div class="game-icon">🦁</div><h3>ONE LION</h3><p>لعبة RP متقدمة برسومات عالية.</p><a href="https://play.google.com/store/search?q=ONE%20LION%20RP&c=apps" class="download-btn" target="_blank">⬇️ تحميل</a></div>
 <div class="game-card"><div class="game-icon">🎮</div><h3>RP Grand</h3><p>أشهر ألعاب الحياة الواقعية.</p><a href="https://play.google.com/store/search?q=RP%20Grand&c=apps" class="download-btn" target="_blank">⬇️ تحميل</a></div>
-<div class="game-card"><div class="game-icon">🌆</div><h3>Suburbio RP</h3><p>تجربة RP فريدة بأسلوب برازيلي.</p><a href="https://play.google.com/store/search?q=Suburbio%20RP&c=apps" class="download-btn" target="_blank">⬇️ تحميل</a></div>
-<div class="game-card"><div class="game-icon">⛏️</div><h3>Craft RP</h3><p>ماين كرافت بأسلوب حياة واقعية.</p><a href="https://play.google.com/store/search?q=Craft%20RP&c=apps" class="download-btn" target="_blank">⬇️ تحميل</a></div>
+<div class="game-card"><div class="game-icon">🌆</div><h3>Suburbio RP</h3><p>تجربة RP بأسلوب برازيلي.</p><a href="https://play.google.com/store/search?q=Suburbio%20RP&c=apps" class="download-btn" target="_blank">⬇️ تحميل</a></div>
+<div class="game-card"><div class="game-icon">⛏️</div><h3>Craft RP</h3><p>ماين كرافت بأسلوب واقعي.</p><a href="https://play.google.com/store/search?q=Craft%20RP&c=apps" class="download-btn" target="_blank">⬇️ تحميل</a></div>
 <div class="game-card"><div class="game-icon">🎯</div><h3>BEDROCK Reimagined</h3><p>رسومات محسنة و تحكم ممتاز.</p><a href="https://play.google.com/store/search?q=BEDROCK%20Reimagined&c=apps" class="download-btn" target="_blank">⬇️ تحميل</a></div>
 </div>
 </section>
 
+<!-- About -->
 <section class="container about" id="about">
 <div class="about-content">
 <div class="about-text">
@@ -298,16 +480,32 @@ nav a{font-size:.85rem;padding:4px 8px}
 <p>أنا خفاجي، صانع محتوى متخصص في ألعاب الحياة الواقعية (RP) على الموبايل. أقدم شروحات وتغطيات ممتعة.</p>
 <p>هدفي مساعدة اللاعبين العرب ومشاركة كل جديد. تابعني على قناتي!</p>
 </div>
-<div class="about-image"><img src="profile.jpg" alt="خفاجي ڪيمز" onerror="this.src='https://via.placeholder.com/220/2d1b4e/00d4ff?text=Khafaji'"></div>
+<div class="about-image"><img src="profile.jpg" alt="خفاجي ڪيمز" onerror="this.src='https://via.placeholder.com/220/ffffff/ff1b8d?text=Khafaji'"></div>
 </div>
 </section>
 
+<!-- Social -->
 <section class="container social-section" id="contact">
 <h2 class="section-title">🌟 تابعني على</h2>
 <div class="social-cards">
-<div class="social-card youtube"><div class="social-logo">▶</div><h3>YouTube</h3><p>اشترك ليصلك كل جديد</p><a href="https://youtube.com/@experiencestaterp" class="follow-btn" target="_blank">اشترك الآن</a></div>
-<div class="social-card tiktok"><div class="social-logo">♪</div><h3>TikTok</h3><p>مقاطع قصيرة ومحتوى حصري</p><a href="https://www.tiktok.com/@fvx4" class="follow-btn" target="_blank">تابعني</a></div>
-<div class="social-card discord"><div class="social-logo">💬</div><h3>Discord</h3><p>انضم للمجتمع الرسمي</p><a href="https://discord.gg/4AbKZMCPXP" class="follow-btn" target="_blank">انضم الآن</a></div>
+<div class="social-card youtube">
+<div class="social-logo">▶</div>
+<h3>YouTube</h3>
+<p>اشترك ليصلك كل جديد</p>
+<a href="https://youtube.com/@experiencestaterp" class="follow-btn" target="_blank">اشترك الآن</a>
+</div>
+<div class="social-card tiktok">
+<div class="social-logo">♪</div>
+<h3>TikTok</h3>
+<p>مقاطع قصيرة ومحتوى حصري</p>
+<a href="https://www.tiktok.com/@fvx4" class="follow-btn" target="_blank">تابعني</a>
+</div>
+<div class="social-card discord">
+<div class="social-logo">💬</div>
+<h3>Discord</h3>
+<p>انضم للمجتمع الرسمي</p>
+<a href="https://discord.gg/4AbKZMCPXP" class="follow-btn" target="_blank">انضم الآن</a>
+</div>
 </div>
 </section>
 
@@ -317,15 +515,15 @@ nav a{font-size:.85rem;padding:4px 8px}
 <a href="#home">الرئيسية</a>
 <a href="#videos">الفيديوهات</a>
 <a href="#games">تحميل الألعاب</a>
-<a href="#play">العب واربح</a>
-<a href="#about">من أنا</a>
+<a href="#play">العب</a>
+<a href="#quiz">اختبار</a>
 <a href="#contact">تابعني</a>
 </div>
 <p>© 2026 خفاجي ڪيمز - جميع الحقوق محفوظة | صُنع بـ ❤️ في العراق</p>
 </div>
 </footer>
 
-<!-- Games Modal -->
+<!-- Game Modal -->
 <div class="modal" id="gameModal">
 <div class="modal-content">
 <button class="modal-close" onclick="closeGame()">✕</button>
@@ -334,7 +532,7 @@ nav a{font-size:.85rem;padding:4px 8px}
 </div>
 </div>
 
-<!-- Chat Widget -->
+<!-- Chat -->
 <div class="chat-widget">
 <div class="chat-window" id="chatWindow">
 <div class="chat-header">
@@ -356,318 +554,250 @@ nav a{font-size:.85rem;padding:4px 8px}
 <button class="chat-toggle" onclick="toggleChat()">💬</button>
 </div>
 
+<div class="toast" id="toast"></div>
+
 <script>
-/* ============ COINS SYSTEM ============ */
+/* ====== COINS & STORAGE ====== */
 let coins = parseInt(localStorage.getItem('khafajiCoins') || '0');
-function updateCoins(){
-document.getElementById('coinCount').textContent = coins;
-localStorage.setItem('khafajiCoins', coins);
-}
-function addCoins(n){
-coins += n;
-updateCoins();
+let highScore = parseInt(localStorage.getItem('khafajiHighScore') || '0');
+function updateCoins(){ document.getElementById('coinCount').textContent = coins; localStorage.setItem('khafajiCoins', coins); if(coins>highScore){highScore=coins;localStorage.setItem('khafajiHighScore',highScore);} updateHall(); }
+function addCoins(n){ coins += n; updateCoins(); toast('+'+n+' 🪙'); }
+function spendCoins(n){ if(coins<n){ toast('❌ لا تملك عملات كافية!','error'); return false; } coins-=n; updateCoins(); return true; }
+function updateHall(){
+const hs = parseInt(localStorage.getItem('khafajiHighScore')||'0');
+document.getElementById('rank1').textContent = hs>0 ? hs+' 🪙' : '-';
+document.getElementById('rank2').textContent = hs>0 ? Math.floor(hs*0.7)+' 🪙' : '-';
+document.getElementById('rank3').textContent = hs>0 ? Math.floor(hs*0.5)+' 🪙' : '-';
 }
 updateCoins();
 
-/* ============ GAMES ============ */
-let currentGame = null;
-let memoryState = {cards:[],flipped:[],matched:0,lock:false};
-let guessNum = 0, guessTries = 0;
-let reactionState = {timeout:null,startTime:0,ready:false};
-let mathState = {score:0,qIndex:0};
+function toast(msg, type){
+const t = document.getElementById('toast');
+t.textContent = msg;
+t.className = 'toast' + (type==='error'?' error':'') + ' show';
+setTimeout(()=>t.classList.remove('show'), 2500);
+}
+
+/* ====== NOTIFICATIONS ====== */
+const notifBanner = document.getElementById('notifBanner');
+setTimeout(()=>{
+if(Notification && Notification.permission === 'default' && !localStorage.getItem('notifDismissed')){
+notifBanner.classList.add('show');
+}
+}, 1500);
+function dismissNotif(){ notifBanner.classList.remove('show'); localStorage.setItem('notifDismissed','1'); }
+function enableNotifications(){
+if(!('Notification' in window)){ toast('❌ متصفحك لا يدعم الإشعارات','error'); dismissNotif(); return; }
+Notification.requestPermission().then(perm=>{
+if(perm === 'granted'){
+toast('✅ تم تفعيل الإشعارات!');
+new Notification('خفاجي ڪيمز 🎮', { body: 'تم تفعيل الإشعارات! ستصلك أخبار البث المباشر والمكافآت.', icon: 'profile.jpg' });
+dismissNotif();
+} else {
+toast('❌ لم يتم تفعيل الإشعارات','error');
+dismissNotif();
+}
+});
+}
+
+/* ====== DAILY REWARD ====== */
+const dailyRewards = [50,75,100,150,200,300,500];
+function checkDaily(){
+const last = localStorage.getItem('khafajiLastDaily');
+const streak = parseInt(localStorage.getItem('khafajiStreak') || '0');
+const today = new Date().toDateString();
+const display = document.getElementById('streakDisplay');
+display.innerHTML = '';
+for(let i=0;i<7;i++){
+const d = document.createElement('div');
+d.className = 'streak-day';
+if(i<streak) d.classList.add('done');
+if(last!==today && i===streak) d.classList.add('today');
+d.textContent = dailyRewards[i]+'🪙';
+d.title = 'اليوم '+(i+1);
+display.appendChild(d);
+}
+const btn = document.getElementById('dailyBtn');
+const msg = document.getElementById('dailyMsg');
+if(last === today){
+btn.disabled = true;
+btn.style.opacity = '.5';
+btn.textContent = '✅ استلمت مكافأة اليوم';
+msg.textContent = 'عد غداً لمكافأة أكبر! 🔥';
+} else {
+btn.disabled = false;
+btn.style.opacity = '1';
+btn.textContent = '🎉 استلم مكافأة اليوم ('+dailyRewards[Math.min(streak,6)]+' 🪙)';
+msg.textContent = 'سلسلتك: '+streak+' يوم';
+}
+}
+function claimDaily(){
+const last = localStorage.getItem('khafajiLastDaily');
+const today = new Date().toDateString();
+if(last === today){ toast('❌ استلمت مكافأتك اليوم!','error'); return; }
+let streak = parseInt(localStorage.getItem('khafajiStreak') || '0');
+const yesterday = new Date(); yesterday.setDate(yesterday.getDate()-1);
+if(last !== yesterday.toDateString()) streak = 0;
+const reward = dailyRewards[Math.min(streak,6)];
+addCoins(reward);
+streak++;
+localStorage.setItem('khafajiStreak', streak);
+localStorage.setItem('khafajiLastDaily', today);
+toast('🎉 +'+reward+' 🪙 مكافأة يوم ' + streak + '!');
+checkDaily();
+}
+checkDaily();
+
+/* ====== GAMES ====== */
+let currentGame=null, mathScore=0, mathQ=0, mathCorrect=0;
+let memoryState={cards:[],flipped:[],matched:0,lock:false};
+let guessNum=0, guessTries=0;
+let reactionState={timeout:null,startTime:0,ready:false};
 
 function openGame(type){
-currentGame = type;
+currentGame=type;
 document.getElementById('gameModal').classList.add('active');
-const area = document.getElementById('gameArea');
-const title = document.getElementById('gameTitle');
-document.body.style.overflow = 'hidden';
+const area=document.getElementById('gameArea'), title=document.getElementById('gameTitle');
+document.body.style.overflow='hidden';
 
-if(type === 'math'){
-title.textContent = '🧮 تحدي الرياضيات';
-mathState = {score:0,qIndex:0};
-area.innerHTML = `
-<div class="score-display">النقاط: <span id="mathScore">0</span> / 5</div>
-<div class="game-display" id="mathQuestion">جاري التحضير...</div>
-<input type="number" class="game-input" id="mathAnswer" placeholder="اكتب الإجابة" onkeypress="if(event.key==='Enter')checkMath()">
-<div class="game-btns"><button class="btn green" onclick="checkMath()">إرسال</button></div>
-`;
+if(type==='math'){
+title.textContent='🧮 تحدي الرياضيات';
+mathScore=0; mathQ=0;
+area.innerHTML=`<div class="score-display">النقاط: <span id="mathScore">0</span> / 5</div><div class="game-display" id="mathQuestion">جاري التحضير...</div><input type="number" class="game-input" id="mathAnswer" placeholder="اكتب الإجابة" onkeypress="if(event.key==='Enter')checkMath()"><div class="game-btns"><button class="btn green" onclick="checkMath()">إرسال</button></div>`;
 nextMath();
 }
-else if(type === 'memory'){
-title.textContent = '🧠 لعبة الذاكرة';
-startMemory();
+else if(type==='memory'){ title.textContent='🧠 لعبة الذاكرة'; startMemory(); }
+else if(type==='reaction'){ title.textContent='⚡ سرعة الرد'; startReaction(); }
+else if(type==='guess'){
+title.textContent='🎯 خمن الرقم'; guessNum=Math.floor(Math.random()*100)+1; guessTries=0;
+area.innerHTML=`<div class="game-display" id="guessMsg">خمن الرقم بين 1 و 100</div><input type="number" class="game-input" id="guessInput" placeholder="تخمينك" min="1" max="100" onkeypress="if(event.key==='Enter')checkGuess()"><div class="game-btns"><button class="btn green" onclick="checkGuess()">تخمين</button></div><div class="score-display" id="guessTries">المحاولات: 0</div>`;
 }
-else if(type === 'reaction'){
-title.textContent = '⚡ سرعة الرد';
-startReaction();
+else if(type==='rps'){ title.textContent='✊ حجر ورقة مقص'; startRPS(); }
 }
-else if(type === 'guess'){
-title.textContent = '🎯 خمن الرقم';
-guessNum = Math.floor(Math.random()*100)+1;
-guessTries = 0;
-area.innerHTML = `
-<div class="game-display" id="guessMsg">خمن الرقم بين 1 و 100</div>
-<input type="number" class="game-input" id="guessInput" placeholder="اكتب تخمينك" min="1" max="100" onkeypress="if(event.key==='Enter')checkGuess()">
-<div class="game-btns"><button class="btn green" onclick="checkGuess()">تخمين</button></div>
-<div class="score-display" id="guessTries">المحاولات: 0</div>
-`;
-}
-else if(type === 'rps'){
-title.textContent = '✊ حجر ورقة مقص';
-startRPS();
-}
-}
-
 function closeGame(){
 document.getElementById('gameModal').classList.remove('active');
-document.body.style.overflow = '';
+document.body.style.overflow='';
 if(reactionState.timeout) clearTimeout(reactionState.timeout);
-currentGame = null;
+currentGame=null;
 }
-
-/* MATH GAME */
-let mathAnswerCorrect = 0;
 function nextMath(){
-if(mathState.qIndex >= 5){
-const earned = mathState.score * 10;
-addCoins(earned);
-document.getElementById('gameTitle').textContent = '🎉 نتيجة اللعبة';
-document.getElementById('gameArea').innerHTML = `
-<div class="game-display">أحسنت! أحرزت ${mathState.score} من 5<br>ربحت ${earned} 🪙</div>
-<div class="game-btns"><button class="btn green" onclick="closeGame()">إغلاق</button><button class="btn blue" onclick="openGame('math')">العب مرة أخرى</button></div>
-`;
+if(mathQ>=5){
+const earned=mathScore*10; addCoins(earned);
+document.getElementById('gameTitle').textContent='🎉 نتيجة اللعبة';
+document.getElementById('gameArea').innerHTML=`<div class="game-display">أحسنت! أحرزت ${mathScore} من 5<br>ربحت ${earned} 🪙</div><div class="game-btns"><button class="btn green" onclick="closeGame()">إغلاق</button><button class="btn cyan" onclick="openGame('math')">العب مرة أخرى</button></div>`;
 return;
 }
-const a = Math.floor(Math.random()*20)+1;
-const b = Math.floor(Math.random()*20)+1;
-const ops = ['+','-','×'];
-const op = ops[Math.floor(Math.random()*3)];
-let correct;
-if(op==='+') correct = a+b;
-else if(op==='-') correct = a-b;
-else correct = a*b;
-mathAnswerCorrect = correct;
-document.getElementById('mathQuestion').textContent = `${a} ${op} ${b} = ؟`;
-document.getElementById('mathAnswer').value = '';
+const a=Math.floor(Math.random()*20)+1, b=Math.floor(Math.random()*20)+1;
+const ops=['+','-','×'], op=ops[Math.floor(Math.random()*3)];
+let correct = op==='+'?a+b:op==='-'?a-b:a*b;
+mathCorrect=correct;
+document.getElementById('mathQuestion').textContent=`${a} ${op} ${b} = ؟`;
+document.getElementById('mathAnswer').value='';
 document.getElementById('mathAnswer').focus();
 }
 function checkMath(){
-const val = parseInt(document.getElementById('mathAnswer').value);
-if(isNaN(val)) return;
-if(val === mathAnswerCorrect) mathState.score++;
-mathState.qIndex++;
-document.getElementById('mathScore').textContent = mathState.score;
+const val=parseInt(document.getElementById('mathAnswer').value);
+if(isNaN(val))return;
+if(val===mathCorrect) mathScore++;
+mathQ++;
+document.getElementById('mathScore').textContent=mathScore;
 nextMath();
 }
-
-/* MEMORY GAME */
 function startMemory(){
-const emojis = ['🎮','🚗','🔫','🏠','💎','⭐','🔥','🎯'];
-const cards = [...emojis, ...emojis].sort(() => Math.random() - 0.5);
-memoryState = {cards, flipped:[], matched:0, lock:false};
-let html = '<div class="memory-grid" id="memoryGrid">';
-cards.forEach((emoji, i) => {
-html += `<div class="memory-card" data-index="${i}" onclick="flipCard(${i})">?</div>`;
-});
-html += '</div><div class="score-display">الأزواج: <span id="memMatched">0</span> / 8</div>';
-document.getElementById('gameArea').innerHTML = html;
+const emojis=['🎮','🚗','🔫','🏠','💎','⭐','🔥','🎯'];
+const cards=[...emojis,...emojis].sort(()=>Math.random()-.5);
+memoryState={cards,flipped:[],matched:0,lock:false};
+let html='<div class="memory-grid">';
+cards.forEach((e,i)=>{ html+=`<div class="memory-card" data-index="${i}" onclick="flipCard(${i})">?</div>`; });
+html+='</div><div class="score-display">الأزواج: <span id="memMatched">0</span> / 8</div>';
+document.getElementById('gameArea').innerHTML=html;
 }
 function flipCard(i){
-if(memoryState.lock) return;
-const card = document.querySelector(`.memory-card[data-index="${i}"]`);
-if(card.classList.contains('flipped') || card.classList.contains('matched')) return;
-card.classList.add('flipped');
-card.textContent = memoryState.cards[i];
+if(memoryState.lock)return;
+const card=document.querySelector(`.memory-card[data-index="${i}"]`);
+if(card.classList.contains('flipped')||card.classList.contains('matched'))return;
+card.classList.add('flipped'); card.textContent=memoryState.cards[i];
 memoryState.flipped.push(i);
-if(memoryState.flipped.length === 2){
-memoryState.lock = true;
-const [a,b] = memoryState.flipped;
-if(memoryState.cards[a] === memoryState.cards[b]){
-setTimeout(() => {
+if(memoryState.flipped.length===2){
+memoryState.lock=true;
+const [a,b]=memoryState.flipped;
+if(memoryState.cards[a]===memoryState.cards[b]){
+setTimeout(()=>{
 document.querySelector(`.memory-card[data-index="${a}"]`).classList.add('matched');
 document.querySelector(`.memory-card[data-index="${b}"]`).classList.add('matched');
 memoryState.matched++;
-document.getElementById('memMatched').textContent = memoryState.matched;
-memoryState.flipped = [];
-memoryState.lock = false;
-if(memoryState.matched === 8){
+document.getElementById('memMatched').textContent=memoryState.matched;
+memoryState.flipped=[]; memoryState.lock=false;
+if(memoryState.matched===8){
 addCoins(15);
-document.getElementById('gameTitle').textContent = '🎉 فزت!';
-document.getElementById('gameArea').innerHTML = `
-<div class="game-display">أحسنت! أكملت جميع الأزواج<br>ربحت 15 🪙</div>
-<div class="game-btns"><button class="btn green" onclick="closeGame()">إغلاق</button><button class="btn blue" onclick="openGame('memory')">العب مرة أخرى</button></div>
-`;
+document.getElementById('gameTitle').textContent='🎉 فزت!';
+document.getElementById('gameArea').innerHTML=`<div class="game-display">أحسنت! أكملت جميع الأزواج<br>ربحت 15 🪙</div><div class="game-btns"><button class="btn green" onclick="closeGame()">إغلاق</button><button class="btn cyan" onclick="openGame('memory')">العب مرة أخرى</button></div>`;
 }
-}, 500);
+},500);
 } else {
-setTimeout(() => {
-document.querySelector(`.memory-card[data-index="${a}"]`).classList.remove('flipped');
-document.querySelector(`.memory-card[data-index="${a}"]`).textContent = '?';
-document.querySelector(`.memory-card[data-index="${b}"]`).classList.remove('flipped');
-document.querySelector(`.memory-card[data-index="${b}"]`).textContent = '?';
-memoryState.flipped = [];
-memoryState.lock = false;
-}, 800);
+setTimeout(()=>{
+[`${a}`,`${b}`].forEach(i=>{
+const c=document.querySelector(`.memory-card[data-index="${i}"]`);
+c.classList.remove('flipped'); c.textContent='?';
+});
+memoryState.flipped=[]; memoryState.lock=false;
+},800);
 }
 }
 }
-
-/* REACTION GAME */
 function startReaction(){
-reactionState = {timeout:null,startTime:0,ready:false};
-document.getElementById('gameArea').innerHTML = `
-<div class="game-display" id="reactMsg">انتظر اللون الأخضر ثم اضغط بسرعة!</div>
-<div class="reaction-circle wait" id="reactCircle" onclick="tapReaction()">انتظر...</div>
-<div class="score-display" id="reactTime">-</div>
-`;
-const circle = document.getElementById('reactCircle');
-const delay = Math.random()*3000 + 1500;
-reactionState.timeout = setTimeout(() => {
-circle.classList.remove('wait');
-circle.classList.add('ready');
-circle.textContent = 'اضغط!';
-reactionState.ready = true;
-reactionState.startTime = Date.now();
-}, delay);
+reactionState={timeout:null,startTime:0,ready:false};
+document.getElementById('gameArea').innerHTML=`<div class="game-display" id="reactMsg">انتظر اللون الأخضر ثم اضغط بسرعة!</div><div class="reaction-circle wait" id="reactCircle" onclick="tapReaction()">انتظر...</div><div class="score-display" id="reactTime">-</div>`;
+const circle=document.getElementById('reactCircle');
+const delay=Math.random()*3000+1500;
+reactionState.timeout=setTimeout(()=>{
+circle.classList.remove('wait'); circle.classList.add('ready');
+circle.textContent='اضغط!'; reactionState.ready=true; reactionState.startTime=Date.now();
+},delay);
 }
 function tapReaction(){
-const circle = document.getElementById('reactCircle');
 if(!reactionState.ready){
-if(reactionState.timeout) clearTimeout(reactionState.timeout);
-document.getElementById('reactMsg').textContent = '❌ ضغطت مبكراً! جرب مرة أخرى';
-startReaction();
-return;
+if(reactionState.timeout)clearTimeout(reactionState.timeout);
+document.getElementById('reactMsg').textContent='❌ ضغطت مبكراً! جرب مرة أخرى';
+setTimeout(startReaction,1000); return;
 }
-const time = Date.now() - reactionState.startTime;
-document.getElementById('reactTime').textContent = `⚡ وقتك: ${time} مللي ثانية`;
-const earned = Math.max(2, Math.floor((1000 - time)/100));
+const time=Date.now()-reactionState.startTime;
 addCoins(8);
-document.getElementById('gameArea').innerHTML = `
-<div class="game-display">⚡ سرعتك: ${time} مللي ثانية<br>ربحت 8 🪙</div>
-<div class="game-btns"><button class="btn green" onclick="closeGame()">إغلاق</button><button class="btn blue" onclick="openGame('reaction')">العب مرة أخرى</button></div>
-`;
+document.getElementById('gameArea').innerHTML=`<div class="game-display">⚡ سرعتك: ${time} مللي ثانية<br>ربحت 8 🪙</div><div class="game-btns"><button class="btn green" onclick="closeGame()">إغلاق</button><button class="btn cyan" onclick="openGame('reaction')">العب مرة أخرى</button></div>`;
 }
-
-/* GUESS GAME */
 function checkGuess(){
-const val = parseInt(document.getElementById('guessInput').value);
-if(isNaN(val) || val < 1 || val > 100) return;
+const val=parseInt(document.getElementById('guessInput').value);
+if(isNaN(val)||val<1||val>100)return;
 guessTries++;
-document.getElementById('guessTries').textContent = `المحاولات: ${guessTries}`;
-if(val === guessNum){
+document.getElementById('guessTries').textContent=`المحاولات: ${guessTries}`;
+if(val===guessNum){
 addCoins(12);
-document.getElementById('gameArea').innerHTML = `
-<div class="game-display">🎉 صح! الرقم كان ${guessNum}<br>خمنته في ${guessTries} محاولات<br>ربحت 12 🪙</div>
-<div class="game-btns"><button class="btn green" onclick="closeGame()">إغلاق</button><button class="btn blue" onclick="openGame('guess')">العب مرة أخرى</button></div>
-`;
-} else if(val < guessNum){
-document.getElementById('guessMsg').textContent = `⬆️ الرقم أكبر من ${val}`;
-} else {
-document.getElementById('guessMsg').textContent = `⬇️ الرقم أصغر من ${val}`;
+document.getElementById('gameArea').innerHTML=`<div class="game-display">🎉 صح! الرقم كان ${guessNum}<br>خمنته في ${guessTries} محاولات<br>ربحت 12 🪙</div><div class="game-btns"><button class="btn green" onclick="closeGame()">إغلاق</button><button class="btn cyan" onclick="openGame('guess')">العب مرة أخرى</button></div>`;
+} else if(val<guessNum){ document.getElementById('guessMsg').textContent=`⬆️ الرقم أكبر من ${val}`; }
+else { document.getElementById('guessMsg').textContent=`⬇️ الرقم أصغر من ${val}`; }
 }
-}
-
-/* RPS GAME */
 function startRPS(){
-document.getElementById('gameArea').innerHTML = `
-<div class="game-display" id="rpsMsg">اختر حركتك!</div>
-<div class="game-btns">
-<button class="btn blue" onclick="playRPS('✊')">✊ حجر</button>
-<button class="btn blue" onclick="playRPS('📄')">📄 ورقة</button>
-<button class="btn blue" onclick="playRPS('✂️')">✂️ مقص</button>
-</div>
-`;
+document.getElementById('gameArea').innerHTML=`<div class="game-display" id="rpsMsg">اختر حركتك!</div><div class="game-btns"><button class="btn cyan" onclick="playRPS('✊')">✊ حجر</button><button class="btn cyan" onclick="playRPS('📄')">📄 ورقة</button><button class="btn cyan" onclick="playRPS('✂️')">✂️ مقص</button></div>`;
 }
 function playRPS(player){
-const options = ['✊','📄','✂️'];
-const bot = options[Math.floor(Math.random()*3)];
+const options=['✊','📄','✂️'], bot=options[Math.floor(Math.random()*3)];
 let result, color;
-if(player === bot){ result = '🤝 تعادل!'; color = '#ffe600'; }
-else if((player==='✊'&&bot==='✂️')||(player==='📄'&&bot==='✊')||(player==='✂️'&&bot==='📄')){ result = '🎉 فزت!'; color = '#39ff14'; addCoins(5); }
-else { result = '😢 خسرت!'; color = '#ff2d2d'; }
-document.getElementById('gameArea').innerHTML = `
-<div class="game-display" style="color:${color}">
-أنت: ${player} | البوت: ${bot}<br><br>
-<div style="font-size:1.5rem">${result}</div>
-${result==='🎉 فزت!' ? '<div style="font-size:1rem;margin-top:10px">ربحت 5 🪙</div>' : ''}
-</div>
-<div class="game-btns"><button class="btn green" onclick="closeGame()">إغلاق</button><button class="btn blue" onclick="openGame('rps')">العب مرة أخرى</button></div>
-`;
+if(player===bot){ result='🤝 تعادل!'; color='#ff6b00'; }
+else if((player==='✊'&&bot==='✂️')||(player==='📄'&&bot==='✊')||(player==='✂️'&&bot==='📄')){ result='🎉 فزت!'; color='#00cc6a'; addCoins(5); }
+else { result='😢 خسرت!'; color='#ff1b8d'; }
+document.getElementById('gameArea').innerHTML=`<div class="game-display" style="color:${color}">أنت: ${player} | البوت: ${bot}<br><br><div style="font-size:1.5rem">${result}</div>${result==='🎉 فزت!'?'<div style="font-size:1rem;margin-top:10px">ربحت 5 🪙</div>':''}</div><div class="game-btns"><button class="btn green" onclick="closeGame()">إغلاق</button><button class="btn cyan" onclick="openGame('rps')">العب مرة أخرى</button></div>`;
 }
 
-/* ============ AI CHATBOT ============ */
-const chatResponses = {
-greet:['أهلاً وسهلاً! 👋 كيف أقدر أساعدك اليوم؟','يا هلا! نورت الموقع 🌟 اسألني عن أي شي.','هلا بالغالي! 😊 شنو تحب تعرف؟'],
-about:['خفاجي ڪيمز قناة متخصصة في ألعاب الحياة الواقعية (RP) على الموبايل. فيديوهاتنا تشمل NEWRP وONE LION وRP Grand وغيرها! 🎮','خفاجي صانع محتوى عراقي يحب ألعاب RP. يقدم شروحات وتغطيات ممتعة للاعبين العرب. 🔥'],
-games:['عندنا 5 ألعاب تفاعلية في الموقع! 🎮 تحدي الرياضيات، لعبة الذاكرة، سرعة الرد، خمن الرقم، وحجر ورقة مقص. كل لعبة تعطيك عملات 🪙!','تقدر تلعب داخل الموقع وتربح عملات! اضغط على قسم "العب واربح" في الأعلى. 🎯'],
-coins:['العملات 🪙 تكسبها من لعب الألعاب التفاعلية. كل لعبة تعطيك عدد مختلف من العملات. حاول تجمع أكبر قدر! 💰','العملات محفوظة في متصفحك. كل ما تلعب أكثر، تكسب أكثر! 🪙'],
-subscribe:['تشرفت! تقدر تشترك من قسم "تابعني على" أو من زر "اشترك في القناة" في الأعلى. 🔔','اشترك من هنا: youtube.com/@experiencestaterp ✅'],
-tiktok:['تابعني على تيك توك: @fvx4 📱 اضغط على قسم "تابعني" في الأسفل.','رابط تيك توك موجود في قسم التواصل! 🎵'],
-discord:['انضم لسيرفر الديسكورد الرسمي! الرابط في قسم "تابعني". 💬','الديسكورد موجود تحت قسم التواصل. انضم للمجتمع! 🚀'],
-download:['كل الألعاب متوفرة في قسم "تحميل الألعاب". اضغط على زر التحميل لأي لعبة. 📥','تقدر تحمل NEWRP وONE LION وRP Grand وغيرها من قسم "تحميل الألعاب". 🎮'],
-thanks:['على الرحب والسعة! 🤍','أي وقت! إذا احتجت شي، أنا موجود. 😊','تسلم! نورت الموقع. ✨'],
-bye:['وداعاً! نتمنى نشوفك قريباً. 👋','مع السلامة! لا تنسى تلعب الألعاب وتربح العملات. 🎮'],
-help:['أقدر أساعدك في:\n• معلومات عن القناة 🎬\n• الألعاب التفاعلية 🎮\n• كيفية ربح العملات 🪙\n• روابط السوشيال ميديا 📱\n• تحميل الألعاب 📥\n\nشنو تحب تسأل عنه؟'],
-};
-const chatKeywords = {
-greet:['هلا','مرحبا','سلام','السلام','اهلا','أهلا','hi','hello','هاي','صباح','مساء'],
-about:['خفاجي','قناة','القناة','منو','مين','محتوى','تعريف'],
-games:['لعبة','ألعاب','العاب','العب','ألعابكم','play'],
-coins:['عملات','نقاط','كويز','coin','فلوس','رصيد'],
-subscribe:['اشترك','اشتراك','subscribe','قناة يوتيوب','يوتيوب'],
-tiktok:['تيك','تيك توك','tiktok'],
-discord:['دسكورد','ديسكورد','discord','سيرفر'],
-download:['تحميل','تنزيل','download','حمل'],
-thanks:['شكرا','شكراً','تسلم','مشكور','thanks'],
-bye:['وداعا','مع السلامة','باي','bye'],
-help:['مساعدة','ساعدني','كيف','help','مساعدة'],
-};
-function getBotReply(msg){
-const lower = msg.toLowerCase();
-for(const key in chatKeywords){
-if(chatKeywords[key].some(k => lower.includes(k))){
-return chatResponses[key][Math.floor(Math.random()*chatResponses[key].length)];
-}
-}
-// الردود العشوائية
-const randoms = ['أخبرني أكثر! 🤔','موضوع شيق! بس أنا مختص بألعاب RP. 🎮','تقدر تسألني عن الألعاب أو القناة. 😊','فهمت! في شي ثاني تحب تعرفه؟','ممتع! شنو رأيك تجرب لعبة من ألعابنا؟ 🎯'];
-return randoms[Math.floor(Math.random()*randoms.length)];
-}
-function toggleChat(){
-const w = document.getElementById('chatWindow');
-w.classList.toggle('active');
-if(w.classList.contains('active') && document.getElementById('chatBody').children.length === 0){
-botMessage('أهلاً بك في موقع خفاجي ڪيمز! 👋\nأنا مساعدك الذكي. كيف أقدر أساعدك اليوم؟\n\nاكتب "مساعدة" لتشوف شنو أقدر أسوي. 😊');
-}
-}
-function botMessage(text){
-const body = document.getElementById('chatBody');
-const div = document.createElement('div');
-div.className = 'chat-msg bot';
-div.innerHTML = text.replace(/\n/g,'<br>');
-body.appendChild(div);
-body.scrollTop = body.scrollHeight;
-}
-function userMessage(text){
-const body = document.getElementById('chatBody');
-const div = document.createElement('div');
-div.className = 'chat-msg user';
-div.textContent = text;
-body.appendChild(div);
-body.scrollTop = body.scrollHeight;
-}
-function sendChat(){
-const input = document.getElementById('chatInput');
-const msg = input.value.trim();
-if(!msg) return;
-userMessage(msg);
-input.value = '';
-setTimeout(() => {
-botMessage(getBotReply(msg));
-}, 500);
-}
-</script>
-
-</body>
-</html>
+/* ====== PERSONALITY QUIZ ====== */
+const quizQuestions=[
+{q:'شنو أكثر شي يهمك في السيرفر؟',opts:['القوة والسلطة','المال والتجارة','مساعدة الناس','المغامرة والخطر'],scores:[3,2,1,4]},
+{q:'كيف تتصرف لما تشوف جريمة؟',opts:['أتصل بالشرطة','أتدخل بنفسي','أصور وأرفع','أهرب بسرعة'],scores:[1,3,4,2]},
+{q:'وين تحب تقضي وقتك؟',opts:['المركز التجاري','مركز الشرطة','المستشفى','الطرق السريعة'],scores:[3,1,2,4]},
+{q:'شنو سيارتك المفضلة؟',opts:['سيارة رياضية','دورية شرطة','سيارة إسعاف','سيارة مدنية عادية'],scores:[4,1,2,3]},
+{q:'كيف تكسب فلوس؟',opts:['وظيفة رسمية','تجارة غير قانونية','مهن حرة','سرقة'],scores:[1,4,2,3]},
+{q:'شنو سلاحك المفضل؟',opts:['ما أحمل سلاح','مسدس','بندقية','قناصة'],scores:[1,2,4,3]},
+{q:'مع من تحب تتعاون؟',opts:['الشرطة','العصابات','رجال الأعمال','مستقل'],scores:[1,3,2,4]},
+{q:'شنو حلمك الأكبر؟',opts:['أصير قائد الشرطة','أصير زعيم عصابة','أصير أغنى تاجر','أصير مشهور'],scores:[1,3,2,4]}
+];
+const quizResults=[
+{min:8,max:12,title:'👮 الشرطي ال
