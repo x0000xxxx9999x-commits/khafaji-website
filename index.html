@@ -8,7 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Orbitron:wght@600;700;900&family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#07090f;--bg2:#0d1019;--card:#12161f;--border:rgba(255,201,60,.12);--gold:#ffc93c;--gold2:#ffb800;--cyan:#00d4ff;--text:#e8eaf0;--muted:#6a7080}
+:root{--bg:#07090f;--card:#12161f;--border:rgba(255,201,60,.12);--gold:#ffc93c;--gold2:#ffb800;--cyan:#00d4ff;--text:#e8eaf0;--muted:#6a7080}
 html{scroll-behavior:smooth}
 body{font-family:'Tajawal','Cairo',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.7;min-height:100vh}
 body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;background:radial-gradient(ellipse at 20% 10%,rgba(255,201,60,.06),transparent 50%),radial-gradient(ellipse at 80% 90%,rgba(0,212,255,.05),transparent 50%),linear-gradient(180deg,#07090f 0%,#0a0d15 50%,#07090f 100%);z-index:-2;pointer-events:none}
@@ -17,18 +17,6 @@ a{color:inherit;text-decoration:none}
 img{max-width:100%;height:auto}
 .wrap{max-width:1200px;margin:0 auto;padding:0 20px}
 
-/* ROBOT - نسخة سينمائية متحركة */
-#robotArea{position:fixed;bottom:-20px;left:50%;transform:translateX(-50%);z-index:1;pointer-events:none;opacity:0;animation:robotAppear 3s ease 2s forwards,robotFloat 5s ease-in-out 2s infinite}
-#robotImg{width:320px;max-width:65vw;display:block;filter:drop-shadow(0 0 25px rgba(0,212,255,.7)) drop-shadow(0 0 60px rgba(0,212,255,.4)) drop-shadow(0 -10px 40px rgba(0,212,255,.3));animation:robotBreath 4s ease-in-out infinite,robotGlow 3s ease-in-out infinite alternate;transform-origin:center 40%;will-change:transform,filter}
-@keyframes robotAppear{0%{opacity:0;transform:translateX(-50%) translateY(80px) scale(.8)}100%{opacity:.9;transform:translateX(-50%) translateY(0) scale(1)}}
-@keyframes robotFloat{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-20px)}}
-@keyframes robotBreath{0%,100%{transform:scale(1)}50%{transform:scale(1.02)}}
-@keyframes robotGlow{0%{filter:drop-shadow(0 0 25px rgba(0,212,255,.6)) drop-shadow(0 0 60px rgba(0,212,255,.3))}100%{filter:drop-shadow(0 0 40px rgba(0,212,255,1)) drop-shadow(0 0 100px rgba(0,212,255,.6)) drop-shadow(0 -10px 60px rgba(0,212,255,.4))}}
-#robotArea::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:100%;height:100%;background:radial-gradient(circle, rgba(0,212,255,.15) 0%, transparent 60%);border-radius:50%;animation:particlePulse 3s ease-in-out infinite;pointer-events:none}
-@keyframes particlePulse{0%,100%{transform:translate(-50%,-50%) scale(.9);opacity:.3}50%{transform:translate(-50%,-50%) scale(1.3);opacity:.7}}
-@media(max-width:768px){#robotArea{opacity:.35 !important;bottom:-30px;animation:robotFloat 5s ease-in-out infinite !important}#robotImg{width:170px}}
-
-/* HEADER */
 header{position:fixed;top:0;left:0;right:0;padding:18px 0;z-index:1000;transition:all .4s;background:linear-gradient(180deg,rgba(7,9,15,.9) 0%,rgba(7,9,15,.4) 70%,transparent 100%);backdrop-filter:blur(8px)}
 header.scrolled{background:rgba(7,9,15,.95);padding:12px 0;border-bottom:1px solid var(--border);box-shadow:0 10px 40px rgba(0,0,0,.5)}
 .hdr{display:flex;justify-content:space-between;align-items:center;gap:15px}
@@ -45,7 +33,6 @@ nav a:hover::after{content:'';position:absolute;bottom:2px;left:14px;right:14px;
 .coin-box{background:rgba(255,201,60,.08);border:1px solid rgba(255,201,60,.3);padding:8px 16px;border-radius:20px;font-family:'Orbitron',sans-serif;font-weight:700;font-size:.85rem;color:var(--gold);display:flex;align-items:center;gap:6px}
 .coin-box .dot{width:6px;height:6px;background:var(--gold);border-radius:50%;box-shadow:0 0 8px var(--gold);animation:logoDot 1.5s infinite}
 
-/* HERO */
 .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:100px 20px 60px;position:relative;overflow:hidden}
 #sphere{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:min(700px,95vw);height:min(700px,95vw);z-index:0;opacity:.9}
 .hero-content{position:relative;z-index:2;max-width:900px}
@@ -67,7 +54,6 @@ nav a:hover::after{content:'';position:absolute;bottom:2px;left:14px;right:14px;
 .scroll-ind::after{content:'';width:1px;height:30px;background:linear-gradient(180deg,var(--gold),transparent)}
 @keyframes scrollBounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
 
-/* SECTIONS */
 section{padding:80px 0;position:relative;z-index:2}
 .sec-title{text-align:center;margin-bottom:50px}
 .sec-tag{display:inline-block;font-family:'Orbitron',sans-serif;font-size:.7rem;letter-spacing:5px;color:var(--gold);margin-bottom:12px;font-weight:600}
@@ -77,7 +63,6 @@ section{padding:80px 0;position:relative;z-index:2}
 .line-deco{width:60px;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:18px auto 0;position:relative}
 .line-deco::after{content:'';position:absolute;top:-2px;left:50%;transform:translateX(-50%);width:6px;height:6px;background:var(--gold);border-radius:50%;box-shadow:0 0 12px var(--gold)}
 
-/* CARDS */
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
 .card{background:linear-gradient(135deg,rgba(18,22,31,.9),rgba(13,16,25,.9));border:1px solid var(--border);border-radius:16px;padding:25px;position:relative;overflow:hidden;transition:.4s}
 .card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0;transition:.4s}
@@ -90,7 +75,6 @@ section{padding:80px 0;position:relative;z-index:2}
 .link-arrow{display:inline-block;color:var(--gold);font-weight:700;font-size:.85rem;margin-top:12px;cursor:pointer;transition:.3s}
 .link-arrow:hover{letter-spacing:1px}
 
-/* DAILY */
 .daily-wrap{max-width:700px;margin:0 auto;background:linear-gradient(135deg,rgba(255,201,60,.05),rgba(18,22,31,.9));border:1px solid rgba(255,201,60,.25);border-radius:20px;padding:35px 25px;text-align:center;position:relative;overflow:hidden}
 .daily-wrap::before{content:'';position:absolute;top:-50%;right:-50%;width:200%;height:200%;background:conic-gradient(from 0deg,transparent,rgba(255,201,60,.08),transparent);animation:rotate 15s linear infinite;pointer-events:none}
 @keyframes rotate{100%{transform:rotate(360deg)}}
@@ -101,7 +85,6 @@ section{padding:80px 0;position:relative;z-index:2}
 .sd.today{border-color:var(--gold);color:var(--gold);animation:pulseGold 1.5s infinite}
 @keyframes pulseGold{0%,100%{box-shadow:0 0 0 0 rgba(255,201,60,.4)}50%{box-shadow:0 0 0 10px rgba(255,201,60,0)}}
 
-/* BUTTONS */
 .btn{display:inline-block;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#0a0d15;padding:14px 32px;border-radius:10px;font-weight:900;font-size:.95rem;border:none;cursor:pointer;transition:.3s;font-family:inherit;letter-spacing:.5px;position:relative;overflow:hidden}
 .btn::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.4),transparent);transition:.5s}
 .btn:hover::before{left:100%}
@@ -109,12 +92,10 @@ section{padding:80px 0;position:relative;z-index:2}
 .btn.ghost{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);color:#fff}
 .btn.ghost:hover{background:rgba(255,201,60,.1);border-color:var(--gold);color:var(--gold);box-shadow:0 10px 30px rgba(255,201,60,.2)}
 
-/* PLAY */
 .play-card{cursor:pointer;text-align:center}
 .play-card .icon{font-size:2.5rem;margin-bottom:12px;display:block;filter:drop-shadow(0 5px 15px rgba(255,201,60,.3))}
 .play-card .earn{display:inline-block;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#0a0d15;padding:3px 12px;border-radius:20px;font-size:.7rem;font-weight:900;margin-bottom:10px}
 
-/* QUIZ */
 .quiz-card{max-width:650px;margin:0 auto}
 .quiz-q{font-size:1.15rem;font-weight:700;color:#fff;margin:15px 0;text-align:center}
 .quiz-opts{display:grid;gap:10px;margin-bottom:15px}
@@ -122,11 +103,9 @@ section{padding:80px 0;position:relative;z-index:2}
 .quiz-opt:hover{border-color:var(--gold);background:rgba(255,201,60,.05);color:var(--gold)}
 .quiz-prog{text-align:center;color:var(--muted);font-size:.8rem;font-family:'Orbitron',sans-serif;letter-spacing:2px;margin-bottom:10px}
 
-/* RP */
 .rp-card{border-right:3px solid var(--gold)}
 .rp-card .icon{font-size:2rem;display:block;margin-bottom:10px}
 
-/* STORIES */
 .story{background:linear-gradient(135deg,rgba(18,22,31,.9),rgba(13,16,25,.95));border:1px solid var(--border);border-right:3px solid var(--gold);border-radius:16px;padding:25px;margin-bottom:20px;transition:.3s}
 .story:hover{border-color:rgba(255,201,60,.3)}
 .story h4{color:var(--gold);font-size:1.15rem;margin-bottom:8px}
@@ -135,12 +114,10 @@ section{padding:80px 0;position:relative;z-index:2}
 .story-btn{background:none;border:none;color:var(--gold);font-weight:700;cursor:pointer;font-family:inherit;font-size:.9rem;margin-top:10px;padding:0;transition:.3s}
 .story-btn:hover{letter-spacing:1px}
 
-/* INPUTS */
 .inp{width:100%;padding:13px 18px;background:rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.08);border-radius:10px;color:#fff;font-family:inherit;font-size:.95rem;outline:none;margin-bottom:10px;transition:.3s}
 .inp:focus{border-color:var(--gold);box-shadow:0 0 20px rgba(255,201,60,.15);background:rgba(0,0,0,.5)}
 .inp::placeholder{color:var(--muted)}
 
-/* CARD GEN */
 .card-prev{background:linear-gradient(135deg,#0a0d15,#1a1f2e);border:2px solid var(--gold);border-radius:16px;padding:25px;text-align:center;max-width:380px;margin:20px auto;box-shadow:0 20px 60px rgba(255,201,60,.15)}
 .card-av{width:85px;height:85px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold2));display:flex;align-items:center;justify-content:center;font-size:2.2rem;margin:0 auto 15px;box-shadow:0 0 30px rgba(255,201,60,.5)}
 .card-name{color:var(--gold);font-size:1.2rem;font-weight:900;margin-bottom:5px;letter-spacing:1px}
@@ -150,7 +127,6 @@ section{padding:80px 0;position:relative;z-index:2}
 .card-st span{color:var(--muted);display:block;font-size:.65rem;font-family:'Orbitron',sans-serif;letter-spacing:1px}
 .card-st strong{color:var(--gold)}
 
-/* DICT */
 .dict-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px;max-height:400px;overflow-y:auto;padding:5px}
 .dict-list::-webkit-scrollbar{width:4px}
 .dict-list::-webkit-scrollbar-thumb{background:var(--gold);border-radius:2px}
@@ -159,7 +135,6 @@ section{padding:80px 0;position:relative;z-index:2}
 .dict-item strong{color:var(--gold);display:block;margin-bottom:4px;font-family:'Orbitron',sans-serif;font-size:.9rem;letter-spacing:1px}
 .dict-item span{color:var(--muted);font-size:.85rem}
 
-/* SOCIALS */
 .socials{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;max-width:950px;margin:0 auto}
 .soc{background:linear-gradient(135deg,rgba(18,22,31,.9),rgba(13,16,25,.9));border:1px solid var(--border);border-radius:16px;padding:30px 20px;text-align:center;transition:.4s;position:relative;overflow:hidden}
 .soc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;transition:.4s;opacity:.3}
@@ -181,7 +156,6 @@ section{padding:80px 0;position:relative;z-index:2}
 .soc.dc .soc-btn{background:linear-gradient(135deg,#5865F2,#7c83ff)}
 .soc-btn:hover{transform:translateY(-2px);box-shadow:0 10px 25px rgba(255,255,255,.2)}
 
-/* ADMIN */
 .admin-panel{background:linear-gradient(135deg,rgba(18,22,31,.95),rgba(7,9,15,.95));border:1px solid rgba(255,201,60,.3);border-radius:20px;padding:30px;position:relative;overflow:hidden}
 .admin-panel::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),transparent,var(--gold))}
 .admin-panel h3{color:var(--gold);text-align:center;margin-bottom:25px;font-family:'Orbitron',sans-serif;font-size:1.1rem;letter-spacing:3px}
@@ -191,7 +165,6 @@ section{padding:80px 0;position:relative;z-index:2}
 .stat .n{display:block;font-family:'Orbitron',sans-serif;font-size:1.9rem;font-weight:900;color:var(--gold);margin-bottom:6px;text-shadow:0 0 20px rgba(255,201,60,.5)}
 .stat .l{color:var(--muted);font-size:.75rem;letter-spacing:1px;font-family:'Orbitron',sans-serif}
 
-/* ABOUT */
 .about-box{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;background:linear-gradient(135deg,rgba(18,22,31,.7),rgba(13,16,25,.7));border:1px solid var(--border);border-radius:24px;padding:50px 40px}
 .about-txt h3{color:#fff;font-size:1.8rem;margin-bottom:20px;font-weight:900}
 .about-txt h3 span{color:var(--gold)}
@@ -200,7 +173,6 @@ section{padding:80px 0;position:relative;z-index:2}
 .about-img img{width:220px;height:220px;border-radius:50%;object-fit:cover;border:4px solid var(--gold);box-shadow:0 0 50px rgba(255,201,60,.4),0 0 100px rgba(255,201,60,.2);animation:avatarSpin 20s linear infinite}
 @keyframes avatarSpin{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
 
-/* FOOTER */
 footer{padding:50px 0 30px;text-align:center;border-top:1px solid rgba(255,255,255,.05);margin-top:50px;position:relative;z-index:2}
 .foot-links{display:flex;justify-content:center;gap:25px;flex-wrap:wrap;margin-bottom:20px}
 .foot-links a{color:var(--muted);font-size:.85rem;cursor:pointer;transition:.3s;font-weight:600}
@@ -208,7 +180,6 @@ footer{padding:50px 0 30px;text-align:center;border-top:1px solid rgba(255,255,2
 footer p{color:var(--muted);font-size:.8rem}
 footer .foot-logo{font-family:'Orbitron',sans-serif;font-size:1.1rem;color:var(--gold);letter-spacing:4px;margin-bottom:15px;font-weight:900}
 
-/* MODAL */
 .modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.85);backdrop-filter:blur(8px);z-index:2000;justify-content:center;align-items:center;padding:20px}
 .modal.on{display:flex;animation:fadeIn .3s}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
@@ -229,7 +200,6 @@ footer .foot-logo{font-family:'Orbitron',sans-serif;font-size:1.1rem;color:var(-
 .circle.ready{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#0a0d15;box-shadow:0 0 50px rgba(255,201,60,.7);animation:pulseGold 1s infinite}
 .circle.wait{background:rgba(255,0,60,.15);border-color:#ff1b8d;color:#ff1b8d}
 
-/* CHAT */
 .chat-w{position:fixed;bottom:20px;right:20px;z-index:1500}
 .chat-t{width:62px;height:62px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold2));border:none;color:#0a0d15;font-size:1.6rem;cursor:pointer;box-shadow:0 10px 30px rgba(255,201,60,.5),0 0 0 0 rgba(255,201,60,.5);animation:chatPulse 2.5s infinite;transition:.3s}
 @keyframes chatPulse{0%{box-shadow:0 10px 30px rgba(255,201,60,.5),0 0 0 0 rgba(255,201,60,.5)}70%{box-shadow:0 10px 30px rgba(255,201,60,.5),0 0 0 20px rgba(255,201,60,0)}100%{box-shadow:0 10px 30px rgba(255,201,60,.5),0 0 0 0 rgba(255,201,60,0)}}
@@ -253,7 +223,6 @@ footer .foot-logo{font-family:'Orbitron',sans-serif;font-size:1.1rem;color:var(-
 .chat-inp input:focus{border-color:var(--gold)}
 .chat-inp button{background:linear-gradient(135deg,var(--gold),var(--gold2));border:none;color:#0a0d15;width:40px;height:40px;border-radius:50%;cursor:pointer;font-size:1rem;font-weight:900}
 
-/* TOAST */
 .toast{position:fixed;top:90px;left:50%;transform:translateX(-50%) translateY(-150px);background:linear-gradient(135deg,var(--gold),var(--gold2));color:#0a0d15;padding:14px 28px;border-radius:30px;font-weight:900;z-index:3000;transition:.4s;opacity:0;pointer-events:none;box-shadow:0 15px 40px rgba(255,201,60,.5)}
 .toast.on{transform:translateX(-50%) translateY(0);opacity:1}
 .toast.err{background:linear-gradient(135deg,#ff1b8d,#cc0055);color:#fff;box-shadow:0 15px 40px rgba(255,27,141,.5)}
@@ -272,10 +241,6 @@ nav.open ul a{padding:12px 16px;text-align:right}
 </style>
 </head>
 <body>
-
-<div id="robotArea">
-<img id="robotImg" src="robot.png" alt="Robot" onerror="this.style.display='none'">
-</div>
 
 <header id="hdr">
 <div class="wrap hdr">
@@ -631,68 +596,7 @@ nav.open ul a{padding:12px 16px;text-align:right}
 <div class="toast" id="toast"></div>
 
 <script>
-/* ====== ROBOT ====== */
-(function(){
-var robot = document.getElementById('robotImg');
-var area = document.getElementById('robotArea');
-if(!robot || !area) return;
-var greeted = false;
-var voiceReady = false;
-
-var currentAngle = 0;
-var targetAngle = 0;
-function newTarget(){ targetAngle = (Math.random() - 0.5) * 15; }
-function smoothGaze(){
-currentAngle += (targetAngle - currentAngle) * 0.02;
-robot.style.transform = 'rotate(' + currentAngle.toFixed(2) + 'deg) scale(' + (1 + Math.sin(Date.now()/3000)*0.01) + ')';
-requestAnimationFrame(smoothGaze);
-}
-newTarget();
-setInterval(newTarget, 3500);
-smoothGaze();
-
-function speak(text){
-if(!('speechSynthesis' in window)) return;
-try{
-window.speechSynthesis.cancel();
-var u = new SpeechSynthesisUtterance(text);
-u.lang = 'ar-SA';
-u.rate = 0.95;
-u.pitch = 1.15;
-u.volume = 0.9;
-var voices = window.speechSynthesis.getVoices();
-for(var i=0;i<voices.length;i++){
-if(voices[i].lang.indexOf('ar') !== -1){ u.voice = voices[i]; break; }
-}
-window.speechSynthesis.speak(u);
-}catch(e){}
-}
-
-var greetings = ['مرحباً بك في موقع خفاجي','أهلاً وسهلاً بك','يا هلا! نورت الموقع'];
-
-setTimeout(function(){
-if(!greeted){ greeted = true; speak(greetings[Math.floor(Math.random()*greetings.length)]); }
-}, 6000);
-
-setInterval(function(){ speak('أهلاً وسهلاً بك مرة أخرى'); }, 240000);
-
-document.addEventListener('click', function(){
-if(!voiceReady){
-voiceReady = true;
-greeted = true;
-setTimeout(function(){ speak('مرحباً بك في موقع خفاجي'); }, 500);
-}
-}, {once: true});
-
-window.addEventListener('scroll', function(){
-var s = window.scrollY;
-var maxScroll = window.innerHeight * 1.2;
-var opacity = Math.max(0.1, 0.9 - (s / maxScroll) * 0.8);
-area.style.opacity = opacity;
-});
-})();
-
-/* ====== SPHERE ====== */
+/* SPHERE */
 (function(){
 var canvas = document.getElementById('sphere');
 if(!canvas) return;
@@ -880,8 +784,94 @@ if(out) out.innerHTML = '<span style="color:var(--gold)">🎉 ربحت 1000 🪙
 }
 
 var stories = [
-{title:'🌃 الليلة الأخيرة', meta:'قصة RP',
-short:'كنت أقف في زاوية الشارع القديم، أنظر إلى أضواء المدينة التي لا تنام. في جيبي 500 دولار فقط...',
-full:'كنت أقف في زاوية الشارع القديم، أنظر إلى أضواء المدينة التي لا تنام. في جيبي 500 دولار فقط، وفي قلبي رغبة في الهروب من كل شيء.\n\nساعة اليد أشارت إلى منتصف الليل. كان الرصيف مبللاً من المطر. صوت سيارات الشرطة يتردد من بعيد.\n\nفي تلك الليلة، اتخذت قراراً سيبقى معي للأبد. بعد سنوات من العمل في الظل، قررت أن أعمل عملية واحدة أخيرة.\n\nاتصلت بصديقي القديم كريم. كان رجلاً يخشى منه الجميع. ابتسامته كانت تخفي وراءها ألف سر.\n\nسمعت أنك تريد القيام بعملية كبيرة؟ قال بصوته الهادئ. لم أجب. فقط أومأت برأسي.\n\nبدأنا التخطيط. كل تفصيلة، كل خطوة، كل ثانية محسوبة.\n\nفي الساعة الثانية والنصف، كنا في السيارة. أيدينا باردة، وقلبي يدق بعنف.\n\nدخلنا المصرف. كل شيء كان كما خططنا. في أقل من خمس دقائق، كنا قد جمعنا 2.5 مليون دولار.\n\nلكن في اللحظة التي كنا نستعد فيها للخروج، سمعنا صوت صفارات الإنذار.\n\nاندفعنا نحو الباب الخلفي. الرصاص يمر بجانبنا.\n\nكنا على وشك الوصول إلى السيارة، حين سقط كريم. رصاصة أصابته في ساقه. لم أتردد لحظة. حملته ووضعته في السيارة.\n\nقُدت السيارة بأقصى سرعة. وصلنا إلى مخبأ قديم.\n\nفي تلك الليلة، تعلمت درساً لن أنساه: في عالم المجرمين، لا يوجد أصدقاء حقيقيون. لكن كريم أثبت العكس.\n\nبعد شهر، افترقنا. فتحت ورشة سيارات صغيرة. أصلح السيارات للجميع.\n\nكل ليلة، قبل النوم، أفكر في تلك الليلة. الليلة التي علمتني أن الصداقة أغلى من أي مال.'},
-{title:'🚔 الشرطي الذي كسر القاعدة', meta:'قصة RP',
-short:'اليوم كان أول
+{title:'🌃 الليلة الأخيرة', meta:'قصة RP', short:'كنت أقف في زاوية الشارع القديم، أنظر إلى أضواء المدينة التي لا تنام. في جيبي 500 دولار فقط...', full:'كنت أقف في زاوية الشارع القديم، أنظر إلى أضواء المدينة التي لا تنام. في جيبي 500 دولار فقط.\n\nفي منتصف الليل، اتخذت قراراً سيبقى معي للأبد. عملية واحدة أخيرة، كافية لأبدأ حياة جديدة.\n\nاتصلت بصديقي كريم. كان رجلاً يخشى منه الجميع. بدأنا التخطيط.\n\nفي الساعة الثانية والنصف، كنا في السيارة. دخلنا المصرف، وجمعنا 2.5 مليون دولار.\n\nلكن صفارات الإنذار انطلقت. اندفعنا نحو الباب الخلفي. الرصاص يمر بجانبنا.\n\nسقط كريم. حملته ووضعته في السيارة. قُدت بأقصى سرعة.\n\nتعلمت درساً: الصداقة أغلى من أي مال.'},
+{title:'🚔 الشرطي الذي كسر القاعدة', meta:'قصة RP', short:'اليوم كان أول يوم لي في قسم الشرطة. البذلة الجديدة، الشارة اللامعة، والفخر الذي لا يوصف...', full:'اليوم كان أول يوم لي في قسم الشرطة. البذلة الجديدة، الشارة اللامعة، والفخر الذي لا يوصف.\n\nاستقبلني الرقيب علي بابتسامة. رجل في الخمسينيات بخبرة عشرين سنة.\n\nوصلنا بلاغ عن سرقة في متجر صغير. صاحبه رجل عجوز يدعى أبو سامي كان يبكي.\n\nكل شيء كان يشير إلى عصابة الذئاب السوداء.\n\nدخلنا مخبأهم. كانوا خمسة رجال. لكن حينها رأيت شيئاً غير متوقع. أحد الشباب كان ابن علي!\n\nتوقف كل شيء. علي نظر إلى ابنه بصدمة. ثم أخرج الأصفاد.\n\nفي الصباح، قدم علي استقالته. قال: القانون ليس دائماً عادلاً. لكن حافظ على شرفك.'},
+{title:'💰 صفقة المليون', meta:'قصة RP', short:'كانت الساعة الحادية عشرة ليلاً حين وصلت الرسالة. صفقة المليون، فرصة العمر...', full:'وصلت الرسالة: صفقة المليون، فرصة العمر. كن عند المستودع القديم.\n\nرجل أصلع يرتدي معطفاً أسود كان ينتظرني. نريد منك نقل حقيبة من المطار إلى الميناء. المبلغ: مليون دولار.\n\nقبلت العرض. في المساء التالي، أخذت الحقيبة وتوجهت للميناء. لاحظت سيارة تتبعني.\n\nتوجهت إلى مركز الشرطة. فتحنا الحقيبة: عملات مزيفة عالية الجودة.\n\nوافقت على مساعدة الشرطة. في الميناء، أضاءت الأضواء. عشر سيارات شرطة، ثلاث مروحيات.\n\nالرجل الأصلع حاول الهرب، لكنني أمسكت به. فهمت أن المال السريع دائماً يخفى وراءه مخاطر.'}
+];
+function renderStories(){
+try{
+var box = document.getElementById('storiesBox');
+if(!box) return;
+var html = '';
+for(var i=0;i<stories.length;i++){
+var s = stories[i];
+html += '<div class="story">';
+html += '<h4>' + s.title + '</h4>';
+html += '<div class="story-meta">' + s.meta + '</div>';
+html += '<div class="story-txt" id="st' + i + '">' + s.short + '</div>';
+html += '<button class="story-btn" id="stb' + i + '" onclick="toggleStory(' + i + ')">📖 اقرأ القصة كاملة ←</button>';
+html += '</div>';
+}
+box.innerHTML = html;
+}catch(e){}
+}
+function toggleStory(i){
+try{
+var el = document.getElementById('st' + i);
+var btn = document.getElementById('stb' + i);
+if(el.textContent === stories[i].short){
+el.textContent = stories[i].full;
+btn.textContent = '📕 إغلاق';
+} else {
+el.textContent = stories[i].short;
+btn.textContent = '📖 اقرأ القصة كاملة ←';
+}
+}catch(e){}
+}
+renderStories();
+
+var mScore = 0, mQ = 0, mAns = 0;
+var memState = {cards:[], flips:[], matches:0, lock:false};
+var guessNum = 0, guessTries = 0;
+var reactState = {timeout:null, start:0, ready:false};
+
+function openGame(type){
+try{
+document.getElementById('gameModal').classList.add('on');
+var area = document.getElementById('gameArea');
+var title = document.getElementById('gameTitle');
+document.body.style.overflow = 'hidden';
+if(type === 'math'){
+title.textContent = '🧮 تحدي الرياضيات';
+mScore = 0; mQ = 0;
+area.innerHTML = '<div class="gd">النقاط: <span id="mS">0</span> / 5</div><div class="gd" id="mQ">جاري التحضير...</div><input type="number" class="gi" id="mA" placeholder="الإجابة"><div class="gbtns"><button class="btn" onclick="checkMath()">إرسال</button></div>';
+nextMath();
+}
+else if(type === 'memory'){ title.textContent = '🧠 لعبة الذاكرة'; startMemory(); }
+else if(type === 'reaction'){ title.textContent = '⚡ سرعة الرد'; startReaction(); }
+else if(type === 'guess'){
+title.textContent = '🎯 خمن الرقم';
+guessNum = Math.floor(Math.random()*100) + 1;
+guessTries = 0;
+area.innerHTML = '<div class="gd" id="gMsg">خمن الرقم بين 1 و 100</div><input type="number" class="gi" id="gInp" placeholder="تخمينك"><div class="gbtns"><button class="btn" onclick="checkGuess()">تخمين</button></div><div class="gd" id="gTry">المحاولات: 0</div>';
+}
+else if(type === 'rps'){
+title.textContent = '✊ حجر ورقة مقص';
+area.innerHTML = '<div class="gd">اختر حركتك!</div><div class="gbtns"><button class="btn ghost" onclick="playRPS(0)">✊ حجر</button><button class="btn ghost" onclick="playRPS(1)">📄 ورقة</button><button class="btn ghost" onclick="playRPS(2)">✂️ مقص</button></div>';
+}
+}catch(e){}
+}
+function closeGame(){
+document.getElementById('gameModal').classList.remove('on');
+document.body.style.overflow = '';
+if(reactState.timeout) clearTimeout(reactState.timeout);
+}
+function nextMath(){
+try{
+if(mQ >= 5){
+var e = mScore * 10;
+addCoins(e);
+document.getElementById('gameTitle').textContent = '🎉 انتهت اللعبة';
+document.getElementById('gameArea').innerHTML = '<div class="gd">أحرزت ' + mScore + ' من 5<br>ربحت ' + e + ' 🪙</div><div class="gbtns"><button class="btn" onclick="closeGame()">إغلاق</button></div>';
+return;
+}
+var a = Math.floor(Math.random()*20) + 1;
+var b = Math.floor(Math.random()*20) + 1;
+var ops = ['+', '-', '×'];
+var op = ops[Math.floor(Math.random()*3)];
+var c;
+if(op === '+') c = a + b;
+else if(op === '-') c = a - b;
+else c = a * b;
+mAns = c;
+document.getElementById('mQ').textContent = a + ' ' 
