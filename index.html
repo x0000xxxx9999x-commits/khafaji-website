@@ -3,359 +3,199 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>خفاجي گيمز | عيش تجربة الحياة الواقعية</title>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+<title>خفاجي گيمز</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{
---bg:#0a0612;--bg2:#130a24;
---purple:#a855f7;--purple2:#7c3aed;
---pink:#ec4899;--blue:#3b82f6;--cyan:#06b6d4;--gold:#fbbf24;
---text:#f0e9ff;--muted:#8b7ba8;
---border:rgba(168,85,247,.25);
-}
-html{scroll-behavior:smooth}
-body{font-family:'Tajawal','Cairo',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.7;min-height:100vh;position:relative}
-body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;background:radial-gradient(ellipse at 20% 15%,rgba(168,85,247,.25),transparent 50%),radial-gradient(ellipse at 80% 40%,rgba(236,72,153,.18),transparent 50%),radial-gradient(ellipse at 50% 90%,rgba(59,130,246,.15),transparent 50%),linear-gradient(180deg,#0a0612 0%,#130a24 50%,#0a0612 100%);z-index:-2;pointer-events:none}
-body::after{content:'';position:fixed;top:0;left:0;width:100%;height:100%;background-image:linear-gradient(rgba(168,85,247,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(168,85,247,.03) 1px,transparent 1px);background-size:50px 50px;z-index:-1;pointer-events:none;mask-image:radial-gradient(ellipse at center,black 30%,transparent 80%)}
+:root{--purple:#a855f7;--purple2:#7c3aed;--pink:#ec4899;--gold:#fbbf24;--bg:#0a0612;--text:#f0e9ff;--muted:#8b7ba8;--border:rgba(168,85,247,.25)}
+body{font-family:'Tajawal',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden;min-height:100vh}
+body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;background:radial-gradient(ellipse at 20% 15%,rgba(168,85,247,.25),transparent 50%),radial-gradient(ellipse at 80% 40%,rgba(236,72,153,.18),transparent 50%),linear-gradient(180deg,#0a0612,#130a24,#0a0612);z-index:-2}
 a{color:inherit;text-decoration:none}
-img{max-width:100%;height:auto;display:block}
 .wrap{max-width:1200px;margin:0 auto;padding:0 20px}
 
-/* HEADER */
-header{position:fixed;top:0;left:0;right:0;padding:16px 0;z-index:1000;transition:.4s;background:linear-gradient(180deg,rgba(10,6,18,.95) 0%,rgba(10,6,18,.6) 70%,transparent 100%);backdrop-filter:blur(12px)}
-header.scrolled{background:rgba(10,6,18,.98);padding:10px 0;border-bottom:1px solid var(--border);box-shadow:0 10px 40px rgba(168,85,247,.15)}
-.hdr{display:flex;justify-content:space-between;align-items:center;gap:15px}
-.logo{font-family:'Tajawal',sans-serif;font-size:1.4rem;font-weight:900;background:linear-gradient(135deg,#a855f7,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:flex;align-items:center;gap:8px;filter:drop-shadow(0 0 15px rgba(168,85,247,.5))}
-nav ul{list-style:none;display:flex;gap:4px;align-items:center}
-nav a{font-size:.85rem;font-weight:700;color:var(--muted);padding:8px 14px;border-radius:8px;cursor:pointer;transition:.3s;position:relative}
-nav a:hover{color:var(--purple);background:rgba(168,85,247,.08)}
-.btn-sub{background:linear-gradient(135deg,var(--purple),var(--purple2));color:#fff;padding:10px 22px;border-radius:10px;font-weight:900;font-size:.85rem;border:none;cursor:pointer;transition:.3s;font-family:inherit;box-shadow:0 0 20px rgba(168,85,247,.5);position:relative;overflow:hidden}
-.btn-sub:hover{transform:translateY(-2px);box-shadow:0 10px 35px rgba(168,85,247,.7)}
-.menu-toggle{display:none;background:none;border:none;color:var(--purple);font-size:1.5rem;cursor:pointer}
-.admin-link{color:var(--muted);font-size:.7rem;opacity:.35;cursor:pointer;padding:5px 8px;transition:.3s;font-weight:600;letter-spacing:1px}
-.admin-link:hover{opacity:1;color:var(--purple)}
+header{position:fixed;top:0;left:0;right:0;padding:15px 0;z-index:100;background:rgba(10,6,18,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.hdr{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.logo{font-size:1.3rem;font-weight:900;background:linear-gradient(135deg,#a855f7,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+nav ul{list-style:none;display:flex;gap:5px;flex-wrap:wrap}
+nav a{color:var(--muted);font-size:.85rem;font-weight:700;padding:6px 12px;border-radius:8px;cursor:pointer;transition:.3s}
+nav a:hover{color:var(--purple);background:rgba(168,85,247,.1)}
+.admin-btn{color:var(--muted);font-size:.7rem;opacity:.4;cursor:pointer;padding:6px 10px;font-weight:700}
+.admin-btn:hover{opacity:1;color:var(--purple)}
+.btn-main{background:linear-gradient(135deg,#a855f7,#7c3aed);color:#fff;padding:10px 20px;border-radius:10px;font-weight:900;font-size:.85rem;border:none;cursor:pointer;font-family:inherit;box-shadow:0 0 20px rgba(168,85,247,.5);transition:.3s}
+.btn-main:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(168,85,247,.7)}
 
-/* HERO */
-.hero{min-height:100vh;padding:120px 20px 60px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
-.hero-bg{position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;overflow:hidden}
-.hero-city{position:absolute;bottom:0;left:0;right:0;height:300px;background:linear-gradient(180deg,transparent,rgba(168,85,247,.08)),repeating-linear-gradient(90deg,transparent 0px,transparent 30px,rgba(168,85,247,.15) 30px,rgba(168,85,247,.15) 32px),repeating-linear-gradient(0deg,transparent 0px,transparent 30px,rgba(59,130,246,.1) 30px,rgba(59,130,246,.1) 32px);mask-image:linear-gradient(180deg,transparent,black 40%)}
-.hero-content{position:relative;z-index:2;max-width:1200px;margin:0 auto;width:100%}
-.hero-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center}
-.hero-tag{display:inline-flex;align-items:center;gap:10px;background:rgba(168,85,247,.1);border:1px solid var(--border);padding:6px 16px;border-radius:20px;font-size:.75rem;font-weight:700;color:var(--purple);margin-bottom:20px}
-.hero-tag::before{content:'';width:6px;height:6px;background:var(--purple);border-radius:50%;box-shadow:0 0 10px var(--purple);animation:blink 1.5s infinite}
-@keyframes blink{50%{opacity:.3}}
-.hero h1{font-family:'Tajawal',sans-serif;font-size:clamp(2.2rem,7vw,4.5rem);font-weight:900;line-height:1.1;margin-bottom:20px;letter-spacing:-1px}
-.hero h1 .white{color:#fff}
-.hero h1 .grad{background:linear-gradient(135deg,#a855f7 0%,#ec4899 50%,#3b82f6 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 0 30px rgba(168,85,247,.6))}
-.hero-desc{color:#c4b5e0;font-size:clamp(.95rem,2vw,1.1rem);margin-bottom:35px;max-width:550px;font-weight:600}
-.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:12px;font-weight:900;font-size:.95rem;border:none;cursor:pointer;transition:.3s;font-family:inherit}
-.btn-primary{background:linear-gradient(135deg,var(--purple),var(--purple2));color:#fff;box-shadow:0 0 25px rgba(168,85,247,.5)}
-.btn-primary:hover{transform:translateY(-3px);box-shadow:0 15px 40px rgba(168,85,247,.7)}
-.btn-secondary{background:rgba(59,130,246,.15);color:#fff;border:1px solid rgba(59,130,246,.4)}
-.btn-secondary:hover{background:rgba(59,130,246,.3);transform:translateY(-3px)}
-.hero-car{position:relative;height:350px;display:flex;align-items:center;justify-content:center}
-.car-glow{position:absolute;width:100%;height:100%;background:radial-gradient(ellipse at center,rgba(168,85,247,.3),transparent 60%);filter:blur(40px);animation:pulseGlow 3s ease-in-out infinite}
-@keyframes pulseGlow{0%,100%{opacity:.5}50%{opacity:1}}
-.car-svg{width:100%;max-width:500px;filter:drop-shadow(0 20px 40px rgba(168,85,247,.5));animation:carFloat 4s ease-in-out infinite;position:relative;z-index:1}
-@keyframes carFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.hero{padding:130px 20px 60px;text-align:center;min-height:80vh;display:flex;flex-direction:column;justify-content:center;align-items:center}
+.hero h1{font-size:clamp(2rem,8vw,4rem);font-weight:900;line-height:1.1;margin-bottom:20px}
+.hero h1 .grad{background:linear-gradient(135deg,#a855f7,#ec4899,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p{color:#c4b5e0;max-width:600px;margin:0 auto 30px;font-weight:600}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:12px;font-weight:900;font-size:.95rem;border:none;cursor:pointer;font-family:inherit;transition:.3s}
+.btn-p{background:linear-gradient(135deg,#a855f7,#7c3aed);color:#fff;box-shadow:0 0 25px rgba(168,85,247,.5)}
+.btn-p:hover{transform:translateY(-3px);box-shadow:0 15px 40px rgba(168,85,247,.7)}
+.btn-s{background:rgba(59,130,246,.15);color:#fff;border:1px solid rgba(59,130,246,.4)}
+.btn-s:hover{background:rgba(59,130,246,.3)}
 
-.stats-bar{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px;margin-top:50px;background:linear-gradient(135deg,rgba(30,15,60,.6),rgba(20,10,40,.6));border:1px solid var(--border);border-radius:20px;padding:25px;backdrop-filter:blur(15px)}
-.stat-item{display:flex;align-items:center;gap:12px;padding:10px;border-radius:12px;transition:.3s}
-.stat-item:hover{background:rgba(168,85,247,.08)}
-.stat-icon{width:45px;height:45px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;background:linear-gradient(135deg,rgba(168,85,247,.2),rgba(236,72,153,.2));border:1px solid var(--border)}
-.stat-num{font-size:1.3rem;font-weight:900;color:#fff;font-family:'Tajawal',sans-serif}
-.stat-lbl{font-size:.75rem;color:var(--muted);font-weight:700}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-top:40px;background:linear-gradient(135deg,rgba(30,15,60,.6),rgba(20,10,40,.6));border:1px solid var(--border);border-radius:20px;padding:20px;max-width:900px;margin-left:auto;margin-right:auto}
+.stat{text-align:center;padding:10px}
+.stat .num{font-size:1.3rem;font-weight:900;color:#fff}
+.stat .lbl{font-size:.75rem;color:var(--muted)}
 
-section{padding:80px 0;position:relative;z-index:2}
-.sec-head{text-align:center;margin-bottom:45px}
-.sec-head h2{font-size:clamp(1.8rem,5vw,2.5rem);font-weight:900;color:#fff;letter-spacing:-.5px;margin-bottom:10px}
-.sec-head h2 span{background:linear-gradient(135deg,var(--purple),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.sec-head p{color:var(--muted);font-size:.95rem}
-.sec-line{width:80px;height:3px;background:linear-gradient(90deg,transparent,var(--purple),var(--pink),transparent);margin:15px auto 0;border-radius:3px;box-shadow:0 0 15px rgba(168,85,247,.5)}
+section{padding:70px 0;position:relative;z-index:2}
+.sec-head{text-align:center;margin-bottom:40px}
+.sec-head h2{font-size:clamp(1.6rem,5vw,2.3rem);font-weight:900;color:#fff;margin-bottom:8px}
+.sec-head h2 span{background:linear-gradient(135deg,#a855f7,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.sec-head p{color:var(--muted);font-size:.9rem}
 
-.video-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
-.video-card{background:linear-gradient(135deg,rgba(30,15,60,.7),rgba(20,10,40,.7));border:1px solid var(--border);border-radius:18px;overflow:hidden;transition:.4s;backdrop-filter:blur(10px);cursor:pointer}
-.video-card:hover{transform:translateY(-6px);border-color:rgba(168,85,247,.5);box-shadow:0 25px 60px rgba(0,0,0,.6),0 0 40px rgba(168,85,247,.25)}
-.video-thumb{position:relative;padding-bottom:56.25%;height:0;background:linear-gradient(135deg,#1a0a30,#2d1655);overflow:hidden}
-.video-thumb::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 40%,rgba(168,85,247,.3),transparent 50%),radial-gradient(circle at 70% 70%,rgba(236,72,153,.3),transparent 50%)}
-.play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:60px;height:60px;background:linear-gradient(135deg,var(--purple),var(--pink));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;color:#fff;box-shadow:0 0 30px rgba(168,85,247,.8);z-index:2;transition:.3s}
-.video-card:hover .play-btn{transform:translate(-50%,-50%) scale(1.15)}
-.video-duration{position:absolute;bottom:10px;left:10px;background:rgba(0,0,0,.8);padding:3px 10px;border-radius:6px;font-size:.7rem;color:#fff;font-weight:700;z-index:2}
-.video-info{padding:18px}
-.video-title{color:#fff;font-weight:700;font-size:1rem;margin-bottom:8px;line-height:1.5}
-.video-channel{display:flex;align-items:center;gap:6px;color:var(--muted);font-size:.8rem;font-weight:600}
-.video-channel::before{content:'👤';font-size:.9rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.card{background:linear-gradient(135deg,rgba(30,15,60,.7),rgba(20,10,40,.7));border:1px solid var(--border);border-radius:18px;padding:22px;transition:.3s;backdrop-filter:blur(10px);cursor:pointer}
+.card:hover{transform:translateY(-5px);border-color:rgba(168,85,247,.5);box-shadow:0 20px 50px rgba(0,0,0,.5),0 0 30px rgba(168,85,247,.2)}
+.card h3{color:#fff;font-size:1rem;margin-bottom:6px;font-weight:700}
+.card p{color:var(--muted);font-size:.85rem}
+.card .icon{font-size:2.5rem;margin-bottom:10px;display:block}
+.card .earn{display:inline-block;background:linear-gradient(135deg,#fbbf24,#f59e0b);color:#1a0a30;padding:3px 12px;border-radius:20px;font-size:.7rem;font-weight:900;margin-bottom:8px}
+.card-center{text-align:center}
+.card-btn{display:inline-block;background:linear-gradient(135deg,#a855f7,#7c3aed);color:#fff;padding:10px 22px;border-radius:10px;font-weight:700;font-size:.85rem;border:none;cursor:pointer;font-family:inherit;transition:.3s;margin-top:10px}
+.card-btn:hover{transform:scale(1.05);box-shadow:0 10px 25px rgba(168,85,247,.5)}
 
-.tutorials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
-.tut-card{display:flex;align-items:center;justify-content:space-between;gap:15px;background:linear-gradient(135deg,rgba(30,15,60,.6),rgba(20,10,40,.6));border:1px solid var(--border);border-radius:16px;padding:20px 22px;cursor:pointer;transition:.3s;backdrop-filter:blur(10px)}
-.tut-card:hover{border-color:rgba(168,85,247,.5);background:linear-gradient(135deg,rgba(168,85,247,.1),rgba(236,72,153,.05));transform:translateY(-4px)}
-.tut-txt h4{color:#fff;font-size:1rem;font-weight:700;margin-bottom:3px}
-.tut-txt p{color:var(--muted);font-size:.75rem}
-.tut-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;background:linear-gradient(135deg,rgba(168,85,247,.25),rgba(236,72,153,.2));border:1px solid var(--border);flex-shrink:0}
-
-.community-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:25px}
-.discord-card{background:linear-gradient(135deg,rgba(88,101,242,.15),rgba(30,15,60,.7));border:1px solid rgba(88,101,242,.4);border-radius:20px;padding:28px;display:flex;flex-direction:column;justify-content:space-between;backdrop-filter:blur(10px)}
-.discord-icon{width:65px;height:65px;border-radius:18px;background:linear-gradient(135deg,#5865F2,#7c83ff);display:flex;align-items:center;justify-content:center;font-size:2rem;color:#fff;box-shadow:0 10px 30px rgba(88,101,242,.5);margin-bottom:18px}
-.discord-card h3{color:#fff;font-size:1.3rem;margin-bottom:6px;font-weight:900}
-.discord-card .sub{color:var(--muted);font-size:.85rem;margin-bottom:12px}
-.discord-members{display:flex;align-items:center;gap:8px;color:#00ff88;font-weight:700;font-size:.9rem;margin-bottom:20px}
-.discord-members::before{content:'●';font-size:.7rem;animation:blink 1.5s infinite}
-.btn-discord{background:linear-gradient(135deg,#5865F2,#7c83ff);color:#fff;padding:14px;border-radius:12px;font-weight:900;text-align:center;border:none;cursor:pointer;font-family:inherit;font-size:.95rem;transition:.3s;box-shadow:0 0 25px rgba(88,101,242,.5)}
-.btn-discord:hover{transform:translateY(-3px);box-shadow:0 15px 40px rgba(88,101,242,.7)}
-
-.shorts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.short-card{aspect-ratio:9/16;border-radius:14px;overflow:hidden;position:relative;cursor:pointer;background:linear-gradient(135deg,#1a0a30,#2d1655);border:1px solid var(--border);transition:.3s}
-.short-card:hover{transform:scale(1.05);border-color:var(--purple)}
-.short-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:44px;height:44px;background:rgba(255,255,255,.95);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;color:#1a0a30;z-index:2}
-.short-tag{position:absolute;top:10px;right:10px;background:linear-gradient(135deg,var(--purple),var(--pink));padding:4px 10px;border-radius:10px;font-size:.65rem;font-weight:900;color:#fff;z-index:2}
-
-/* PLAY */
-.play-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-.play-card{background:linear-gradient(135deg,rgba(30,15,60,.7),rgba(20,10,40,.7));border:1px solid var(--border);border-radius:18px;padding:25px 20px;text-align:center;cursor:pointer;transition:.3s;position:relative;overflow:hidden;backdrop-filter:blur(10px)}
-.play-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--purple),var(--pink),var(--blue));opacity:.6;transition:.3s}
-.play-card:hover{transform:translateY(-6px);border-color:rgba(168,85,247,.5);box-shadow:0 20px 50px rgba(0,0,0,.5),0 0 30px rgba(168,85,247,.25)}
-.play-card:hover::before{opacity:1}
-.play-icon{font-size:2.5rem;margin-bottom:12px;display:block}
-.play-card h4{color:#fff;font-size:1rem;font-weight:700;margin-bottom:5px}
-.play-card p{color:var(--muted);font-size:.8rem;margin-bottom:12px}
-.earn{display:inline-block;background:linear-gradient(135deg,var(--gold),#f59e0b);color:#1a0a30;padding:3px 12px;border-radius:20px;font-size:.7rem;font-weight:900}
-
-/* GAMES DOWNLOAD */
-.games-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-.game-card{background:linear-gradient(135deg,rgba(30,15,60,.7),rgba(20,10,40,.7));border:1px solid var(--border);border-radius:18px;padding:22px 18px;text-align:center;transition:.3s;backdrop-filter:blur(10px)}
-.game-card:hover{transform:translateY(-6px);border-color:rgba(168,85,247,.5);box-shadow:0 20px 50px rgba(0,0,0,.5)}
-.game-icon{font-size:2.5rem;margin-bottom:12px}
-.game-card h4{color:#fff;font-size:1rem;font-weight:700;margin-bottom:5px}
-.game-card p{color:var(--muted);font-size:.8rem;margin-bottom:15px}
-.game-btn{display:inline-block;padding:10px 22px;border-radius:10px;background:linear-gradient(135deg,var(--purple),var(--purple2));color:#fff;font-weight:700;font-size:.85rem;transition:.3s;border:none;cursor:pointer;font-family:inherit}
-.game-btn:hover{transform:scale(1.05);box-shadow:0 10px 25px rgba(168,85,247,.5)}
-
-/* FOOTER */
-footer{background:linear-gradient(180deg,transparent,rgba(10,6,18,.95));border-top:1px solid var(--border);padding:40px 0 30px;text-align:center;position:relative;z-index:2;margin-top:40px}
-.footer-socials{display:flex;justify-content:center;gap:15px;margin-bottom:20px}
-.social-icon{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;background:rgba(168,85,247,.1);border:1px solid var(--border);color:var(--text);transition:.3s;cursor:pointer}
+footer{background:linear-gradient(180deg,transparent,rgba(10,6,18,.95));border-top:1px solid var(--border);padding:40px 0 30px;text-align:center;margin-top:40px}
+.footer-socials{display:flex;justify-content:center;gap:15px;margin-bottom:15px}
+.social-icon{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;background:rgba(168,85,247,.1);border:1px solid var(--border);color:var(--text);transition:.3s}
 .social-icon:hover{transform:translateY(-5px) scale(1.1);background:rgba(168,85,247,.25);border-color:var(--purple)}
-footer p{color:var(--muted);font-size:.85rem;font-weight:600}
+footer p{color:var(--muted);font-size:.85rem}
 
-/* MODALS */
-.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.85);backdrop-filter:blur(10px);z-index:2000;justify-content:center;align-items:center;padding:20px}
+.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.85);backdrop-filter:blur(10px);z-index:2000;justify-content:center;align-items:center;padding:20px;overflow-y:auto}
 .modal.on{display:flex}
-.mc{background:linear-gradient(135deg,#1a0a30,#0a0612);border:1px solid var(--border);border-radius:20px;padding:30px 25px;max-width:480px;width:100%;position:relative;max-height:90vh;overflow-y:auto;box-shadow:0 30px 80px rgba(0,0,0,.7),0 0 60px rgba(168,85,247,.2)}
-.close{position:absolute;top:15px;left:15px;background:rgba(168,85,247,.15);border:1px solid var(--border);color:var(--purple);width:34px;height:34px;border-radius:50%;font-size:1.1rem;cursor:pointer;font-weight:900;transition:.3s}
-.close:hover{background:var(--purple);color:#fff;transform:rotate(90deg)}
-.mc h2{color:#fff;text-align:center;margin-bottom:20px;font-size:1.3rem;letter-spacing:1px}
-.gd{background:rgba(0,0,0,.4);border:1px solid var(--border);border-radius:12px;padding:18px;margin:12px 0;text-align:center;font-weight:700;color:#fff;min-height:70px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:1.1rem}
-.gi{width:100%;padding:13px;background:rgba(0,0,0,.4);border:1px solid var(--border);border-radius:10px;color:#fff;font-family:inherit;font-size:1rem;text-align:center;margin:10px 0;outline:none}
+.mc{background:linear-gradient(135deg,#1a0a30,#0a0612);border:1px solid var(--border);border-radius:20px;padding:28px 22px;max-width:480px;width:100%;position:relative;max-height:90vh;overflow-y:auto;box-shadow:0 30px 80px rgba(0,0,0,.7)}
+.close{position:absolute;top:12px;left:12px;background:rgba(168,85,247,.15);border:1px solid var(--border);color:var(--purple);width:34px;height:34px;border-radius:50%;font-size:1rem;cursor:pointer;font-weight:900}
+.close:hover{background:var(--purple);color:#fff}
+.mc h2{color:#fff;text-align:center;margin-bottom:18px;font-size:1.2rem}
+.gd{background:rgba(0,0,0,.4);border:1px solid var(--border);border-radius:12px;padding:16px;margin:10px 0;text-align:center;font-weight:700;color:#fff;min-height:60px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:1.05rem}
+.gi{width:100%;padding:12px;background:rgba(0,0,0,.4);border:1px solid var(--border);border-radius:10px;color:#fff;font-family:inherit;font-size:1rem;text-align:center;margin:8px 0;outline:none}
 .gi:focus{border-color:var(--purple)}
-.gbtns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:12px}
-.mem-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:15px 0}
-.mem-card{aspect-ratio:1;background:linear-gradient(135deg,#1a0a30,#0a0612);border:1px solid var(--border);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.7rem;cursor:pointer;color:var(--purple);font-weight:900}
-.mem-card.flip{background:linear-gradient(135deg,var(--purple),var(--purple2));color:#fff}
-.mem-card.match{background:linear-gradient(135deg,#10b981,#059669);color:#fff;cursor:default;opacity:.6}
-.circle{width:140px;height:140px;border-radius:50%;background:rgba(168,85,247,.15);border:2px solid var(--purple);color:var(--purple);margin:20px auto;display:flex;align-items:center;justify-content:center;font-weight:900;cursor:pointer;font-size:1.1rem;font-family:'Tajawal',sans-serif;letter-spacing:1px}
-.circle.ready{background:linear-gradient(135deg,var(--purple),var(--pink));color:#fff;box-shadow:0 0 50px rgba(168,85,247,.7)}
-.circle.wait{background:rgba(255,0,60,.15);border-color:#ff1b8d;color:#ff1b8d}
-.btn-g{display:inline-block;background:linear-gradient(135deg,var(--purple),var(--purple2));color:#fff;padding:12px 24px;border-radius:10px;font-weight:900;border:none;cursor:pointer;font-family:inherit;font-size:.9rem;transition:.3s}
+.gbtns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:10px}
+.btn-g{background:linear-gradient(135deg,#a855f7,#7c3aed);color:#fff;padding:11px 22px;border-radius:10px;font-weight:900;border:none;cursor:pointer;font-family:inherit;font-size:.9rem;transition:.3s}
 .btn-g:hover{transform:translateY(-2px);box-shadow:0 10px 25px rgba(168,85,247,.5)}
 .btn-g.ghost{background:rgba(168,85,247,.1);border:1px solid var(--border);color:var(--purple)}
-.btn-g.ghost:hover{background:rgba(168,85,247,.2)}
+.mem-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:12px 0}
+.mem-card{aspect-ratio:1;background:linear-gradient(135deg,#1a0a30,#0a0612);border:1px solid var(--border);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.6rem;cursor:pointer;color:var(--purple);font-weight:900}
+.mem-card.flip{background:linear-gradient(135deg,#a855f7,#7c3aed);color:#fff}
+.mem-card.match{background:linear-gradient(135deg,#10b981,#059669);color:#fff;opacity:.6}
+.circle{width:130px;height:130px;border-radius:50%;background:rgba(168,85,247,.15);border:2px solid var(--purple);color:var(--purple);margin:18px auto;display:flex;align-items:center;justify-content:center;font-weight:900;cursor:pointer;font-size:1rem;font-family:'Tajawal',sans-serif}
+.circle.ready{background:linear-gradient(135deg,#a855f7,#ec4899);color:#fff;box-shadow:0 0 50px rgba(168,85,247,.7)}
+.circle.wait{background:rgba(255,0,60,.15);border-color:#ff1b8d;color:#ff1b8d}
 
-/* ADMIN */
-.admin-input{width:100%;padding:14px;background:rgba(0,0,0,.4);border:1px solid var(--border);border-radius:12px;color:#fff;font-family:inherit;font-size:1rem;text-align:center;margin:15px 0;outline:none;letter-spacing:2px}
+.admin-input{width:100%;padding:14px;background:rgba(0,0,0,.4);border:1px solid var(--border);border-radius:12px;color:#fff;font-family:inherit;font-size:1rem;text-align:center;margin:12px 0;outline:none;letter-spacing:2px}
 .admin-input:focus{border-color:var(--purple);box-shadow:0 0 20px rgba(168,85,247,.3)}
-.admin-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin-bottom:15px}
+.admin-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:10px;margin-bottom:15px}
 .admin-stat{background:rgba(168,85,247,.08);border:1px solid var(--border);border-radius:12px;padding:15px;text-align:center}
 .admin-stat .n{font-size:1.5rem;font-weight:900;color:var(--purple);display:block;font-family:'Tajawal',sans-serif}
-.admin-stat .l{color:var(--muted);font-size:.7rem;font-family:'Tajawal',sans-serif}
-.visitors-list{max-height:280px;overflow-y:auto;background:rgba(0,0,0,.3);border-radius:12px;padding:12px;margin-top:15px}
-.visitor-item{padding:10px 12px;border-bottom:1px solid rgba(168,85,247,.1);font-size:.8rem;color:#c4b5e0;display:flex;justify-content:space-between;gap:10px;align-items:center}
+.admin-stat .l{color:var(--muted);font-size:.7rem}
+.visitors-list{max-height:280px;overflow-y:auto;background:rgba(0,0,0,.3);border-radius:12px;padding:10px;margin-top:10px}
+.visitor-item{padding:8px 10px;border-bottom:1px solid rgba(168,85,247,.1);font-size:.78rem;color:#c4b5e0;display:flex;justify-content:space-between;gap:8px}
 .visitor-item:last-child{border:none}
-.visitor-item .time{color:var(--muted);font-size:.7rem;font-family:monospace}
-.visitor-item .act{color:var(--gold);font-size:.7rem}
+.visitor-item .time{color:var(--muted);font-size:.65rem;font-family:monospace}
+.visitor-item .act{color:var(--gold);font-size:.65rem}
 
-/* CHAT */
-.chat-w{position:fixed;bottom:20px;right:20px;z-index:1500}
-.chat-t{width:62px;height:62px;border-radius:50%;background:linear-gradient(135deg,var(--purple),var(--pink));border:none;color:#fff;font-size:1.6rem;cursor:pointer;box-shadow:0 10px 30px rgba(168,85,247,.5);transition:.3s}
-.chat-t:hover{transform:scale(1.08)}
-.chat-win{position:absolute;bottom:80px;right:0;width:330px;max-width:calc(100vw - 30px);height:480px;background:linear-gradient(135deg,#1a0a30,#0a0612);border:1px solid var(--border);border-radius:18px;box-shadow:0 30px 80px rgba(0,0,0,.7);display:none;flex-direction:column;overflow:hidden}
+.chat-btn{position:fixed;bottom:20px;right:20px;width:62px;height:62px;border-radius:50%;background:linear-gradient(135deg,#a855f7,#ec4899);border:none;color:#fff;font-size:1.6rem;cursor:pointer;box-shadow:0 10px 30px rgba(168,85,247,.5);z-index:1500;transition:.3s}
+.chat-btn:hover{transform:scale(1.08)}
+.chat-win{position:fixed;bottom:90px;right:20px;width:330px;max-width:calc(100vw - 40px);height:480px;background:linear-gradient(135deg,#1a0a30,#0a0612);border:1px solid var(--border);border-radius:18px;box-shadow:0 30px 80px rgba(0,0,0,.7);display:none;flex-direction:column;overflow:hidden;z-index:1500}
 .chat-win.on{display:flex}
-.chat-h{background:linear-gradient(135deg,rgba(168,85,247,.2),rgba(236,72,153,.1));border-bottom:1px solid var(--border);padding:15px;display:flex;justify-content:space-between;align-items:center}
-.chat-h .info{display:flex;align-items:center;gap:10px}
-.chat-h .av{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--purple),var(--pink));display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:#fff}
-.chat-h .nm{color:#fff;font-weight:700;font-size:.9rem}
-.chat-h .st{color:#00ff88;font-size:.65rem;font-family:monospace;letter-spacing:1px}
-.chat-h button{background:rgba(255,255,255,.05);border:none;color:var(--purple);width:28px;height:28px;border-radius:50%;cursor:pointer}
-.chat-body{flex:1;padding:15px;overflow-y:auto;display:flex;flex-direction:column;gap:10px}
-.chat-body::-webkit-scrollbar{width:4px}
-.chat-body::-webkit-scrollbar-thumb{background:var(--purple);border-radius:2px}
+.chat-h{background:linear-gradient(135deg,rgba(168,85,247,.2),rgba(236,72,153,.1));border-bottom:1px solid var(--border);padding:14px;display:flex;justify-content:space-between;align-items:center;color:#fff;font-weight:700}
+.chat-h button{background:rgba(255,255,255,.1);border:none;color:#fff;width:28px;height:28px;border-radius:50%;cursor:pointer}
+.chat-body{flex:1;padding:14px;overflow-y:auto;display:flex;flex-direction:column;gap:8px}
 .msg{max-width:82%;padding:10px 14px;border-radius:14px;font-size:.85rem;line-height:1.6;word-wrap:break-word}
-.msg.b{background:rgba(168,85,247,.15);border:1px solid var(--border);color:#fff;align-self:flex-start;border-bottom-right-radius:4px}
-.msg.u{background:linear-gradient(135deg,var(--purple),var(--purple2));color:#fff;align-self:flex-end;border-bottom-left-radius:4px;font-weight:600}
+.msg.b{background:rgba(168,85,247,.15);border:1px solid var(--border);color:#fff;align-self:flex-start}
+.msg.u{background:linear-gradient(135deg,#a855f7,#7c3aed);color:#fff;align-self:flex-end;font-weight:600}
 .chat-inp{padding:12px;border-top:1px solid var(--border);display:flex;gap:8px}
-.chat-inp input{flex:1;padding:10px 15px;background:rgba(0,0,0,.4);border:1px solid var(--border);border-radius:20px;color:#fff;font-family:inherit;font-size:.85rem;outline:none}
+.chat-inp input{flex:1;padding:10px 14px;background:rgba(0,0,0,.4);border:1px solid var(--border);border-radius:20px;color:#fff;font-family:inherit;font-size:.85rem;outline:none}
 .chat-inp input:focus{border-color:var(--purple)}
-.chat-inp button{background:linear-gradient(135deg,var(--purple),var(--purple2));border:none;color:#fff;width:40px;height:40px;border-radius:50%;cursor:pointer;font-size:1rem;font-weight:900}
+.chat-inp button{background:linear-gradient(135deg,#a855f7,#7c3aed);border:none;color:#fff;width:40px;height:40px;border-radius:50%;cursor:pointer;font-size:1rem;font-weight:900}
 
-/* TOAST */
-.toast{position:fixed;top:90px;left:50%;transform:translateX(-50%) translateY(-150px);background:linear-gradient(135deg,var(--purple),var(--pink));color:#fff;padding:14px 28px;border-radius:30px;font-weight:900;z-index:3000;transition:.4s;opacity:0;pointer-events:none;box-shadow:0 15px 40px rgba(168,85,247,.5);font-family:'Tajawal',sans-serif;font-size:.9rem}
+.toast{position:fixed;top:90px;left:50%;transform:translateX(-50%) translateY(-150px);background:linear-gradient(135deg,#a855f7,#ec4899);color:#fff;padding:14px 28px;border-radius:30px;font-weight:900;z-index:3000;transition:.4s;opacity:0;pointer-events:none;box-shadow:0 15px 40px rgba(168,85,247,.5);font-size:.9rem}
 .toast.on{transform:translateX(-50%) translateY(0);opacity:1}
 .toast.err{background:linear-gradient(135deg,#dc2626,#991b1b)}
 
-@media(max-width:900px){.hero-grid{grid-template-columns:1fr;text-align:center}.hero-desc{margin:0 auto 35px}.hero-btns{justify-content:center}.hero-car{height:220px}.community-grid{grid-template-columns:1fr}}
 @media(max-width:768px){
 nav ul{display:none}
-nav.open ul{display:flex;position:absolute;top:100%;right:15px;background:rgba(20,10,40,.98);border:1px solid var(--border);border-radius:14px;padding:15px;flex-direction:column;align-items:stretch;min-width:200px;gap:4px;box-shadow:0 25px 60px rgba(0,0,0,.7)}
-nav.open ul a{padding:12px 16px;text-align:right}
-.menu-toggle{display:block}
-.stats-bar{grid-template-columns:1fr 1fr;padding:18px}
-section{padding:60px 0}
+.hero{padding:110px 15px 50px}
+section{padding:50px 0}
 }
-@media(max-width:480px){.stats-bar{grid-template-columns:1fr}.btn{width:100%;justify-content:center}.hero-btns{flex-direction:column}}
 </style>
 </head>
 <body>
 
-<header id="hdr">
+<header>
 <div class="wrap hdr">
 <div class="logo">🎮 خفاجي گيمز</div>
-<nav id="nav">
-<ul>
-<li><a onclick="go('home')">الرئيسية</a></li>
-<li><a onclick="go('videos')">الفيديوهات</a></li>
-<li><a onclick="go('tutorials')">الشروحات</a></li>
-<li><a onclick="go('play')">الألعاب</a></li>
-<li><a onclick="go('tips')">نصايح RP</a></li>
-<li><a onclick="go('games')">تحميل الألعاب</a></li>
-<li><a onclick="go('community')">المجتمع</a></li>
-</ul>
-</nav>
-<div style="display:flex;gap:10px;align-items:center">
-<span class="admin-link" onclick="openAdmin()" title="لوحة التحكم">⚙ الإدارة</span>
-<button class="btn-sub" onclick="subscribe()">اشترك الآن</button>
-<button class="menu-toggle" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
+<nav><ul>
+<li><a href="#videos">الفيديوهات</a></li>
+<li><a href="#play">الألعاب</a></li>
+<li><a href="#tips">نصايح RP</a></li>
+<li><a href="#games">تحميل</a></li>
+</ul></nav>
+<div style="display:flex;gap:8px;align-items:center">
+<span class="admin-btn" id="adminBtn">⚙ الإدارة</span>
+<button class="btn-main" id="subBtn">اشترك الآن</button>
 </div>
 </div>
 </header>
 
-<section class="hero" id="home">
-<div class="hero-bg"><div class="hero-city"></div></div>
-<div class="hero-content">
-<div class="hero-grid">
-<div>
-<div class="hero-tag">قناة عربية · One State RP</div>
-<h1><span class="white">عيش تجربة</span><br><span class="grad">الحياة الواقعية</span></h1>
-<p class="hero-desc">شروحات One State RP، تجارة، تحديثات، ومواقف ضحك مع الأصدقاء. انضم لأكبر مجتمع عربي للعبة الحياة الواقعية!</p>
+<section class="hero">
+<h1>عيش تجربة <span class="grad">الحياة الواقعية</span></h1>
+<p>شروحات One State RP، تجارة، تحديثات، ومواقف ضحك مع الأصدقاء</p>
 <div class="hero-btns">
-<button class="btn btn-primary" onclick="go('videos')">▶ شاهد أحدث فيديو</button>
-<button class="btn btn-secondary" onclick="joinDiscord()">💬 انضم للديسكورد</button>
+<button class="btn btn-p" id="watchBtn">▶ شاهد أحدث فيديو</button>
+<button class="btn btn-s" id="dcBtn">💬 انضم للديسكورد</button>
 </div>
-</div>
-<div class="hero-car">
-<div class="car-glow"></div>
-<svg class="car-svg" viewBox="0 0 500 250" xmlns="http://www.w3.org/2000/svg">
-<defs>
-<linearGradient id="carGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-<stop offset="0%" stop-color="#a855f7"/><stop offset="50%" stop-color="#ec4899"/><stop offset="100%" stop-color="#3b82f6"/>
-</linearGradient>
-<linearGradient id="glass" x1="0%" y1="0%" x2="0%" y2="100%">
-<stop offset="0%" stop-color="#2a1a4a"/><stop offset="100%" stop-color="#0a0612"/>
-</linearGradient>
-</defs>
-<path d="M 60 160 Q 70 120 120 115 L 180 100 Q 220 90 280 95 L 350 100 Q 400 105 430 130 L 450 145 Q 460 150 460 165 L 460 180 L 50 180 L 50 165 Q 50 160 60 160 Z" fill="url(#carGrad)"/>
-<path d="M 200 105 Q 230 95 280 98 L 320 105 Q 340 115 340 140 L 210 140 Q 200 120 200 105 Z" fill="url(#glass)" opacity="0.9"/>
-<path d="M 350 108 L 400 115 Q 420 125 425 145 L 350 145 Z" fill="url(#glass)" opacity="0.9"/>
-<path d="M 60 165 L 460 165" stroke="#fff" stroke-width="2" opacity="0.3"/>
-<path d="M 60 172 L 460 172" stroke="#ec4899" stroke-width="2" opacity="0.6"/>
-<circle cx="130" cy="185" r="28" fill="#0a0612" stroke="#a855f7" stroke-width="3"/>
-<circle cx="130" cy="185" r="14" fill="#1a0a30" stroke="#ec4899" stroke-width="2"/>
-<circle cx="400" cy="185" r="28" fill="#0a0612" stroke="#a855f7" stroke-width="3"/>
-<circle cx="400" cy="185" r="14" fill="#1a0a30" stroke="#ec4899" stroke-width="2"/>
-<circle cx="450" cy="152" r="5" fill="#fbbf24"/>
-<circle cx="55" cy="152" r="4" fill="#ff0000"/>
-<ellipse cx="250" cy="200" rx="200" ry="15" fill="#a855f7" opacity="0.3"/>
-</svg>
-</div>
-</div>
-<div class="stats-bar">
-<div class="stat-item"><div class="stat-icon">📹</div><div><div class="stat-num">+120</div><div class="stat-lbl">فيديو</div></div></div>
-<div class="stat-item"><div class="stat-icon">👥</div><div><div class="stat-num">+6000</div><div class="stat-lbl">مشترك</div></div></div>
-<div class="stat-item"><div class="stat-icon">💬</div><div><div class="stat-num">مجتمع نشط</div><div class="stat-lbl">على ديسكورد</div></div></div>
-<div class="stat-item"><div class="stat-icon">🔄</div><div><div class="stat-num">يومياً</div><div class="stat-lbl">تحديثات</div></div></div>
-</div>
+<div class="stats">
+<div class="stat"><div class="num">+120</div><div class="lbl">فيديو</div></div>
+<div class="stat"><div class="num">+6000</div><div class="lbl">مشترك</div></div>
+<div class="stat"><div class="num">73K</div><div class="lbl">عضو ديسكورد</div></div>
+<div class="stat"><div class="num">يومياً</div><div class="lbl">تحديثات</div></div>
 </div>
 </section>
 
 <section class="wrap" id="videos">
-<div class="sec-head"><h2>أحدث <span>الفيديوهات</span></h2><p>شاهد آخر ما نشرناه على قناة خفاجي گيمز</p><div class="sec-line"></div></div>
-<div class="video-grid">
-<div class="video-card" onclick="openVideo('أسرع طريق للفلوس')"><div class="video-thumb"><div class="play-btn">▶</div><div class="video-duration">3:30</div></div><div class="video-info"><div class="video-title">أسرع طريق للفلوس في One State RP</div><div class="video-channel">One State RP</div></div></div>
-<div class="video-card" onclick="openVideo('تاجر سيارات بحدث الدبل')"><div class="video-thumb"><div class="play-btn">▶</div><div class="video-duration">2:18</div></div><div class="video-info"><div class="video-title">تاجر سيارات بحدث الدبل</div><div class="video-channel">One State RP</div></div></div>
-<div class="video-card" onclick="openVideo('تجربة التحديث الجديد')"><div class="video-thumb"><div class="play-btn">▶</div><div class="video-duration">2:38</div></div><div class="video-info"><div class="video-title">تجربة التحديث الجديد في المدينة</div><div class="video-channel">One State RP</div></div></div>
-</div>
-</section>
-
-<section class="wrap" id="tutorials">
-<div class="sec-head"><h2>شروحات <span>ودروس</span></h2><p>تعلم كل أسرار One State RP من الصفر</p><div class="sec-line"></div></div>
-<div class="tutorials-grid">
-<div class="tut-card" onclick="openTutorial('دليل المبتدئين')"><div class="tut-txt"><h4>دليل المبتدئين</h4><p>ابدأ رحلتك خطوة بخطوة</p></div><div class="tut-icon">🚀</div></div>
-<div class="tut-card" onclick="openTutorial('الربح والتجارة')"><div class="tut-txt"><h4>الربح والتجارة</h4><p>طرق كسب المال بسرعة</p></div><div class="tut-icon">💰</div></div>
-<div class="tut-card" onclick="openTutorial('أسرار التحديثات')"><div class="tut-txt"><h4>أسرار التحديثات</h4><p>كل ما هو جديد في اللعبة</p></div><div class="tut-icon">🔓</div></div>
-<div class="tut-card" onclick="openTutorial('مشاريع مع الأصدقاء')"><div class="tut-txt"><h4>مشاريع مع الأصدقاء</h4><p>ابنِ إمبراطوريتك مع شلتك</p></div><div class="tut-icon">🤝</div></div>
+<div class="sec-head"><h2>أحدث <span>الفيديوهات</span></h2><p>شاهد آخر ما نشرناه</p></div>
+<div class="grid">
+<div class="card" data-video="أسرع طريق للفلوس"><span class="icon">🎬</span><h3>أسرع طريق للفلوس</h3><p>شرح كامل في One State RP</p></div>
+<div class="card" data-video="تاجر سيارات"><span class="icon">🚗</span><h3>تاجر سيارات بحدث الدبل</h3><p>طريقة الربح من السيارات</p></div>
+<div class="card" data-video="التحديث الجديد"><span class="icon">🆕</span><h3>تجربة التحديث الجديد</h3><p>كل ما هو جديد في المدينة</p></div>
 </div>
 </section>
 
 <section class="wrap" id="play">
-<div class="sec-head"><h2>العب و<span>اربح</span></h2><p>5 ألعاب تفاعلية داخل الموقع - اجمع العملات</p><div class="sec-line"></div></div>
-<div class="play-grid">
-<div class="play-card" onclick="openGame('math')"><span class="earn">+10 🪙</span><div class="play-icon">🧮</div><h4>تحدي الرياضيات</h4><p>حل 5 مسائل</p></div>
-<div class="play-card" onclick="openGame('memory')"><span class="earn">+15 🪙</span><div class="play-icon">🧠</div><h4>لعبة الذاكرة</h4><p>طابق الأزواج</p></div>
-<div class="play-card" onclick="openGame('reaction')"><span class="earn">+8 🪙</span><div class="play-icon">⚡</div><h4>سرعة الرد</h4><p>اختبر سرعتك</p></div>
-<div class="play-card" onclick="openGame('guess')"><span class="earn">+12 🪙</span><div class="play-icon">🎯</div><h4>خمن الرقم</h4><p>بين 1 و 100</p></div>
-<div class="play-card" onclick="openGame('rps')"><span class="earn">+5 🪙</span><div class="play-icon">✊</div><h4>حجر ورقة مقص</h4><p>تحدى البوت</p></div>
+<div class="sec-head"><h2>العب و<span>اربح</span></h2><p>5 ألعاب تفاعلية داخل الموقع</p></div>
+<div class="grid">
+<div class="card card-center" data-game="math"><span class="earn">+10 نقطة</span><span class="icon">🧮</span><h3>تحدي الرياضيات</h3><p>حل 5 مسائل</p></div>
+<div class="card card-center" data-game="memory"><span class="earn">+15 نقطة</span><span class="icon">🧠</span><h3>لعبة الذاكرة</h3><p>طابق الأزواج</p></div>
+<div class="card card-center" data-game="reaction"><span class="earn">+8 نقطة</span><span class="icon">⚡</span><h3>سرعة الرد</h3><p>اختبر سرعتك</p></div>
+<div class="card card-center" data-game="guess"><span class="earn">+12 نقطة</span><span class="icon">🎯</span><h3>خمن الرقم</h3><p>بين 1 و 100</p></div>
+<div class="card card-center" data-game="rps"><span class="earn">+5 نقطة</span><span class="icon">✊</span><h3>حجر ورقة مقص</h3><p>تحدى البوت</p></div>
 </div>
 </section>
 
 <section class="wrap" id="tips">
-<div class="sec-head"><h2>نصايح <span>الـ RP</span></h2><p>نصائح ذهبية للعب أدوار احترافي</p><div class="sec-line"></div></div>
-<div class="tutorials-grid">
-<div class="tut-card"><div class="tut-txt"><h4>🎭 ابقَ في شخصيتك</h4><p>لا تخرج من الـ RP أبداً، عش الشخصية</p></div></div>
-<div class="tut-card"><div class="tut-txt"><h4>😱 احترم الخوف</h4><p>إذا صوب عليك سلاح، تظاهر بالخوف</p></div></div>
-<div class="tut-card"><div class="tut-txt"><h4>🚫 لا تسوي RDM</h4><p>لا تقتل أحد بدون سبب داخل اللعبة</p></div></div>
-<div class="tut-card"><div class="tut-txt"><h4>🤐 لا تستخدم MG</h4><p>لا تستعمل معلومات من خارج اللعبة</p></div></div>
-<div class="tut-card"><div class="tut-txt"><h4>💀 احترم NLR</h4><p>بعد الموت تنسى حياتك السابقة</p></div></div>
-<div class="tut-card"><div class="tut-txt"><h4>🤝 احترم الجميع</h4><p>الاحترام أساس المجتمع الناجح</p></div></div>
+<div class="sec-head"><h2>نصايح <span>الـ RP</span></h2><p>نصائح ذهبية للعب أدوار احترافي</p></div>
+<div class="grid">
+<div class="card"><span class="icon">🎭</span><h3>ابقَ في شخصيتك</h3><p>لا تخرج من الـ RP أبداً، عش الشخصية</p></div>
+<div class="card"><span class="icon">😱</span><h3>احترم الخوف</h3><p>إذا صوب عليك سلاح، تظاهر بالخوف</p></div>
+<div class="card"><span class="icon">🚫</span><h3>لا تسوي RDM</h3><p>لا تقتل أحد بدون سبب داخل اللعبة</p></div>
+<div class="card"><span class="icon">🤐</span><h3>لا تستخدم MG</h3><p>لا تستعمل معلومات من خارج اللعبة</p></div>
+<div class="card"><span class="icon">💀</span><h3>احترم NLR</h3><p>بعد الموت تنسى حياتك السابقة</p></div>
+<div class="card"><span class="icon">🤝</span><h3>احترم الجميع</h3><p>الاحترام أساس المجتمع الناجح</p></div>
 </div>
 </section>
 
 <section class="wrap" id="games">
-<div class="sec-head"><h2>تحميل <span>الألعاب</span></h2><p>كل ألعاب الحياة الواقعية على الموبايل</p><div class="sec-line"></div></div>
-<div class="games-grid">
-<div class="game-card"><div class="game-icon">🏙️</div><h4>NEWRP</h4><p>حياة واقعية بسيرفرات عربية</p><a href="https://play.google.com/store/search?q=NEWRP&c=apps" class="game-btn" target="_blank">⬇️ تحميل</a></div>
-<div class="game-card"><div class="game-icon">🦁</div><h4>ONE LION</h4><p>RP متقدمة برسومات عالية</p><a href="https://play.google.com/store/search?q=ONE%20LION%20RP&c=apps" class="game-btn" target="_blank">⬇️ تحميل</a></div>
-<div class="game-card"><div class="game-icon">🎮</div><h4>RP Grand</h4><p>أشهر ألعاب الحياة الواقعية</p><a href="https://play.google.com/store/search?q=RP%20Grand&c=apps" class="game-btn" target="_blank">⬇️ تحميل</a></div>
-<div class="game-card"><div class="game-icon">🌆</div><h4>Suburbio RP</h4><p>تجربة RP برازيلية</p><a href="https://play.google.com/store/search?q=Suburbio%20RP&c=apps" class="game-btn" target="_blank">⬇️ تحميل</a></div>
-<div class="game-card"><div class="game-icon">⛏️</div><h4>Craft RP</h4><p>ماين كرافت بأسلوب واقعي</p><a href="https://play.google.com/store/search?q=Craft%20RP&c=apps" class="game-btn" target="_blank">⬇️ تحميل</a></div>
-<div class="game-card"><div class="game-icon">🎯</div><h4>BEDROCK</h4><p>رسومات محسنة و تحكم ممتاز</p><a href="https://play.google.com/store/search?q=BEDROCK%20Reimagined&c=apps" class="game-btn" target="_blank">⬇️ تحميل</a></div>
-</div>
-</section>
-
-<section class="wrap" id="community">
-<div class="sec-head"><h2>انضم <span>لمجتمعنا</span></h2><p>أكبر مجتمع عربي للاعبين One State RP</p><div class="sec-line"></div></div>
-<div class="community-grid">
-<div class="discord-card">
-<div class="discord-icon">💬</div>
-<h3>ديسكورد خفاجي گيمز</h3>
-<p class="sub">Community PP</p>
-<div class="discord-members">+73K عضو نشط</div>
-<button class="btn-discord" onclick="joinDiscord()">انضم الآن</button>
-</div>
-<div class="shorts-grid">
-<div class="short-card" onclick="openShort('سيارة رياضية')"><div class="short-tag">🔥</div><div class="short-play">▶</div></div>
-<div class="short-card" onclick="openShort('مطاردة')"><div class="short-tag">⚡</div><div class="short-play">▶</div></div>
-<div class="short-card" onclick="openShort('لحظة مضحكة')"><div class="short-tag">😂</div><div class="short-play">▶</div></div>
-</div>
+<div class="sec-head"><h2>تحميل <span>الألعاب</span></h2><p>كل ألعاب الحياة الواقعية على الموبايل</p></div>
+<div class="grid">
+<div class="card card-center"><span class="icon">🏙️</span><h3>NEWRP</h3><p>حياة واقعية بسيرفرات عربية</p><a href="https://play.google.com/store/search?q=NEWRP&c=apps" class="card-btn" target="_blank">⬇️ تحميل</a></div>
+<div class="card card-center"><span class="icon">🦁</span><h3>ONE LION</h3><p>RP متقدمة برسومات عالية</p><a href="https://play.google.com/store/search?q=ONE%20LION%20RP&c=apps" class="card-btn" target="_blank">⬇️ تحميل</a></div>
+<div class="card card-center"><span class="icon">🎮</span><h3>RP Grand</h3><p>أشهر ألعاب الحياة الواقعية</p><a href="https://play.google.com/store/search?q=RP%20Grand&c=apps" class="card-btn" target="_blank">⬇️ تحميل</a></div>
+<div class="card card-center"><span class="icon">🌆</span><h3>Suburbio RP</h3><p>تجربة RP برازيلية</p><a href="https://play.google.com/store/search?q=Suburbio%20RP&c=apps" class="card-btn" target="_blank">⬇️ تحميل</a></div>
+<div class="card card-center"><span class="icon">⛏️</span><h3>Craft RP</h3><p>ماين كرافت بأسلوب واقعي</p><a href="https://play.google.com/store/search?q=Craft%20RP&c=apps" class="card-btn" target="_blank">⬇️ تحميل</a></div>
+<div class="card card-center"><span class="icon">🎯</span><h3>BEDROCK</h3><p>رسومات محسنة و تحكم ممتاز</p><a href="https://play.google.com/store/search?q=BEDROCK&c=apps" class="card-btn" target="_blank">⬇️ تحميل</a></div>
 </div>
 </section>
 
@@ -370,381 +210,421 @@ section{padding:60px 0}
 </div>
 </footer>
 
-<!-- Game Modal -->
+<!-- GAME MODAL -->
 <div class="modal" id="gameModal">
 <div class="mc">
-<button class="close" onclick="closeGame()">✕</button>
+<button class="close" id="closeGame">✕</button>
 <h2 id="gameTitle">لعبة</h2>
 <div id="gameArea"></div>
 </div>
 </div>
 
-<!-- Admin Modal -->
+<!-- ADMIN MODAL -->
 <div class="modal" id="adminModal">
 <div class="mc">
-<button class="close" onclick="closeAdmin()">✕</button>
+<button class="close" id="closeAdmin">✕</button>
 <h2>🔐 لوحة الإدارة</h2>
 <div id="adminArea"></div>
 </div>
 </div>
 
-<!-- Chat -->
-<div class="chat-w">
+<!-- CHAT -->
+<button class="chat-btn" id="chatBtn">💬</button>
 <div class="chat-win" id="chatWin">
 <div class="chat-h">
-<div class="info">
-<div class="av">🤖</div>
-<div><div class="nm">مساعد خفاجي</div><div class="st">● ONLINE</div></div>
-</div>
-<button onclick="toggleChat()">✕</button>
+<div>🤖 مساعد خفاجي</div>
+<button id="chatClose">✕</button>
 </div>
 <div class="chat-body" id="chatBody"></div>
 <div class="chat-inp">
-<input type="text" id="chatInput" placeholder="اكتب رسالتك..." onkeydown="if(event.key==='Enter')sendChat()">
-<button onclick="sendChat()">➤</button>
+<input type="text" id="chatInput" placeholder="اكتب رسالتك...">
+<button id="chatSend">➤</button>
 </div>
-</div>
-<button class="chat-t" onclick="toggleChat()">💬</button>
 </div>
 
 <div class="toast" id="toast"></div>
 
 <script>
 /* ══════ UTILS ══════ */
+function $(id){ return document.getElementById(id); }
 function toast(msg, err){
-var t = document.getElementById('toast');
-t.textContent = msg;
-t.className = 'toast on' + (err ? ' err' : '');
-setTimeout(function(){ t.classList.remove('on') }, 2500);
-}
-
-window.addEventListener('scroll', function(){
-var hdr = document.getElementById('hdr');
-if(window.scrollY > 50) hdr.classList.add('scrolled');
-else hdr.classList.remove('scrolled');
-});
-
-function go(id){
-var el = document.getElementById(id);
-if(el){ window.scrollTo({top: el.offsetTop - 70, behavior: 'smooth'}); document.getElementById('nav').classList.remove('open'); }
+  var t = $('toast');
+  t.textContent = msg;
+  t.className = 'toast on' + (err ? ' err' : '');
+  setTimeout(function(){ t.classList.remove('on'); }, 2500);
 }
 
 /* ══════ VISITOR TRACKING ══════ */
+function getVisitors(){
+  try { return JSON.parse(localStorage.getItem('khafajiVisitors') || '[]'); }
+  catch(e) { return []; }
+}
+function saveVisitors(v){
+  try { localStorage.setItem('khafajiVisitors', JSON.stringify(v)); } catch(e){}
+}
 function trackVisitor(action){
-try{
-var visitors = JSON.parse(localStorage.getItem('khafajiVisitors') || '[]');
-var now = new Date().toISOString();
-var userAgent = navigator.userAgent.substring(0, 50);
-var device = /Mobile|Android|iPhone/i.test(userAgent) ? '📱 موبايل' : '💻 كمبيوتر';
-var browser = 'متصفح';
-if(userAgent.indexOf('Chrome') > -1) browser = 'Chrome';
-if(userAgent.indexOf('Firefox') > -1) browser = 'Firefox';
-if(userAgent.indexOf('Safari') > -1 && userAgent.indexOf('Chrome') === -1) browser = 'Safari';
-
-visitors.push({
-time: now,
-device: device,
-browser: browser,
-action: action || 'زيارة الموقع',
-ua: userAgent
-});
-
-if(visitors.length > 100) visitors = visitors.slice(-100);
-localStorage.setItem('khafajiVisitors', JSON.stringify(visitors));
-
-var total = parseInt(localStorage.getItem('khafajiTotalVisits') || '0') + 1;
-localStorage.setItem('khafajiTotalVisits', total);
-}catch(e){}
+  try {
+    var v = getVisitors();
+    v.push({
+      time: new Date().toISOString(),
+      device: /Mobile|Android|iPhone/i.test(navigator.userAgent) ? '📱 موبايل' : '💻 كمبيوتر',
+      action: action || 'زيارة الموقع'
+    });
+    if(v.length > 100) v = v.slice(-100);
+    saveVisitors(v);
+    var total = parseInt(localStorage.getItem('khafajiTotal') || '0') + 1;
+    localStorage.setItem('khafajiTotal', total);
+  } catch(e){}
 }
-
 function trackAction(name){
-try{
-var actions = JSON.parse(localStorage.getItem('khafajiActions') || '{}');
-actions[name] = (actions[name] || 0) + 1;
-localStorage.setItem('khafajiActions', JSON.stringify(actions));
-var visitors = JSON.parse(localStorage.getItem('khafajiVisitors') || '[]');
-if(visitors.length > 0){
-visitors[visitors.length - 1].action = name;
-visitors[visitors.length - 1].time = new Date().toISOString();
+  try {
+    var v = getVisitors();
+    if(v.length > 0){
+      v[v.length - 1].action = name;
+      v[v.length - 1].time = new Date().toISOString();
+      saveVisitors(v);
+    }
+  } catch(e){}
 }
-localStorage.setItem('khafajiVisitors', JSON.stringify(visitors));
-}catch(e){}
-}
-
-/* تسجيل الزيارة عند فتح الموقع */
 trackVisitor('زيارة الموقع');
 
 /* ══════ ADMIN ══════ */
 var ADMIN_PASS = '12000AbC@#';
-var isAdmin = false;
 
-function openAdmin(){
-document.getElementById('adminModal').classList.add('on');
-renderAdminLogin();
-}
-
-function closeAdmin(){
-document.getElementById('adminModal').classList.remove('on');
-}
+$('adminBtn').addEventListener('click', function(){
+  $('adminModal').classList.add('on');
+  renderAdminLogin();
+});
+$('closeAdmin').addEventListener('click', function(){
+  $('adminModal').classList.remove('on');
+});
 
 function renderAdminLogin(){
-document.getElementById('adminArea').innerHTML = `
-<p style="text-align:center;color:#8b7ba8;margin-bottom:15px;font-size:.85rem">أدخل رمز الدخول للوصول للوحة التحكم</p>
-<input type="password" class="admin-input" id="adminPass" placeholder="••••••••" onkeypress="if(event.key==='Enter')checkAdmin()">
-<div style="text-align:center">
-<button class="btn-g" onclick="checkAdmin()">🔓 دخول</button>
-</div>
-`;
-setTimeout(function(){
-var inp = document.getElementById('adminPass');
-if(inp) inp.focus();
-}, 100);
+  $('adminArea').innerHTML = 
+    '<p style="text-align:center;color:#8b7ba8;margin-bottom:12px;font-size:.85rem">أدخل رمز الدخول</p>' +
+    '<input type="password" class="admin-input" id="adminPass" placeholder="••••••••">' +
+    '<div style="text-align:center"><button class="btn-g" id="adminLoginBtn">🔓 دخول</button></div>';
+  $('adminLoginBtn').addEventListener('click', checkAdmin);
+  $('adminPass').addEventListener('keypress', function(e){ if(e.key === 'Enter') checkAdmin(); });
 }
 
 function checkAdmin(){
-var pass = document.getElementById('adminPass').value;
-if(pass === ADMIN_PASS){
-isAdmin = true;
-toast('✅ تم الدخول للوحة الإدارة');
-renderAdminPanel();
-}else{
-toast('❌ رمز الدخول خطأ!', true);
-document.getElementById('adminPass').value = '';
-}
+  var pass = $('adminPass').value;
+  if(pass === ADMIN_PASS){
+    toast('✅ تم الدخول للوحة الإدارة');
+    renderAdminPanel();
+  } else {
+    toast('❌ رمز الدخول خطأ!', true);
+    $('adminPass').value = '';
+  }
 }
 
 function renderAdminPanel(){
-var visitors = JSON.parse(localStorage.getItem('khafajiVisitors') || '[]');
-var total = parseInt(localStorage.getItem('khafajiTotalVisits') || '0');
-var actions = JSON.parse(localStorage.getItem('khafajiActions') || '{}');
-var uniqueDevices = {};
-visitors.forEach(function(v){ uniqueDevices[v.device] = (uniqueDevices[v.device] || 0) + 1; });
-
-var html = '<div class="admin-stats">';
-html += '<div class="admin-stat"><span class="n">' + total + '</span><span class="l">إجمالي الزيارات</span></div>';
-html += '<div class="admin-stat"><span class="n">' + visitors.length + '</span><span class="l">سجلات محفوظة</span></div>';
-html += '<div class="admin-stat"><span class="n">' + Object.keys(uniqueDevices).length + '</span><span class="l">أنواع الأجهزة</span></div>';
-html += '</div>';
-
-html += '<h3 style="color:#a855f7;font-size:.9rem;margin:15px 0 8px">📊 نشاط الزوار:</h3>';
-if(visitors.length === 0){
-html += '<p style="text-align:center;color:#8b7ba8;font-size:.85rem">لا يوجد زوار بعد</p>';
-}else{
-html += '<div class="visitors-list">';
-var reversed = visitors.slice().reverse();
-for(var i = 0; i < Math.min(reversed.length, 30); i++){
-var v = reversed[i];
-var time = new Date(v.time);
-var timeStr = time.toLocaleDateString('ar-EG') + ' ' + time.toLocaleTimeString('ar-EG', {hour:'2-digit', minute:'2-digit'});
-html += '<div class="visitor-item"><div><div>' + v.device + ' - ' + v.browser + '</div><div class="act">' + v.action + '</div></div><div class="time">' + timeStr + '</div></div>';
+  var visitors = getVisitors();
+  var total = parseInt(localStorage.getItem('khafajiTotal') || '0');
+  
+  var html = '<div class="admin-stats">';
+  html += '<div class="admin-stat"><span class="n">' + total + '</span><span class="l">إجمالي الزيارات</span></div>';
+  html += '<div class="admin-stat"><span class="n">' + visitors.length + '</span><span class="l">سجلات</span></div>';
+  html += '</div>';
+  html += '<h3 style="color:#a855f7;font-size:.85rem;margin:12px 0 5px">📊 آخر الزوار:</h3>';
+  
+  if(visitors.length === 0){
+    html += '<p style="text-align:center;color:#8b7ba8;font-size:.85rem">لا يوجد زوار بعد</p>';
+  } else {
+    html += '<div class="visitors-list">';
+    var reversed = visitors.slice().reverse();
+    for(var i = 0; i < Math.min(reversed.length, 30); i++){
+      var v = reversed[i];
+      var d = new Date(v.time);
+      var ts = d.toLocaleDateString('ar-EG') + ' ' + d.toLocaleTimeString('ar-EG', {hour:'2-digit', minute:'2-digit'});
+      html += '<div class="visitor-item">';
+      html += '<div><div>' + v.device + '</div><div class="act">' + (v.action || 'زيارة') + '</div></div>';
+      html += '<div class="time">' + ts + '</div>';
+      html += '</div>';
+    }
+    html += '</div>';
+  }
+  html += '<div style="text-align:center;margin-top:15px"><button class="btn-g ghost" id="clearBtn" style="font-size:.8rem;padding:8px 16px">🗑️ مسح البيانات</button></div>';
+  
+  $('adminArea').innerHTML = html;
+  $('clearBtn').addEventListener('click', function(){
+    if(confirm('هل تريد مسح كل البيانات؟')){
+      localStorage.removeItem('khafajiVisitors');
+      localStorage.removeItem('khafajiTotal');
+      toast('✅ تم المسح');
+      renderAdminPanel();
+    }
+  });
 }
-html += '</div>';
-}
 
-html += '<h3 style="color:#a855f7;font-size:.9rem;margin:15px 0 8px">🎯 التفاعلات:</h3>';
-var acts = Object.keys(actions);
-if(acts.length === 0){
-html += '<p style="text-align:center;color:#8b7ba8;font-size:.85rem">لا يوجد تفاعلات بعد</p>';
-}else{
-html += '<div class="visitors-list" style="max-height:150px">';
-acts.forEach(function(k){
-html += '<div class="visitor-item"><div>' + k + '</div><div class="act">' + actions[k] + ' مرة</div></div>';
+/* ══════ BUTTONS ══════ */
+$('subBtn').addEventListener('click', function(){
+  trackAction('اشترك بيوتيوب');
+  toast('✅ جاري فتح القناة');
+  window.open('https://youtube.com/@experiencestaterp', '_blank');
 });
-html += '</div>';
-}
+$('watchBtn').addEventListener('click', function(){
+  trackAction('شاهد فيديو');
+  toast('▶ جاري فتح الفيديوهات');
+  window.open('https://youtube.com/@experiencestaterp/videos', '_blank');
+});
+$('dcBtn').addEventListener('click', function(){
+  trackAction('انضم للديسكورد');
+  toast('💬 جاري فتح الديسكورد');
+  window.open('https://discord.gg/4AbKZMCPXP', '_blank');
+});
 
-html += '<div style="text-align:center;margin-top:20px">';
-html += '<button class="btn-g ghost" onclick="clearAdminData()" style="font-size:.8rem;padding:8px 16px">🗑️ مسح البيانات</button>';
-html += '</div>';
+/* الفيديو */
+document.querySelectorAll('[data-video]').forEach(function(el){
+  el.addEventListener('click', function(){
+    var name = el.getAttribute('data-video');
+    trackAction('شاهد: ' + name);
+    toast('▶ ' + name);
+    setTimeout(function(){ window.open('https://youtube.com/@experiencestaterp/videos', '_blank'); }, 500);
+  });
+});
 
-document.getElementById('adminArea').innerHTML = html;
-}
-
-function clearAdminData(){
-if(confirm('هل تريد مسح كل بيانات الزوار والتفاعلات؟')){
-localStorage.removeItem('khafajiVisitors');
-localStorage.removeItem('khafajiActions');
-localStorage.removeItem('khafajiTotalVisits');
-toast('✅ تم مسح البيانات');
-renderAdminPanel();
-}
-}
-
-/* ══════ SUBSCRIBE & DISCORD ══════ */
-function subscribe(){ trackAction('اشترك في يوتيوب'); window.open('https://youtube.com/@experiencestaterp', '_blank'); toast('✅ جاري فتح القناة'); }
-function joinDiscord(){ trackAction('انضم للديسكورد'); window.open('https://discord.gg/4AbKZMCPXP', '_blank'); toast('💬 جاري فتح الديسكورد'); }
-function openVideo(title){ trackAction('شاهد فيديو: ' + title); toast('▶ ' + title); setTimeout(function(){ window.open('https://youtube.com/@experiencestaterp/videos', '_blank'); }, 500); }
-function openTutorial(title){ trackAction('شاهد شرح: ' + title); toast('📚 ' + title); setTimeout(function(){ window.open('https://youtube.com/@experiencestaterp', '_blank'); }, 500); }
-function openShort(title){ trackAction('شاهد شورت: ' + title); toast('📱 ' + title); setTimeout(function(){ window.open('https://www.tiktok.com/@fvx4', '_blank'); }, 500); }
+/* الألعاب */
+document.querySelectorAll('[data-game]').forEach(function(el){
+  el.addEventListener('click', function(){
+    var type = el.getAttribute('data-game');
+    trackAction('لعب: ' + type);
+    openGame(type);
+  });
+});
 
 /* ══════ GAMES ══════ */
-var mScore = 0, mQ = 0, mAns = 0;
-var memState = {cards:[], flips:[], matches:0, lock:false};
-var guessNum = 0, guessTries = 0;
-var reactState = {timeout:null, start:0, ready:false};
+$('closeGame').addEventListener('click', closeGame);
 
 function openGame(type){
-trackAction('لعب: ' + type);
-document.getElementById('gameModal').classList.add('on');
-var area = document.getElementById('gameArea');
-var title = document.getElementById('gameTitle');
-document.body.style.overflow = 'hidden';
-
-if(type === 'math'){
-title.textContent = '🧮 تحدي الرياضيات';
-mScore = 0; mQ = 0;
-area.innerHTML = '<div class="gd">النقاط: <span id="mS">0</span> / 5</div><div class="gd" id="mQ">جاري التحضير...</div><input type="number" class="gi" id="mA" placeholder="الإجابة" onkeypress="if(event.key===\'Enter\')checkMath()"><div class="gbtns"><button class="btn-g" onclick="checkMath()">إرسال</button></div>';
-nextMath();
-}
-else if(type === 'memory'){ title.textContent = '🧠 لعبة الذاكرة'; startMemory(); }
-else if(type === 'reaction'){ title.textContent = '⚡ سرعة الرد'; startReaction(); }
-else if(type === 'guess'){
-title.textContent = '🎯 خمن الرقم';
-guessNum = Math.floor(Math.random()*100) + 1; guessTries = 0;
-area.innerHTML = '<div class="gd" id="gMsg">خمن الرقم بين 1 و 100</div><input type="number" class="gi" id="gInp" placeholder="تخمينك" onkeypress="if(event.key===\'Enter\')checkGuess()"><div class="gbtns"><button class="btn-g" onclick="checkGuess()">تخمين</button></div><div class="gd" id="gTry">المحاولات: 0</div>';
-}
-else if(type === 'rps'){
-title.textContent = '✊ حجر ورقة مقص';
-area.innerHTML = '<div class="gd">اختر حركتك!</div><div class="gbtns"><button class="btn-g ghost" onclick="playRPS(0)">✊ حجر</button><button class="btn-g ghost" onclick="playRPS(1)">📄 ورقة</button><button class="btn-g ghost" onclick="playRPS(2)">✂️ مقص</button></div>';
-}
+  $('gameModal').classList.add('on');
+  var area = $('gameArea');
+  var title = $('gameTitle');
+  document.body.style.overflow = 'hidden';
+  
+  if(type === 'math'){
+    title.textContent = '🧮 تحدي الرياضيات';
+    window.mathScore = 0; window.mathQ = 0;
+    area.innerHTML = '<div class="gd">النقاط: <span id="mS">0</span> / 5</div><div class="gd" id="mQ">جاري...</div><input type="number" class="gi" id="mA" placeholder="الإجابة"><div class="gbtns"><button class="btn-g" id="mBtn">إرسال</button></div>';
+    $('mBtn').addEventListener('click', checkMath);
+    $('mA').addEventListener('keypress', function(e){ if(e.key === 'Enter') checkMath(); });
+    nextMath();
+  }
+  else if(type === 'memory'){ title.textContent = '🧠 لعبة الذاكرة'; startMemory(); }
+  else if(type === 'reaction'){ title.textContent = '⚡ سرعة الرد'; startReaction(); }
+  else if(type === 'guess'){
+    title.textContent = '🎯 خمن الرقم';
+    window.guessNum = Math.floor(Math.random()*100) + 1;
+    window.guessTries = 0;
+    area.innerHTML = '<div class="gd" id="gMsg">خمن بين 1 و 100</div><input type="number" class="gi" id="gInp" placeholder="تخمينك"><div class="gbtns"><button class="btn-g" id="gBtn">تخمين</button></div><div class="gd" id="gTry">المحاولات: 0</div>';
+    $('gBtn').addEventListener('click', checkGuess);
+    $('gInp').addEventListener('keypress', function(e){ if(e.key === 'Enter') checkGuess(); });
+  }
+  else if(type === 'rps'){
+    title.textContent = '✊ حجر ورقة مقص';
+    area.innerHTML = '<div class="gd">اختر حركتك!</div><div class="gbtns"><button class="btn-g ghost" data-rps="0">✊ حجر</button><button class="btn-g ghost" data-rps="1">📄 ورقة</button><button class="btn-g ghost" data-rps="2">✂️ مقص</button></div>';
+    area.querySelectorAll('[data-rps]').forEach(function(b){
+      b.addEventListener('click', function(){ playRPS(parseInt(b.getAttribute('data-rps'))); });
+    });
+  }
 }
 
 function closeGame(){
-document.getElementById('gameModal').classList.remove('on');
-document.body.style.overflow = '';
-if(reactState.timeout) clearTimeout(reactState.timeout);
+  $('gameModal').classList.remove('on');
+  document.body.style.overflow = '';
+  if(window.reactTimeout) clearTimeout(window.reactTimeout);
 }
 
+/* رياضيات */
 function nextMath(){
-if(mQ >= 5){
-var e = mScore * 10;
-document.getElementById('gameTitle').textContent = '🎉 انتهت اللعبة';
-document.getElementById('gameArea').innerHTML = '<div class="gd">أحرزت ' + mScore + ' من 5<br>ربحت ' + e + ' نقطة</div><div class="gbtns"><button class="btn-g" onclick="closeGame()">إغلاق</button><button class="btn-g ghost" onclick="openGame(\'math\')">العب مرة أخرى</button></div>';
-return;
+  if(window.mathQ >= 5){
+    var earned = window.mathScore * 10;
+    $('gameTitle').textContent = '🎉 النتيجة';
+    $('gameArea').innerHTML = '<div class="gd">أحرزت ' + window.mathScore + ' من 5<br>ربحت ' + earned + ' نقطة</div><div class="gbtns"><button class="btn-g" id="againBtn">العب مرة أخرى</button></div>';
+    $('againBtn').addEventListener('click', function(){ openGame('math'); });
+    return;
+  }
+  var a = Math.floor(Math.random()*20) + 1;
+  var b = Math.floor(Math.random()*20) + 1;
+  var ops = ['+', '-', '×'];
+  var op = ops[Math.floor(Math.random()*3)];
+  var c;
+  if(op === '+') c = a + b;
+  else if(op === '-') c = a - b;
+  else c = a * b;
+  window.mathAns = c;
+  $('mQ').textContent = a + ' ' + op + ' ' + b + ' = ؟';
+  $('mA').value = '';
+  $('mA').focus();
 }
-var a = Math.floor(Math.random()*20) + 1, b = Math.floor(Math.random()*20) + 1;
-var ops = ['+', '-', '×'], op = ops[Math.floor(Math.random()*3)];
-var c; if(op === '+') c = a+b; else if(op === '-') c = a-b; else c = a*b;
-mAns = c;
-document.getElementById('mQ').textContent = a + ' ' + op + ' ' + b + ' = ؟';
-document.getElementById('mA').value = '';
-document.getElementById('mA').focus();
-}
-
 function checkMath(){
-var v = parseInt(document.getElementById('mA').value);
-if(isNaN(v)) return;
-if(v === mAns) mScore++;
-mQ++;
-document.getElementById('mS').textContent = mScore;
-nextMath();
+  var v = parseInt($('mA').value);
+  if(isNaN(v)) return;
+  if(v === window.mathAns) window.mathScore++;
+  window.mathQ++;
+  $('mS').textContent = window.mathScore;
+  nextMath();
 }
 
+/* ذاكرة */
 function startMemory(){
-var emo = ['🎮','🚗','🔫','🏠','💎','⭐','🔥','🎯'];
-var cards = emo.concat(emo);
-for(var i = cards.length-1; i > 0; i--){ var j = Math.floor(Math.random()*(i+1)); var t = cards[i]; cards[i] = cards[j]; cards[j] = t; }
-memState = {cards:cards, flips:[], matches:0, lock:false};
-var h = '<div class="mem-grid">';
-for(var k = 0; k < cards.length; k++){ h += '<div class="mem-card" data-i="' + k + '" onclick="flipCard(' + k + ')">?</div>'; }
-h += '</div><div class="gd">الأزواج: <span id="memM">0</span> / 8</div>';
-document.getElementById('gameArea').innerHTML = h;
+  var emo = ['🎮','🚗','🔫','🏠','💎','⭐','🔥','🎯'];
+  var cards = emo.concat(emo);
+  for(var i = cards.length - 1; i > 0; i--){
+    var j = Math.floor(Math.random()*(i+1));
+    var t = cards[i]; cards[i] = cards[j]; cards[j] = t;
+  }
+  window.memState = {cards: cards, flips: [], matches: 0, lock: false};
+  var h = '<div class="mem-grid">';
+  for(var k = 0; k < cards.length; k++){
+    h += '<div class="mem-card" data-idx="' + k + '">?</div>';
+  }
+  h += '</div><div class="gd">الأزواج: <span id="memM">0</span> / 8</div>';
+  $('gameArea').innerHTML = h;
+  $('gameArea').querySelectorAll('.mem-card').forEach(function(card){
+    card.addEventListener('click', function(){
+      flipCard(parseInt(card.getAttribute('data-idx')));
+    });
+  });
 }
-
 function flipCard(i){
-if(memState.lock) return;
-var c = document.querySelector('.mem-card[data-i="' + i + '"]');
-if(!c || c.classList.contains('flip') || c.classList.contains('match')) return;
-c.classList.add('flip'); c.textContent = memState.cards[i];
-memState.flips.push(i);
-if(memState.flips.length === 2){
-memState.lock = true;
-var a = memState.flips[0], b = memState.flips[1];
-if(memState.cards[a] === memState.cards[b]){
-setTimeout(function(){
-document.querySelector('.mem-card[data-i="' + a + '"]').classList.add('match');
-document.querySelector('.mem-card[data-i="' + b + '"]').classList.add('match');
-memState.matches++;
-document.getElementById('memM').textContent = memState.matches;
-memState.flips = []; memState.lock = false;
-if(memState.matches === 8){
-document.getElementById('gameTitle').textContent = '🎉 فزت!';
-document.getElementById('gameArea').innerHTML = '<div class="gd">أحسنت! أكملت جميع الأزواج<br>ربحت 15 نقطة</div><div class="gbtns"><button class="btn-g" onclick="closeGame()">إغلاق</button></div>';
-}
-}, 400);
-} else {
-setTimeout(function(){
-var c1 = document.querySelector('.mem-card[data-i="' + a + '"]');
-var c2 = document.querySelector('.mem-card[data-i="' + b + '"]');
-if(c1){ c1.classList.remove('flip'); c1.textContent = '?'; }
-if(c2){ c2.classList.remove('flip'); c2.textContent = '?'; }
-memState.flips = []; memState.lock = false;
-}, 700);
-}
-}
+  if(window.memState.lock) return;
+  var card = document.querySelector('.mem-card[data-idx="' + i + '"]');
+  if(!card || card.classList.contains('flip') || card.classList.contains('match')) return;
+  card.classList.add('flip');
+  card.textContent = window.memState.cards[i];
+  window.memState.flips.push(i);
+  if(window.memState.flips.length === 2){
+    window.memState.lock = true;
+    var a = window.memState.flips[0], b = window.memState.flips[1];
+    if(window.memState.cards[a] === window.memState.cards[b]){
+      setTimeout(function(){
+        document.querySelector('.mem-card[data-idx="' + a + '"]').classList.add('match');
+        document.querySelector('.mem-card[data-idx="' + b + '"]').classList.add('match');
+        window.memState.matches++;
+        $('memM').textContent = window.memState.matches;
+        window.memState.flips = [];
+        window.memState.lock = false;
+        if(window.memState.matches === 8){
+          $('gameTitle').textContent = '🎉 فزت!';
+          $('gameArea').innerHTML = '<div class="gd">أكملت جميع الأزواج!<br>ربحت 15 نقطة</div><div class="gbtns"><button class="btn-g" id="againBtn2">العب مرة أخرى</button></div>';
+          $('againBtn2').addEventListener('click', function(){ openGame('memory'); });
+        }
+      }, 400);
+    } else {
+      setTimeout(function(){
+        var c1 = document.querySelector('.mem-card[data-idx="' + a + '"]');
+        var c2 = document.querySelector('.mem-card[data-idx="' + b + '"]');
+        if(c1){ c1.classList.remove('flip'); c1.textContent = '?'; }
+        if(c2){ c2.classList.remove('flip'); c2.textContent = '?'; }
+        window.memState.flips = [];
+        window.memState.lock = false;
+      }, 700);
+    }
+  }
 }
 
+/* سرعة الرد */
 function startReaction(){
-reactState = {timeout:null, start:0, ready:false};
-document.getElementById('gameArea').innerHTML = '<div class="gd" id="rMsg">انتظر اللون ثم اضغط!</div><div class="circle wait" id="rCirc" onclick="tapReaction()">انتظر...</div>';
-var circ = document.getElementById('rCirc');
-var delay = Math.random() * 3000 + 1500;
-reactState.timeout = setTimeout(function(){
-circ.classList.remove('wait'); circ.classList.add('ready');
-circ.textContent = 'اضغط!'; reactState.ready = true; reactState.start = Date.now();
-}, delay);
+  window.reactReady = false;
+  $('gameArea').innerHTML = '<div class="gd" id="rMsg">انتظر اللون ثم اضغط!</div><div class="circle wait" id="rCirc">انتظر...</div>';
+  var circ = $('rCirc');
+  circ.addEventListener('click', tapReaction);
+  var delay = Math.random() * 3000 + 1500;
+  window.reactTimeout = setTimeout(function(){
+    circ.classList.remove('wait');
+    circ.classList.add('ready');
+    circ.textContent = 'اضغط!';
+    window.reactReady = true;
+    window.reactStart = Date.now();
+  }, delay);
 }
-
 function tapReaction(){
-if(!reactState.ready){
-if(reactState.timeout) clearTimeout(reactState.timeout);
-document.getElementById('rMsg').textContent = '❌ ضغطت مبكراً!';
-setTimeout(startReaction, 800); return;
-}
-var t = Date.now() - reactState.start;
-document.getElementById('gameArea').innerHTML = '<div class="gd">⚡ سرعتك: ' + t + ' ms<br>ربحت 8 نقطة</div><div class="gbtns"><button class="btn-g" onclick="closeGame()">إغلاق</button></div>';
+  if(!window.reactReady){
+    if(window.reactTimeout) clearTimeout(window.reactTimeout);
+    $('rMsg').textContent = '❌ ضغطت مبكراً!';
+    setTimeout(startReaction, 800);
+    return;
+  }
+  var t = Date.now() - window.reactStart;
+  $('gameArea').innerHTML = '<div class="gd">⚡ سرعتك: ' + t + ' ms<br>ربحت 8 نقطة</div><div class="gbtns"><button class="btn-g" id="againBtn3">العب مرة أخرى</button></div>';
+  $('againBtn3').addEventListener('click', function(){ openGame('reaction'); });
 }
 
+/* خمن */
 function checkGuess(){
-var v = parseInt(document.getElementById('gInp').value);
-if(isNaN(v) || v < 1 || v > 100) return;
-guessTries++;
-document.getElementById('gTry').textContent = 'المحاولات: ' + guessTries;
-if(v === guessNum){
-document.getElementById('gameArea').innerHTML = '<div class="gd">🎉 صح! الرقم ' + guessNum + '<br>خمنته في ' + guessTries + ' محاولات</div><div class="gbtns"><button class="btn-g" onclick="closeGame()">إغلاق</button></div>';
-} else if(v < guessNum){ document.getElementById('gMsg').textContent = '⬆️ الرقم أكبر من ' + v; }
-else { document.getElementById('gMsg').textContent = '⬇️ الرقم أصغر من ' + v; }
+  var v = parseInt($('gInp').value);
+  if(isNaN(v) || v < 1 || v > 100) return;
+  window.guessTries++;
+  $('gTry').textContent = 'المحاولات: ' + window.guessTries;
+  if(v === window.guessNum){
+    $('gameArea').innerHTML = '<div class="gd">🎉 صح! الرقم ' + window.guessNum + '<br>في ' + window.guessTries + ' محاولات</div><div class="gbtns"><button class="btn-g" id="againBtn4">العب مرة أخرى</button></div>';
+    $('againBtn4').addEventListener('click', function(){ openGame('guess'); });
+  } else if(v < window.guessNum){
+    $('gMsg').textContent = '⬆️ الرقم أكبر من ' + v;
+  } else {
+    $('gMsg').textContent = '⬇️ الرقم أصغر من ' + v;
+  }
 }
 
+/* RPS */
 function playRPS(p){
-var opts = ['✊','📄','✂️'];
-var b = Math.floor(Math.random()*3);
-var res, col;
-if(p === b){ res = '🤝 تعادل'; col = '#fbbf24'; }
-else if((p === 0 && b === 2) || (p === 1 && b === 0) || (p === 2 && b === 1)){ res = '🎉 فزت!'; col = '#10b981'; }
-else { res = '😢 خسرت'; col = '#ec4899'; }
-document.getElementById('gameArea').innerHTML = '<div class="gd" style="color:' + col + '">أنت: ' + opts[p] + ' | البوت: ' + opts[b] + '<br><br><b style="font-size:1.3rem">' + res + '</b></div><div class="gbtns"><button class="btn-g" onclick="closeGame()">إغلاق</button><button class="btn-g ghost" onclick="openGame(\'rps\')">العب مرة أخرى</button></div>';
+  var opts = ['✊','📄','✂️'];
+  var b = Math.floor(Math.random()*3);
+  var res, col;
+  if(p === b){ res = '🤝 تعادل'; col = '#fbbf24'; }
+  else if((p === 0 && b === 2) || (p === 1 && b === 0) || (p === 2 && b === 1)){ res = '🎉 فزت!'; col = '#10b981'; }
+  else { res = '😢 خسرت'; col = '#ec4899'; }
+  $('gameArea').innerHTML = '<div class="gd" style="color:' + col + '">أنت: ' + opts[p] + ' | البوت: ' + opts[b] + '<br><br><b style="font-size:1.3rem">' + res + '</b></div><div class="gbtns"><button class="btn-g" id="againBtn5">العب مرة أخرى</button></div>';
+  $('againBtn5').addEventListener('click', function(){ openGame('rps'); });
 }
 
 /* ══════ CHATBOT ══════ */
-function getReply(m){
-var l = m.toLowerCase();
-if(l.indexOf('هلا') > -1 || l.indexOf('مرحبا') > -1 || l.indexOf('سلام') > -1) return 'أهلاً وسهلاً! 👋 كيف أقدر أساعدك؟';
-if(l.indexOf('خفاجي') > -1 || l.indexOf('قناة') > -1) return 'خفاجي گيمز قناة متخصصة في One State RP على الموبايل! 🎮';
-if(l.indexOf('لعبة') > -1 || l.indexOf('العب') > -1) return 'عندنا 5 ألعاب تفاعلية! اضغط على قسم "العب واربح" 🎮';
-if(l.indexOf('اشترك') > -1 || l.indexOf('يوتيوب') > -1) return 'اشترك من زر "اشترك الآن" في الأعلى! 🔔';
-if(l.indexOf('تيك') > -1) return 'تابعني على تيك توك @fvx4 📱';
-if(l.indexOf('ديسكورد') > -1) return 'انضم لسيرفر الديسكورد! 💬 اضغط على زر "انضم الآن"';
-if(l.indexOf('تحميل') > -1) return 'كل الألعاب في قسم "تحميل الألعاب" 📥';
-if(l.indexOf('شكرا') > -1 || l.indexOf('تسلم') > -1) return 'على الرحب والسعة! 🤍';
-if(l.indexOf('وداع') > -1) return 'وداعاً! 👋';
-if(l.indexOf('rp') > -1 || l.indexOf('أدوار') > -1) return 'شوف قسم "نصايح RP" فيه نصائح ذهبية! 🎭';
-if(l.indexOf('مساعدة') > -1 || l.indexOf('ساعدني') > -1) return 'أقدر أساعدك في:\n• معلومات القناة 🎬\n• الألعاب 🎮\n• تحميل الألعاب 📥\n• نصايح RP 🎭\n• الروابط 📱';
-var r = ['أخبرني أكثر! 🤔','موضوع شيق! 🎮','تقدر تسألني عن الألعاب أو القناة 😊'];
-return r[Math.floor(Math.random()*r.length)];
-}
+$('chatBtn').addEventListener('click', toggleChat);
+$('chatClose').addEventListener('click', toggleChat);
+$('chatSend').addEventListener('click', sendChat);
+$('chatInput').addEventListener('keypress', function(e){ if(e.key === 'Enter') sendChat(); });
 
 function toggleChat(){
-var w = document.getElementById('chatWin');
-w.classList.toggle('on');
-if(w.classList.contains('on') && document.getElementById('chatBody
+  var w = $('chatWin');
+  w.classList.toggle('on');
+  if(w.classList.contains('on') && $('chatBody').children.length === 0){
+    addMsg('b', 'أهلاً بك في خفاجي گيمز! 👋\nأنا مساعدك الذكي.\n\nاكتب "مساعدة" للمزيد.');
+  }
+}
+function addMsg(type, text){
+  var b = $('chatBody');
+  var d = document.createElement('div');
+  d.className = 'msg ' + type;
+  d.innerHTML = text.replace(/\n/g, '<br>');
+  b.appendChild(d);
+  b.scrollTop = b.scrollHeight;
+}
+function getReply(m){
+  var l = m.toLowerCase();
+  if(l.indexOf('هلا') > -1 || l.indexOf('مرحبا') > -1 || l.indexOf('سلام') > -1) return 'أهلاً وسهلاً! 👋 كيف أقدر أساعدك؟';
+  if(l.indexOf('خفاجي') > -1) return 'خفاجي گيمز قناة متخصصة في One State RP! 🎮';
+  if(l.indexOf('لعبة') > -1 || l.indexOf('العب') > -1) return 'عندنا 5 ألعاب تفاعلية! اضغط على قسم "العب واربح" 🎮';
+  if(l.indexOf('اشترك') > -1 || l.indexOf('يوتيوب') > -1) return 'اشترك من زر "اشترك الآن" 🔔';
+  if(l.indexOf('تيك') > -1) return 'تابعني على تيك توك @fvx4 📱';
+  if(l.indexOf('ديسكورد') > -1) return 'انضم لسيرفر الديسكورد! 💬';
+  if(l.indexOf('شكرا') > -1 || l.indexOf('تسلم') > -1) return 'على الرحب والسعة! 🤍';
+  if(l.indexOf('rp') > -1 || l.indexOf('أدوار') > -1) return 'شوف قسم "نصايح RP" 🎭';
+  if(l.indexOf('مساعدة') > -1 || l.indexOf('ساعدني') > -1) return 'أقدر أساعدك في:\n• معلومات القناة 🎬\n• الألعاب 🎮\n• نصايح RP 🎭\n• الروابط 📱';
+  var r = ['أخبرني أكثر! 🤔','موضوع شيق! 🎮','تقدر تسألني عن الألعاب أو القناة 😊'];
+  return r[Math.floor(Math.random()*r.length)];
+}
+function sendChat(){
+  var inp = $('chatInput');
+  var m = inp.value.trim();
+  if(!m) return;
+  addMsg('u', m);
+  trackAction('رسالة للبوت');
+  inp.value = '';
+  setTimeout(function(){ addMsg('b', getReply(m)); }, 400);
+}
+</script>
+
+</body>
+</html>
